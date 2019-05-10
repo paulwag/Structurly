@@ -1,0 +1,69 @@
+Projektname: 		
+Structurly
+
+
+
+Problembeschreibung: 
+Viele Menschen kennen die Schwierigkeit bei einem vollen Terminkalender den Überblick über anstehende Aufgaben,
+Meetings oder Events zu behalten. Bei einem aufgeteilten Alltag zwischen Job, Familie und Hobbys kann es schnell
+sein, dass Aspekte vergessen werden oder Deadlines nicht erreicht werden. Aktuell wird häufig versucht diesem
+Problem mit verteilten To-Do Listen zu begegnen und unzählige Erinnerungsnotizen verschwinden ungelesen in
+Mülleimern.
+Bei dieser Herausforderung soll unser Produkt den Kunden unterstützen, egal ob im beruflichen Leben oder im
+Privaten. Es richtet sich dabei vor allem an vielbeschäftigte Menschen, die eine einfache und intuitive Lösung
+suchen, um verschiedene Aspekte Ihres Alltags an einem Ort zu organisieren.
+
+
+
+Zielbeschreibung:
+Mit unserem Projekt eines Personal Management Systems - auch PMS (Arbeitstitel) möchten wir unseren Kunden
+eine einfache, schnelle und intuitive Lösung zur Verfügung stellen, um ihren Alltag zu organisieren.
+Im Mittelpunkt stehen dabei vor allem eine benutzerfreundliche Bedienung und übersichtliche Darstellung.
+Mit unserem Projekt planen wir zahlreiche Funktionen in einer Anwendung zusammenzufassen, die aktuell nur sehr
+spezialisiert angeboten werden. Dadurch erreichen wir eine deutliche Vereinfachung für unsere Kunden. Eine
+besondere Funktion soll die Integration eines automatischen Planungstools sein, die den Nutzer dabei
+unterstützt, seine Tage optimal zu nutzen und mit Aufgaben zu füllen. Unsere Anwendung wird vorerst als
+Desktop-Version entwickelt und soll später auch auf mobilen Geräten zur Verfügung stehen und
+plattformübergreifend synchronisierbar sein.
+
+
+UseCases:
+siehe Diagramm
+
+
+
+Funktionale Anforderungen
+    • Tasks erstellen
+    • Speichern 
+    • Laden
+    • Zuordnen der Tasks in Kalender
+    • Löschen von Tasks
+    • Automatische Zuweisung in Kalender
+    • Notizen erstellen
+    • Erinnerungen/ Meldungen zu akuten Tasks
+
+
+
+Nicht-funktionale Anforderungen
+    • simples Interface
+    • Unterstützung bei Anlegen 
+    • Zeitverhalten 
+    • Ressourcenverbrauch
+
+
+
+Berechtigungen:
+Nutzer kann nur über das zur Verfügung gestellte Interface mit der Software interagieren.
+Er kann nicht in tieferliegende Funktionen wie z.B. Speichern / Laden eingreifen. 
+
+Glossar
+
+Deadline        - Fälligkeitsdatum / Uhrzeit einer Aufgabe
+Priorität       - Wichtigkeit einer Aufgabe in Relation zu den restlichen Aufgaben
+Timeline        - Tagesübersicht mit Zeitskala und den Zeiten zugeordneten Aufgaben 
+Smart Planning  - Auswählen und Einfügen von passenden Aufgaben in freie Zeitbereiche entsprechend von Prioritäten und Deadlines
+ToDo-List       - Liste von Aufgaben (sehr simpel)
+DailyView       - Tagesansicht (entsprechend auch für Wochenansicht, Monatsansicht)
+Clippy          - “Assistenz”- Nickname für Unterstützungs- und Automatisierungsfunktion
+Kategorie       - Bereich, dem Aufgaben zugeordnet werden
+
