@@ -42,6 +42,9 @@ Funktionale Anforderungen
     • Notizen erstellen
     • Erinnerungen/ Meldungen zu akuten Tasks
 
+Wenn ein Zeitfenster leer ist soll Structurly dem Nutzer die Möglichkeit bieten, Aufgaben automatisch in die Timeline einzufügen. 
+Beim Schließen der Anwendung muss Structurly selbstständig alles selbstständig sichern.
+Beim Öffnen der Anwendung muss Structurly selbstständig die erforderlichen Daten laden.
 
 
 Nicht-funktionale Anforderungen
@@ -67,4 +70,6 @@ ToDo-List       - Liste von Aufgaben (sehr simpel)
 DailyView       - Tagesansicht (entsprechend auch für Wochenansicht, Monatsansicht)
 Clippy          - “Assistenz”- Nickname für Unterstützungs- und Automatisierungsfunktion
 Kategorie       - Bereich, dem Aufgaben zugeordnet werden
+
+Ergänzungen PM:
 
