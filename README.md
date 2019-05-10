@@ -1,1 +1,1 @@
-# se2_project
+#Structurly
