@@ -45,7 +45,7 @@ Funktionale Anforderungen
 
 
 Nicht-funktionale Anforderungen
-    • simples Interface
+    • Das System hat ein intuitives und simples Interface
     • Unterstützung bei Anlegen 
     • Zeitverhalten 
     • Ressourcenverbrauch
