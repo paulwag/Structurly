@@ -1,11 +1,13 @@
 Domänen - Datenbank, Logik/ Funktion, GUI
 
 
+
 Fehlerfälle:
     1. Einlesen der Dateien - Überprüfung der Daten + Fehlermeldung 
     2. Speichern der Daten - Überprüfen des Speicherns + Fehlermeldung
     3. doppelte Namen von Tasks - Hinweis/Warnung? - einzigartige ID
     4. unterschiedliche Screen/Viewportsizes - Autolayout? 
+
 
 
 Abnahmekriterien:
@@ -18,6 +20,7 @@ Abnahmekriterien:
 	Nice-to-haves
                 1. Teilschritte in Aufgaben
                 2. Wiederholung für Aufgaben
+
 
 
 Qualität:

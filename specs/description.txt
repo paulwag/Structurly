@@ -60,6 +60,8 @@ Single User System
 Nutzer kann nur über das zur Verfügung gestellte Interface mit der Software interagieren.
 Er kann nicht in tieferliegende Funktionen wie z.B. Speichern / Laden eingreifen. 
 
+
+
 Glossar
 
 Deadline        - Fälligkeitsdatum / Uhrzeit einer Aufgabe
