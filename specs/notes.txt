@@ -1,0 +1,46 @@
+Der Inter-Team-Kommunikations-Apparat oder auch:
+Ideen und andere Geisteskrankheiten
+
+
+
+Unwichtiges zu Aufgabe C:
+
+- 3 / 4 Komponenten mit Interfaces (z.B. Data Provider o. Usermanager )
+- sieht Taschenrechner Aufgabe A, dort gibt es auch module mit Interfaces (Na Paul, Aufgabe A?)
+- Interface = abstrakte Klasse in der Header (z.B. Controllerinterface beim Taschenrechner), Methoden müssen mit '= 0' deklariert werden
+- Besitzer der Klassen sorgen für Implementierung der hinter den Interfaces
+- Interfaces sollten am Namen erkennbar sein (z.B. _inft also Postfix im Klassennamen)
+- Alles gut kommentieren!!! (sagt auch der Kempfer! Macht trotzdem niemand) (/** erstellt Funktionsheader-Kommentar)
+- main_controller ruft Komponenten in der richtigen Reigenfolge auf (weil Konstruktoren Kacke sind)
+- Konstruktor = keine Logik! Nur Attribute initialisieren!
+
+
+
+___________________________________________________________________
+Datenbank:
+
+- Tasks werden einteln in die Datenbank gespeichert
+- Tasks werden beim Anlegen in die DB gespeichert
+- Tasks bekommen eine ID
+- Tasks werden beim einlesen in die Timeline geladen / gepointed
+- LUT für freie IDs
+- XML???
+
+- Interface:    save_one_task()
+                get_LUT()
+                set_ID()
+                load_all()
+
+
+___________________________________________________________________
+Task:
+
+- ID
+- Titel
+- Notizen / Beschreibung
+- Startzeit (Datum, Uhrzeit)
+- Dauer (15-Minuten-Schritte)
+- Wiederholung (enum)
+- Priorität (1-5, enum??)
+- Deadline (Datum, Uhrzeit)
+- Kategorie (Themenbezogen)
