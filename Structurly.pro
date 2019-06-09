@@ -13,4 +13,5 @@ SOURCES += \
     src/main.cpp
 
 HEADERS += \
-    src/components/database.h
+    src/components/database.h \
+    src/components/datastructure.h
