@@ -10,8 +10,11 @@ INCLUDEPATH += \
     src/components
     
 SOURCES += \
-    src/main.cpp
+    src/main.cpp \
+    src/database.cpp \
+    src/tools.cpp
 
 HEADERS += \
     src/components/database.h \
-    src/components/datastructure.h
+    src/components/datastructure.h \
+    src/components/tools.h
