@@ -1,0 +1,26 @@
+TaskID entspricht der Stelle im Array! Wichtig für Zugriff
+Einträge in der LookUpTable entstehen nur beim Löschen(Bsp. DeleteTask())
+
+Task:
+    Title
+    ID
+    ...
+    
+Timeline:
+    Datum
+    TaskIDs[]
+    
+LookUpTable:
+    freieIDs[]
+   
+----------------------
+Wiederholungen:
+-nur die nächsten xy Wiederholungen speichern - 50?
+-Bereiniger für Tasks einrichten, nach 3 Wochen z.Bsp
+
+beim Laden der Tasks wird ein Array/Vektor erstellt
+Database gibt Zeiger darauf an Model --> Daten werden direkt verändert, muss nicht über das Interface gemacht werden
+
+saveTask(): bekommt ein Struct mit Task ohne ID --> weist Task ID zu, Return-Wert ist diese ID, Task wird gespeichert
+updateTask(): Anstoß vom Manager die Änderungen zu speichern
+wenn ein Task sich verändert müssen sich auch die Timelines verändern(Datum)
