@@ -78,3 +78,5 @@ Database gibt Zeiger darauf an Model --> Daten werden direkt verändert, muss ni
 saveTask(): bekommt ein Struct mit Task ohne ID --> weist Task ID zu, Return-Wert ist diese ID, Task wird gespeichert
 updateTask(): Anstoß vom Manager die Änderungen zu speichern
 wenn ein Task sich verändert müssen sich auch die Timelines verändern(Datum)
+
+Im OutputController sind Verbindungen zu allen sichtbaren Widgets!!
