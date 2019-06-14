@@ -7,14 +7,20 @@ CONFIG -= qt
 
 INCLUDEPATH += \
     src \
-    src/components
+    src/components \
+    src/datatypes
     
 SOURCES += \
     src/main.cpp \
-    src/database.cpp \
-    src/tools.cpp
+    src/tools.cpp \
+    src/components/database.cpp \
+    src/datatypes/tdate.cpp \
+    src/datatypes/ttime.cpp
 
 HEADERS += \
+    scr/tool.h \
     src/components/database.h \
-    src/components/datastructure.h \
-    src/components/tools.h
+    src/components/inputController.h \
+    src/datatypes/datastructure.h \
+    src/datatypes/tdate.h \
+    src/datatypes/ttime.h
