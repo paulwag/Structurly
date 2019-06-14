@@ -1,4 +1,4 @@
-#include <string>
+/*#include <string>
 #include <ctime>
 #include "tdate.h"
 #include "toolbox.h"
@@ -74,3 +74,4 @@ void TDate::load(ifstream &file)
     } while ( (input.find("</Birthday>") == string::npos)
                && !file.eof());
 }
+*/

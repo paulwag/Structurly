@@ -1,4 +1,4 @@
-#include <string>
+/*#include <string>
 #include <ctime>
 #include "ttime.h"
 #include "toolbox.h"
@@ -81,3 +81,4 @@ void TTime::load(ifstream &file)
     } while ( (input.find("</MUSSNOCH>") == string::npos)
                && !file.eof());
 }
+*/

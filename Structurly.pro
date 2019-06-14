@@ -19,8 +19,13 @@ SOURCES += \
 
 HEADERS += \
     scr/tool.h \
+    src/components/calender_manager_intf.h \
+    src/components/controller_intf.h \
     src/components/database.h \
-    src/components/inputController.h \
+    src/components/database_intf.h \
+    src/components/input_controller_intf.h \
+    src/components/output_controller_intf.h \
+    src/components/task_manager_intf.h \
     src/datatypes/datastructure.h \
     src/datatypes/tdate.h \
     src/datatypes/ttime.h
