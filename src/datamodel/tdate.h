@@ -8,17 +8,17 @@
 
 
 
-    class TDate
+    class tdate
     {
         int day;
         int month;
         int year;
 
         public:
-            TDate(); 
-            TDate(int d, int m, int y);
+            tdate(); 
+            tdate(int d, int m, int y);
             
-            friend ostream &operator<< (ostream &, const TDate &);
+            friend ostream &operator<< (ostream &, const tdate &);
 
             int get_day()   const   {return day;}
             int get_month() const   {return month;}
@@ -26,8 +26,6 @@
 
             void set_date(int d, int m, int y);
             void set_today();
-            
-            void load(ifstream &);
     };
 
 #endif

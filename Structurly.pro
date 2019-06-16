@@ -8,17 +8,15 @@ CONFIG -= qt
 INCLUDEPATH += \
     src \
     src/components \
-    src/datatypes
+    src/datamodel
     
 SOURCES += \
     src/main.cpp \
-    src/tools.cpp \
     src/components/database.cpp \
-    src/datatypes/tdate.cpp \
-    src/datatypes/ttime.cpp
+    src/datamodel/tdate.cpp \
+    src/datamodel/ttime.cpp
 
 HEADERS += \
-    scr/tool.h \
     src/components/calender_manager_intf.h \
     src/components/controller_intf.h \
     src/components/database.h \
@@ -26,6 +24,6 @@ HEADERS += \
     src/components/input_controller_intf.h \
     src/components/output_controller_intf.h \
     src/components/task_manager_intf.h \
-    src/datatypes/datastructure.h \
-    src/datatypes/tdate.h \
-    src/datatypes/ttime.h
+    src/datamodel/datastructure.h \
+    src/datamodel/tdate.h \
+    src/datamodel/ttime.h
