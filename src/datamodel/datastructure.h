@@ -2,13 +2,14 @@
     #define DATASTRUCTURE_H_INCLUDED
 
     #include <string>
+    #include "ttime.h"
 
     using namespace std;
 
     enum priority {high, medium, low};
     enum repetition {Taeglich, Woechentlich, Monatlich, Jaehrlich};
 
-    #define MAXTASKS 96 //solange noch keine Ueberschneidungen moeglich sind(24 * 4)
+    #define maxtasks 96 //solange noch keine Ueberschneidungen moeglich sind(24 * 4)
 
     typedef struct
     {
@@ -16,7 +17,7 @@
         string title;
         string description;
         string priority;
-        TTime startingtime;
+        ttime startingtime;
         int length;
         repetition trepetition;
         string category;            // keine dynamischen enums moeglich --> strings und speichern
