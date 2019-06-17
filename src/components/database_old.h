@@ -71,43 +71,4 @@
 
     #endif // DATABASE_H_INCLUDED
 
-    /*
-    <Data>
-        <Tasks>
-            <Task>
-                <identifier>    </identifier>
-                <title>         </title>
-                <description>   </description>
-            </Task>
-            <Task>
-                <identifier>    </identifier>
-                <title>         </title>
-                <description>   </description>
-            </Task>
-        </Tasks>
-        <Timelines>
-            <Timeline>
-                <identifier>    </identifier>
-                <tasks>
-                    <identifier>    </identifier>
-                    <identifier>    </identifier>
-                    <identifier>    </identifier>
-                    <identifier>    </identifier>
-                </tasks>
-            </Timeline>
-        </Timelines>
-        <LookupTable>
-            <identifier>    </identifier>
-            <identifier>    </identifier>
-            <identifier>    </identifier>
-            <identifier>    </identifier>
-            <identifier>    </identifier>
-        </LookupTable>
-        <Categories>
-            <title>     </title>
-            <title>     </title>
-            <title>     </title>
-            <title>     </title>
-        </Categories>
-    </Data>
-    */
+

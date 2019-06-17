@@ -24,7 +24,43 @@ void database::loadFile() {
  * Dann in loadTask und Filepointer uebergeben
  * Task wird returned und in den Task Vector appended(push_back)
  * Datei schließen
- */
+ *
+    FILE *stream;
+    char line[101];
+    char *linestart = NULL;
+
+    stream = fopen("database.xml", "rb");
+    task& newTask = *new task();
+
+    if(stream)
+    {
+        do
+        {
+            fgets(line, 101, stream);
+
+            linestart = line;
+            while(*linestart == ' ' || *linestart == 9)     //remove spaces and tabs
+                linestart++;
+
+            if(strncmp(linestart, "<Tasks>", 7) == 0)
+            {
+                newTask = loadTask(line, stream);
+                tasks.push_back(newTask);
+            }
+
+            if(feof(stream))
+                break;
+
+        }while(strncmp(line, "</Data>", 8) != 0);
+
+        fclose(stream);
+    }
+
+    else
+    {
+        //Error ausgeben?
+    }
+    */
 }
 
 
@@ -36,6 +72,10 @@ void database::loadTask(){
  * Objekt returnen bzw Referenz
  *
 */
+    task& newTask = *new task();
+
+    newTask.set_identifier(3);
+
 }
 
 void database::loadLookUpTable()

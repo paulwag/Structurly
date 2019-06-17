@@ -24,7 +24,7 @@ class task{
         string category;
 
     public:
-        task();
+        task(){}
         task(int identifier, string title, string description, priority tpriority, ttime startingtime, int length, repetition trepetition, string category);     //if not set, empty string?
 
         void set_identifier(int identifier);
