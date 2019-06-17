@@ -8,16 +8,6 @@ class task_manager_intf : public controller_intf
     virtual ~task_manager_intf();
 
     /**
-     * @brief start liest bei Start alle Daten aus der Datenbank aus
-     */
-    void start();
-
-    /**
-     * @brief stop speichert alle Daten bei Programmende
-     */
-    void stop();
-
-    /**
      * @brief taskAnlegen Task Objekt erstellen und speichern und gibt Veränderung an CalenderManager weiter
      */
     virtual void createTask() = 0;

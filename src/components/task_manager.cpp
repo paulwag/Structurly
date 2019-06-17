@@ -1,11 +1,11 @@
-#include "database.h"
+#include "task_manager.h"
 
-void database::start()
+void task_manager::start()
 {
     std::cout << getName() << " gestartet \n";
 }
 
-void database::stop(bool exit)
+void task_manager::stop(bool exit)
 {
     std::cout << getName() << " beendet \n";
 

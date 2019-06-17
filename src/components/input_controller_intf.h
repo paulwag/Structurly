@@ -7,9 +7,6 @@ class input_controller_intf : public controller_intf
 {
     virtual ~input_controller_intf();
 
-    void start();
-    void stop();
-
     /**
      * @brief buttonPressed empfaengt Button Signale und verwertet diese
      */

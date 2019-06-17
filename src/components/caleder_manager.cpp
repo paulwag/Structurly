@@ -1,6 +1,6 @@
-#include "database.h"
+#include "calender_manager.h"
 
-void database::start()
+void calender_manager::start()
 {
     std::cout << getName() << " gestartet \n";
 }

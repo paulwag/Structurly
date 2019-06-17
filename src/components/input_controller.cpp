@@ -1,11 +1,11 @@
-#include "database.h"
+#include "input_controller.h"
 
-void database::start()
+void input_controller::start()
 {
     std::cout << getName() << " gestartet \n";
 }
 
-void database::stop(bool exit)
+void input_controller::stop(bool exit)
 {
     std::cout << getName() << " beendet \n";
 

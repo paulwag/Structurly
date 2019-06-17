@@ -7,9 +7,6 @@ class output_controller_intf : public controller_intf
 {
     virtual ~output_controller_intf();
 
-    void start();
-    void stop();
-
     /**
      * @brief updateGUI updated alle GUI Elemente
      */

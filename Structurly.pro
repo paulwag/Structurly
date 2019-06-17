@@ -12,18 +12,30 @@ INCLUDEPATH += \
     
 SOURCES += \
     src/main.cpp \
-    src/components/database.cpp \
     src/datamodel/tdate.cpp \
-    src/datamodel/ttime.cpp
+    src/datamodel/ttime.cpp \
+    src/components/caleder_manager.cpp \
+    src/components/database_old.cpp \
+    src/components/database.cpp \
+    src/components/input_controller.cpp \
+    src/components/output_controller.cpp \
+    src/components/task_manager.cpp \
+    src/components/maincontroller.cpp
 
 HEADERS += \
     src/components/calender_manager_intf.h \
     src/components/controller_intf.h \
-    src/components/database.h \
     src/components/database_intf.h \
     src/components/input_controller_intf.h \
     src/components/output_controller_intf.h \
     src/components/task_manager_intf.h \
     src/datamodel/datastructure.h \
     src/datamodel/tdate.h \
-    src/datamodel/ttime.h
+    src/datamodel/ttime.h \
+    src/components/calender_manager.h \
+    src/components/input_controller.h \
+    src/components/output_controller.h \
+    src/components/task_manager.h \
+    src/components/database_old.h \
+    src/components/database.h \
+    src/components/maincontroller.h

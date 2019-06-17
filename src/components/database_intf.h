@@ -1,7 +1,9 @@
 #ifndef DATABASE_INTF_H
 #define DATABASE_INTF_H
 
-class database_intf
+#include "controller_intf.h"
+
+class database_intf: public controller_intf
 {
     virtual ~database_intf();
 
