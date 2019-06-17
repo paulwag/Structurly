@@ -33,5 +33,5 @@ int main()
     main.stop();
 
     //return a.exec;
-    return 1;
+    return 0;
 }
