@@ -1,7 +1,7 @@
 #ifndef DATABASE_H
     #define DATABASE_H
 
-    #include "datastructure.h"
+    #include "timeline.h"
     #include "database.h"
     #include <iostream>
     #include <string>

@@ -11,11 +11,13 @@ void mainController::start()
 
 void mainController::stop(bool exit)
 {
-    std::cout << getName() << " beendet \n";
+
     std::reverse(componentList.begin(),componentList.end());
 
     for(auto *component: componentList)
             component->stop();
+
+    std::cout << getName() << " beendet \n";
 
     if (exit)
         std::cout << "exit is true \n";

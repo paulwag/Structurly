@@ -29,7 +29,7 @@ int main()
     main.inject( input_ref );
     main.inject( output_ref );
 
-    main.start();
+    main.start();               // Bug: MainController wird zu erst gestoppt --> soll zuletzt gestoppt werden
     main.stop();
 
     //return a.exec;

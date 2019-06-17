@@ -2,11 +2,13 @@
 
 void database::start()
 {
+    loadFile();
     std::cout << getName() << " gestartet \n";
 }
 
 void database::stop(bool exit)
 {
+    storeFile();
     std::cout << getName() << " beendet \n";
 
     if (exit)

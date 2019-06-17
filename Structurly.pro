@@ -20,7 +20,9 @@ SOURCES += \
     src/components/output_controller.cpp \
     src/components/task_manager.cpp \
     src/components/maincontroller.cpp \
-    src/components/calender_manager.cpp
+    src/components/calender_manager.cpp \
+    src/datamodel/task.cpp \
+    src/datamodel/timeline.cpp
 
 HEADERS += \
     src/components/calender_manager_intf.h \
@@ -29,7 +31,6 @@ HEADERS += \
     src/components/input_controller_intf.h \
     src/components/output_controller_intf.h \
     src/components/task_manager_intf.h \
-    src/datamodel/datastructure.h \
     src/datamodel/tdate.h \
     src/datamodel/ttime.h \
     src/components/calender_manager.h \
@@ -38,4 +39,6 @@ HEADERS += \
     src/components/task_manager.h \
     src/components/database_old.h \
     src/components/database.h \
-    src/components/maincontroller.h
+    src/components/maincontroller.h \
+    src/datamodel/task.h \
+    src/datamodel/timeline.h
