@@ -5,7 +5,7 @@ timeline::timeline(string identifier)
     this->identifier = identifier;
 }
 
-timeline::set_identifier(string identifier)
+void timeline::set_identifier(string identifier)
 {
     this->identifier = identifier;
 }
