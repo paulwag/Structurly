@@ -14,13 +14,13 @@ SOURCES += \
     src/main.cpp \
     src/datamodel/tdate.cpp \
     src/datamodel/ttime.cpp \
-    src/components/caleder_manager.cpp \
     src/components/database_old.cpp \
     src/components/database.cpp \
     src/components/input_controller.cpp \
     src/components/output_controller.cpp \
     src/components/task_manager.cpp \
-    src/components/maincontroller.cpp
+    src/components/maincontroller.cpp \
+    src/components/calender_manager.cpp
 
 HEADERS += \
     src/components/calender_manager_intf.h \

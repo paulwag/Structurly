@@ -12,3 +12,5 @@ void input_controller::stop(bool exit)
     if (exit)
         std::cout << "exit is true \n";
 }
+
+void input_controller::buttonPressed() {}

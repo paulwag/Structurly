@@ -12,3 +12,5 @@ void output_controller::stop(bool exit)
     if (exit)
         std::cout << "exit is true \n";
 }
+
+void output_controller::updateGUI() {}

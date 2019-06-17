@@ -5,7 +5,9 @@
 
 class database_intf: public controller_intf
 {
-    virtual ~database_intf();
+public:
+     database_intf(std::string name) : controller_intf(name) {}
+     virtual ~database_intf(){}
 
     /**
      * @brief loadFile läd alle Daten aus File

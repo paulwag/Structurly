@@ -5,7 +5,9 @@
 
 class input_controller: public input_controller_intf {
 
-    ~input_controller();
+public:
+     input_controller(std::string name) : input_controller_intf(name) {}
+     ~input_controller(){}
 
     /**
      * @brief start zieht alle Tasks und laedt diese in Timelines
@@ -16,6 +18,8 @@ class input_controller: public input_controller_intf {
      * @brief stop
      */
     void stop(bool exit = false);
+
+    void buttonPressed();
 };
 
 #endif // INPUT_CONTROLLER_H

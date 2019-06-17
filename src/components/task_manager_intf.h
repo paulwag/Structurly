@@ -5,7 +5,9 @@
 
 class task_manager_intf : public controller_intf
 {
-    virtual ~task_manager_intf();
+public:
+     task_manager_intf(std::string name) : controller_intf(name) {}
+     ~task_manager_intf(){}
 
     /**
      * @brief taskAnlegen Task Objekt erstellen und speichern und gibt Veränderung an CalenderManager weiter

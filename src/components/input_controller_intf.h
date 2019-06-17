@@ -5,7 +5,9 @@
 
 class input_controller_intf : public controller_intf
 {
-    virtual ~input_controller_intf();
+public:
+     input_controller_intf(std::string name) : controller_intf(name) {}
+     ~input_controller_intf() {}
 
     /**
      * @brief buttonPressed empfaengt Button Signale und verwertet diese

@@ -5,7 +5,9 @@
 
 class output_controller_intf : public controller_intf
 {
-    virtual ~output_controller_intf();
+public:
+     output_controller_intf(std::string name) : controller_intf(name) {}
+     ~output_controller_intf(){}
 
     /**
      * @brief updateGUI updated alle GUI Elemente

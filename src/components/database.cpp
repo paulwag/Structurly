@@ -12,3 +12,7 @@ void database::stop(bool exit)
     if (exit)
         std::cout << "exit is true \n";
 }
+
+void database::loadFile() {}
+
+void database::storeFile() {}

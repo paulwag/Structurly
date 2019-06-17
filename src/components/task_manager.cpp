@@ -12,3 +12,7 @@ void task_manager::stop(bool exit)
     if (exit)
         std::cout << "exit is true \n";
 }
+
+void task_manager::createTask() {}
+void task_manager::delTask() {}
+void task_manager::updateTask() {}

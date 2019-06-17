@@ -5,7 +5,9 @@
 
 class database : public database_intf
 {
-    ~database();
+public:
+     database(std::string name) : database_intf(name) {}
+     ~database(){}
 
     /**
      * @brief start zieht alle Tasks und laedt diese in Timelines
@@ -16,6 +18,9 @@ class database : public database_intf
      * @brief stop
      */
     void stop(bool exit = false);
+
+    void loadFile();
+    void storeFile();
 };
 
 #endif // DATABASE_H

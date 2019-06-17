@@ -5,7 +5,9 @@
 
 class calender_manager : public calender_manager_intf
 {
-     ~calender_manager();
+public:
+     calender_manager(std::string name) : calender_manager_intf(name) {}
+     ~calender_manager() {}
 
     /**
      * @brief start zieht alle Tasks und laedt diese in Timelines
@@ -16,6 +18,8 @@ class calender_manager : public calender_manager_intf
      * @brief stop
      */
     void stop(bool exit = false);
+
+    void updateTimelines();
 
 };
 
