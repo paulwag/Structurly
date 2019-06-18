@@ -1,11 +1,12 @@
 #include "task.h"
 
-task::task(int identifier, string title, string description, priority tpriority, ttime startingtime, int length, repetition trepetition, string category)     //if not set, empty string?
+task::task(int identifier, string title, string description, priority tpriority,tdate date, ttime startingtime, int length, repetition trepetition, string category)     //if not set, empty string?
 {
     this->identifier    = identifier;
     this->title         = title;
     this->description   = description;
     this->tpriority     = tpriority;
+    this->date          = date;
     this->startingtime  = startingtime;
     this->length        = length;
     this->trepetition   = trepetition;
@@ -32,9 +33,20 @@ void task::set_priority( priority tpriority)
     this->tpriority = tpriority;
 }
 
+void task::set_date( tdate date)
+{
+    this->date = date;
+}
+
 void task::set_startingtime( ttime startingtime)
 {
     this->startingtime = startingtime;
+}
+
+
+void task::set_length(int length)
+{
+    this->length = length;
 }
 
 void task::set_repetition( repetition trepetition)

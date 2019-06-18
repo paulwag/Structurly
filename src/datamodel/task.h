@@ -18,6 +18,7 @@ class task{
         string title;
         string description;
         priority tpriority;
+        tdate date;
         ttime startingtime;
         int length;                 //in minutes
         repetition trepetition;
@@ -25,20 +26,23 @@ class task{
 
     public:
         task(){}
-        task(int identifier, string title, string description, priority tpriority, ttime startingtime, int length, repetition trepetition, string category);     //if not set, empty string?
+        task(int identifier, string title, string description, priority tpriority, tdate date, ttime startingtime, int length, repetition trepetition, string category);     //if not set, empty string?
 
         void set_identifier(int identifier);
         void set_title( string title);
         void set_description( string description);
         void set_priority( priority tpriority);
+        void set_date( tdate date);
         void set_startingtime( ttime startingtime);
         void set_repetition( repetition trepetition);
+        void set_length(int length);
         void set_category( string category);
 
         int get_identifier()        {return identifier;}
         string get_title()          {return title;}
         string get_description()    {return description;}
         priority get_priority()     {return tpriority;}
+        tdate get_date()            {return date;}
         ttime get_startingtime()    {return startingtime;}
         int get_length()            {return length;}
         repetition get_repetition() {return trepetition;}
