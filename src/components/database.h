@@ -4,6 +4,8 @@
 #include <vector>
 #include "database_intf.h"
 #include "task.h"
+#include <iostream>
+#include <fstream>
 
 class database : public database_intf
 {
@@ -25,7 +27,7 @@ class database : public database_intf
         void stop(bool exit = false);
 
         void loadFile();
-        void loadTask();
+        task loadTask(ifstream &in);
         void loadLookUpTable();
         void loadCategories();
 

@@ -1,4 +1,9 @@
 #include "database.h"
+#include <iostream>
+#include <fstream>
+#include <string>
+
+using namespace std;
 
 void database::start()
 {
@@ -16,55 +21,37 @@ void database::stop(bool exit)
 }
 
 void database::loadFile() {
-/*
- * Datei oeffnen
- * Filestream
- * Data Tag abgleichen
- * Task Tag abgleichen
- * Dann in loadTask und Filepointer uebergeben
- * Task wird returned und in den Task Vector appended(push_back)
- * Datei schließen
- *
-    FILE *stream;
-    char line[101];
-    char *linestart = NULL;
+    string line;
+    ifstream in("database.xml");
+    task newTask = *new task();
 
-    stream = fopen("database.xml", "rb");
-    task& newTask = *new task();
-
-    if(stream)
+    while(getline(in, line))
     {
-        do
+        string tag;             //Tag without Whitespaces
+        for(int i=0; i<line.length(); ++i)
         {
-            fgets(line, 101, stream);
-
-            linestart = line;
-            while(*linestart == ' ' || *linestart == 9)     //remove spaces and tabs
-                linestart++;
-
-            if(strncmp(linestart, "<Tasks>", 7) == 0)
+            if((line[i] == ' ' || line[i] == 9) && tag.size() == 0)   // Tabs checken?
             {
-                newTask = loadTask(line, stream);
-                tasks.push_back(newTask);
             }
+            else
+                tag += line[i];
+        }
 
-            if(feof(stream))
-                break;
-
-        }while(strncmp(line, "</Data>", 8) != 0);
-
-        fclose(stream);
+        if(tag == "<Task>")
+        {
+            newTask = database::loadTask(in);
+            tasks.push_back(newTask);
+        }
     }
 
-    else
-    {
-        //Error ausgeben?
-    }
-    */
+    //cout << tag << endl;
+    //Fehlerbehandlung
+
+    in.close();
 }
 
 
-void database::loadTask(){
+task database::loadTask(ifstream &in){
 /*
  * Objekt der Klasse Task erstellen
  * Parameter einzeln einlesen und Objekt zuweisen  ->Funktion fuer jeden einzelnen Parameter?
@@ -72,10 +59,42 @@ void database::loadTask(){
  * Objekt returnen bzw Referenz
  *
 */
-    task& newTask = *new task();
+    string tag;
+    string line;
+    task newTask = *new task();
+
+    do
+    {
+        getline(in, line);
+        tag="";             //Tag without Whitespaces
+
+        for(int i=0; i<line.length(); ++i)
+        {
+            if((line[i] == ' ' || line[i] == 9) && tag.size() == 0)   // Tabs checken?
+            {
+            }
+            else
+                tag += line[i];
+        }
+
+        //identifier
+        if(tag.compare(0,12,"<identifier>") == 0)
+        {
+            int identifier;
+
+            tag.erase(0,12);
+            tag.erase(tag.end()-13, tag.end());
+            //cout << tag << endl;
+            identifier = stoi(tag);
+            newTask.set_identifier(identifier);
+        }
+
+        //Testen zu Hause --> Erase Function genaue Stelle etc
+    }while(tag != "</Task>");
 
     newTask.set_identifier(3);
 
+    return newTask;
 }
 
 void database::loadLookUpTable()
