@@ -42,3 +42,6 @@ HEADERS += \
     src/components/maincontroller.h \
     src/datamodel/task.h \
     src/datamodel/timeline.h
+
+DISTFILES += \
+    src/datamodel/database.xml
