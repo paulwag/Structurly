@@ -29,6 +29,11 @@ void database::stop(bool exit)
         std::cout << "exit is true \n";
 }
 
+std::vector<task>& database::getVector()
+{
+    return tasks;
+}
+
 void database::loadFile() {
     string line;
     ifstream in("/home/frank/Dokumente/TI/5.Semester/Projekt/Structurly/src/datamodel/database.xml");

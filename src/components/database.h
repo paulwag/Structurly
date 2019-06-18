@@ -35,6 +35,8 @@ class database : public database_intf
         void storeTask();
         void storeLookUpTable();
         void storeCategories();
+
+        std::vector<task>& getVector();
 };
 
 #endif // DATABASE_H
