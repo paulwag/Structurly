@@ -9,6 +9,10 @@ void database::start()
 {
     loadFile();
     std::cout << getName() << " gestartet \n";
+    //for debug
+    std::cout << tasks.at(1).get_identifier() << endl;
+    std::cout << tasks.at(1).get_title() << endl;
+    std::cout << tasks.at(1).get_description() << endl;
 }
 
 void database::stop(bool exit)
@@ -22,8 +26,12 @@ void database::stop(bool exit)
 
 void database::loadFile() {
     string line;
-    ifstream in("database.xml");
-    task newTask = *new task();
+    ifstream in("../datamodel/database.xml");
+    //Oeffnen klappt nicht
+    task newTask;
+
+    if(in.is_open())
+        cout << "File open" << endl;
 
     while(getline(in, line))
     {
@@ -36,6 +44,7 @@ void database::loadFile() {
             else
                 tag += line[i];
         }
+        cout << tag << endl;
 
         if(tag == "<Task>")
         {
@@ -61,7 +70,7 @@ task database::loadTask(ifstream &in){
 */
     string tag;
     string line;
-    task newTask = *new task();
+    task newTask;
 
     do
     {
@@ -89,10 +98,34 @@ task database::loadTask(ifstream &in){
             newTask.set_identifier(identifier);
         }
 
+        //title
+        if(tag.compare(0,7,"<title>") == 0)
+        {
+            string title;
+
+            tag.erase(0,7);
+            tag.erase(tag.end()-8, tag.end());
+            //cout << tag << endl;
+            title = tag;
+            newTask.set_title(title);
+        }
+
+        //description
+        if(tag.compare(0,13,"<description>") == 0)
+        {
+            string description;
+
+            tag.erase(0,13);
+            tag.erase(tag.end()-14, tag.end());
+            //cout << tag << endl;
+            description = tag;
+            newTask.set_description(description);
+        }
+        //mit case statt if arbeiten
+        //laeuft noch nicht wenn es ueber mehrere Zeilen geht(Bsp. Descr.)
         //Testen zu Hause --> Erase Function genaue Stelle etc
     }while(tag != "</Task>");
 
-    newTask.set_identifier(3);
 
     return newTask;
 }

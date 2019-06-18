@@ -13,7 +13,7 @@
         <Task>
             <identifier>3</identifier>
             <title>Sinnvollen Stuff tun</title>
-            <description>Dummer Scheißdreck blabla</title>
+            <description>Dummer Scheißdreck blabla</description>
             <priority>low</priority>
             <startingtime>1415</startingtime>
             <length>90</length>
