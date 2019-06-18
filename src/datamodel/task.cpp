@@ -1,5 +1,21 @@
 #include "task.h"
 
+//initial values
+task::task()
+{
+    this->identifier = 0;
+    this->title = "";
+    this->description = "";
+    this->tpriority = none;
+    tdate date(0, 0, 0);
+    this->date = date;
+    ttime startingtime(0, 0, 0);
+    this->startingtime = startingtime;
+    this->length = 0;
+    this->trepetition = keine;
+    this->category = "";
+}
+
 task::task(int identifier, string title, string description, priority tpriority,tdate date, ttime startingtime, int length, repetition trepetition, string category)     //if not set, empty string?
 {
     this->identifier    = identifier;

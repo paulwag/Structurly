@@ -7,8 +7,8 @@
 
 using namespace std;
 
-enum priority {high, medium, low};
-enum repetition {Taeglich, Woechentlich, Monatlich, Jaehrlich};
+enum priority {high, medium, low, none};
+enum repetition {Taeglich, Woechentlich, Monatlich, Jaehrlich, keine};
 
 
 
@@ -25,7 +25,7 @@ class task{
         string category;
 
     public:
-        task(){}
+        task();
         task(int identifier, string title, string description, priority tpriority, tdate date, ttime startingtime, int length, repetition trepetition, string category);     //if not set, empty string?
 
         void set_identifier(int identifier);
