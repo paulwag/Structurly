@@ -7,6 +7,10 @@ using namespace std;
 
 void database::start()
 {
+    if(getStarted())
+        return;
+
+    started(); // started = true, stopped = false
 
     std::cout << getName() << " gestartet \n";
     loadFile();
@@ -22,6 +26,11 @@ void database::start()
 
 void database::stop(bool exit)
 {
+    if(getStopped())
+        return;
+
+    stopped(); // started = false, stopped = true
+
     storeFile();
     std::cout << getName() << " beendet \n";
 

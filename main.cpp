@@ -1,5 +1,7 @@
 #include <iostream>
 #include <cstdlib>
+#include "mainwindow.h"
+#include <QApplication>
 
 #include "maincontroller.h"
 #include "database.h"
@@ -8,14 +10,9 @@
 #include "input_controller.h"
 #include "output_controller.h"
 
-using namespace std;
-
-int main()
+int main(int argc, char *argv[])
 {
-    cout << "Application started." << endl;
-    //QCoreApplication a();
 
-//    mainController.start();
     mainController& main = *new mainController("mainController");
     database& db = *new database( "Component_Database" );
     task_manager& task_man_ref = *new task_manager( "Component_TaskManager" );
@@ -30,8 +27,16 @@ int main()
     main.inject( output_ref );
 
     main.start();
+
+    QApplication a(argc, argv);
+    MainWindow w;
+    w.show();
+
     main.stop();
 
-    //return a.exec;
-    return 0;
+
+
+    return a.exec();
 }
+
+

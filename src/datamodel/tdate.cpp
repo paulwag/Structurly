@@ -24,7 +24,7 @@ ostream &operator<< (ostream &ostr, const tdate &d)
     ostr.width(2);
     ostr << d.month << '.' << d.year;
     ostr.fill(' ');
-    
+
     return ostr;
 }
 

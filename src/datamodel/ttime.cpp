@@ -22,16 +22,16 @@ ostream &operator<< (ostream &ostr, const ttime &t)
     ostr.width(2);
     ostr << t.hour << ':';
     ostr.width(2);
-    ostr << t.minute; 
+    ostr << t.minute;
 
     if (t.second)
     {
         ostr << ':';
         ostr.width(2);
-        ostr << t.second; 
+        ostr << t.second;
     }
     ostr.fill(' ');
-    
+
     return ostr;
 }
 

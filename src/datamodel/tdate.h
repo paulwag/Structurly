@@ -15,9 +15,9 @@
         int year;
 
         public:
-            tdate(); 
+            tdate();
             tdate(int d, int m, int y);
-            
+
             friend ostream &operator<< (ostream &, const tdate &);
 
             int get_day()   const   {return day;}

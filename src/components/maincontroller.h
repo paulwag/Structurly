@@ -22,8 +22,8 @@ public:
 
 private:
     std::vector <controller_intf *> componentList = {};
-    enum OpState { init, startet, stopped };
-    OpState opstate = OpState::init;
+    //enum OpState { init, startet, stopped };
+    //OpState opstate = OpState::init;
 
 };
 
