@@ -27,7 +27,8 @@ CONFIG += c++11
 INCLUDEPATH += \
     src \
     src/components \
-    src/datamodel
+    src/datamodel \
+    src/styling
 
 SOURCES += \
         main.cpp \
