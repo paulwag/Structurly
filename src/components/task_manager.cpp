@@ -1,28 +1,46 @@
 #include "task_manager.h"
 
+
+
 void task_manager::start()
 {
-    if(getStarted())
-        return;
+    if (getStarted())
+            return;
 
-    started(); // started = true, stopped = false
+    setStarted(true);
 
-    std::cout << getName() << " gestartet \n";
+    std::cout << getName() << " gestartet" << endl;
 }
+
+
 
 void task_manager::stop(bool exit)
 {
-    if(getStopped())
-        return;
+    if (!getStarted())
+            return;
 
-    stopped(); // started = false, stopped = true
+    setStarted(false);
 
-    std::cout << getName() << " beendet \n";
-
-    if (exit)
-        std::cout << "exit is true \n";
+    std::cout << getName() << " beendet" << endl;
 }
 
-void task_manager::createTask() {}
-void task_manager::delTask() {}
-void task_manager::updateTask() {}
+
+
+void task_manager::createTask()
+{
+
+}
+
+
+
+void task_manager::delTask()
+{
+
+}
+
+
+
+void task_manager::updateTask()
+{
+
+}

@@ -1,38 +1,39 @@
 #include <iostream>
-#include <cstdlib>
-#include "mainwindow.h"
 #include <QApplication>
+#include "mainwindow.h"
+#include "main_controller.h"
 
-#include "maincontroller.h"
-#include "database.h"
-#include "task_manager.h"
 #include "calender_manager.h"
+#include "database.h"
 #include "input_controller.h"
 #include "output_controller.h"
+#include "task_manager.h"
 
-int main(int argc, char *argv[])
+
+
+int main(int argc, char **argv)
 {
+    mainController *mainCntrl = new mainController("main_controller");
 
-    mainController& main = *new mainController("mainController");
-    database& db = *new database( "Component_Database" );
-    task_manager& task_man_ref = *new task_manager( "Component_TaskManager" );
-    calender_manager& cal_man_ref = *new calender_manager( "Component_Calender_Manager" );
-    input_controller& input_ref = *new input_controller( "Component_Input_Controller" );
-    output_controller& output_ref = *new output_controller( "Component_Output_Controller" );
+    calender_manager *cm_c = new calender_manager("calender_manager_component");
+    database *db_c = new database("database_component");
+    input_controller *ic_c = new input_controller("input_controller_component");
+    output_controller *oc_c = new output_controller("output_controller_component");
+    task_manager *tm_c = new task_manager("task_manager_component");
 
-    main.inject( db );
-    main.inject( task_man_ref );
-    main.inject( cal_man_ref );
-    main.inject( input_ref );
-    main.inject( output_ref );
+    mainCntrl->inject(cm_c);
+    mainCntrl->inject(db_c);
+    mainCntrl->inject(ic_c);
+    mainCntrl->inject(oc_c);
+    mainCntrl->inject(tm_c);
 
-    main.start();
+    mainCntrl->start();
 
     QApplication a(argc, argv);
     MainWindow w;
     w.show();
 
-    main.stop();
+    mainCntrl->stop();
 
     return a.exec();
 }

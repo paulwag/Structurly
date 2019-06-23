@@ -35,7 +35,7 @@ SOURCES += \
     src/components/calender_manager.cpp \
     src/components/database.cpp \
     src/components/input_controller.cpp \
-    src/components/maincontroller.cpp \
+    src/components/main_controller.cpp \
     src/components/output_controller.cpp \
     src/components/task_manager.cpp \
     src/datamodel/task.cpp \
@@ -46,17 +46,13 @@ SOURCES += \
 
 HEADERS += \
     src/components/calender_manager.h \
-    src/components/calender_manager_intf.h \
     src/components/controller_intf.h \
     src/components/database.h \
     src/components/database_intf.h \
     src/components/input_controller.h \
-    src/components/input_controller_intf.h \
-    src/components/maincontroller.h \
+    src/components/main_controller.h \
     src/components/output_controller.h \
-    src/components/output_controller_intf.h \
     src/components/task_manager.h \
-    src/components/task_manager_intf.h \
     src/datamodel/task.h \
     src/datamodel/tdate.h \
     src/datamodel/timeline.h \

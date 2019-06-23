@@ -1,26 +1,32 @@
 #include "input_controller.h"
 
+
+
 void input_controller::start()
 {
-    if(getStarted())
+    if (getStarted())
         return;
 
-    started(); // started = true, stopped = false
+    setStarted(true);
 
-    std::cout << getName() << " gestartet \n";
+    std::cout << getName() << " gestartet" << endl;
 }
+
+
 
 void input_controller::stop(bool exit)
 {
-    if(getStopped())
+    if (!getStarted())
         return;
 
-    stopped(); // started = false, stopped = true
+    setStarted(false);
 
-    std::cout << getName() << " beendet \n";
-
-    if (exit)
-        std::cout << "exit is true \n";
+    std::cout << getName() << " beendet" << endl;
 }
 
-void input_controller::buttonPressed() {}
+
+
+void input_controller::buttonPressed()
+{
+
+}

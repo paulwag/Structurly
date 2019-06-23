@@ -1,42 +1,44 @@
 #ifndef DATABASE_H
-#define DATABASE_H
+    #define DATABASE_H
 
-#include <vector>
-#include "database_intf.h"
-#include "task.h"
-#include <iostream>
-#include <fstream>
+    #include <vector>
+    #include <iostream>
+    #include <fstream>
+    #include "controller_intf.h"
+    #include "task.h"
 
-class database : public database_intf
-{
-    private:
-    std::vector<task> tasks = {};
+    using namespace std;
 
-    public:
-         database(std::string name) : database_intf(name) {}
-         ~database(){}
 
-        /**
-         * @brief start zieht alle Tasks und laedt diese in Timelines
-         */
-        void start();
 
-        /**
-         * @brief stop
-         */
-        void stop(bool exit = false);
+    class database: public controller_intf
+    {
+        vector<task *> tasks;
 
-        void loadFile();
-        task loadTask(ifstream &in);
-        void loadLookUpTable();
-        void loadCategories();
+        public:
+             database(string n) : controller_intf(n) {}
 
-        void storeFile();
-        void storeTask();
-        void storeLookUpTable();
-        void storeCategories();
+            /**
+             * @brief start zieht alle Tasks und laedt diese in Timelines
+             */
+            void start();
 
-        std::vector<task>& getVector();
-};
+            /**
+             * @brief stop
+             */
+            void stop(bool exit = false);
+
+            vector<task *> getTasks() const {return tasks;}
+
+            void loadFile();
+            task loadTask(ifstream &in);
+            void loadLookUpTable();
+            void loadCategories();
+
+            void storeFile();
+            void storeTask();
+            void storeLookUpTable();
+            void storeCategories();
+    };
 
 #endif // DATABASE_H

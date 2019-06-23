@@ -1,26 +1,28 @@
 #ifndef CALENDER_MANAGER_H
-#define CALENDER_MANAGER_H
+    #define CALENDER_MANAGER_H
 
-#include "calender_manager_intf.h"
+    #include "controller_intf.h"
 
-class calender_manager : public calender_manager_intf
-{
-public:
-     calender_manager(std::string name) : calender_manager_intf(name) {}
-     ~calender_manager() {}
+    using namespace std;
 
-    /**
-     * @brief start zieht alle Tasks und laedt diese in Timelines
-     */
-    void start();
 
-    /**
-     * @brief stop
-     */
-    void stop(bool exit = false);
 
-    void updateTimelines();
+    class calender_manager: public controller_intf
+    {
+        public:
+             calender_manager(string n) : controller_intf(n) {}
 
-};
+            /**
+             * @brief start zieht alle Tasks und laedt diese in Timelines
+             */
+            void start();
+
+            /**
+             * @brief stop
+             */
+            void stop(bool exit = false);
+
+            void updateTimelines();
+    };
 
 #endif // CALENDER_MANAGER_H

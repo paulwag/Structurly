@@ -5,45 +5,44 @@
 
 using namespace std;
 
+
+
 void database::start()
 {
-    if(getStarted())
-        return;
+    if (getStarted())
+            return;
 
-    started(); // started = true, stopped = false
+    setStarted(true);
 
-    std::cout << getName() << " gestartet \n";
-    loadFile();
+    std::cout << getName() << " gestartet" << endl;
+
+/*    loadFile();
     //for debug
     for(int i = 0; i < tasks.size(); ++i)
     {
         std::cout << tasks.at(i).get_identifier() << endl;
         std::cout << tasks.at(i).get_title() << endl;
         std::cout << tasks.at(i).get_description() << endl;
-    }
-
+    }*/
 }
+
+
 
 void database::stop(bool exit)
 {
-    if(getStopped())
+    if (!getStarted())
         return;
 
-    stopped(); // started = false, stopped = true
+    setStarted(false);
 
     storeFile();
-    std::cout << getName() << " beendet \n";
-
-    if (exit)
-        std::cout << "exit is true \n";
+    std::cout << getName() << " beendet" << endl;
 }
 
-std::vector<task>& database::getVector()
+
+
+void database::loadFile()
 {
-    return tasks;
-}
-
-void database::loadFile() {
     string line;
     ifstream in("/home/frank/Dokumente/TI/5.Semester/Projekt/Structurly/src/datamodel/database.xml");
     //Oeffnen klappt mit absolutem Pfad
@@ -53,7 +52,7 @@ void database::loadFile() {
     if(in)
         cout << "File open" << endl;
 
-    while(getline(in, line))
+    /*while(getline(in, line))
     {
         string tag;             //Tag without Whitespaces
         for(int i=0; i<line.length(); ++i)
@@ -74,10 +73,11 @@ void database::loadFile() {
     }
 
     //cout << tag << endl;
-    //Fehlerbehandlung
+    //Fehlerbehandlung*/
 
     in.close();
 }
+
 
 
 task database::loadTask(ifstream &in){
