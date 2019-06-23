@@ -28,43 +28,46 @@ INCLUDEPATH += \
     src \
     src/components \
     src/datamodel \
-    src/styling
+    src/qtdep_gui
 
 SOURCES += \
-        main.cpp \
-        mainwindow.cpp \
+    src/main.cpp \
     src/components/calender_manager.cpp \
     src/components/database.cpp \
+    src/components/input_controller.cpp \
+    src/components/maincontroller.cpp \
+    src/components/output_controller.cpp \
+    src/components/task_manager.cpp \
     src/datamodel/task.cpp \
     src/datamodel/tdate.cpp \
     src/datamodel/timeline.cpp \
     src/datamodel/ttime.cpp \
-    src/components/input_controller.cpp \
-    src/components/maincontroller.cpp \
-    src/components/task_manager.cpp \
-    src/components/output_controller.cpp
+    src/qtdep_gui/mainwindow.cpp
 
 HEADERS += \
-        mainwindow.h \
     src/components/calender_manager.h \
+    src/components/calender_manager_intf.h \
+    src/components/controller_intf.h \
     src/components/database.h \
+    src/components/database_intf.h \
+    src/components/input_controller.h \
+    src/components/input_controller_intf.h \
+    src/components/maincontroller.h \
+    src/components/output_controller.h \
+    src/components/output_controller_intf.h \
+    src/components/task_manager.h \
+    src/components/task_manager_intf.h \
     src/datamodel/task.h \
     src/datamodel/tdate.h \
     src/datamodel/timeline.h \
     src/datamodel/ttime.h \
-    src/components/input_controller.h \
-    src/components/maincontroller.h \
-    src/components/task_manager.h \
-    src/components/calender_manager_intf.h \
-    src/components/controller_intf.h \
-    src/components/database_intf.h \
-    src/components/input_controller_intf.h \
-    src/components/output_controller_intf.h \
-    src/components/task_manager_intf.h \
-    src/components/output_controller.h
+    src/qtdep_gui/mainwindow.h \
 
 FORMS += \
-        mainwindow.ui
+    src/qtdep_gui/mainwindow.ui
+
+
+
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
