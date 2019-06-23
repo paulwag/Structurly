@@ -17,6 +17,10 @@
 
         public:
              database(string n) : controller_intf(n) {}
+             ~database()
+             {
+                 // Tasks im Vector freigeben
+             }
 
             /**
              * @brief start zieht alle Tasks und laedt diese in Timelines

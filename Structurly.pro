@@ -58,6 +58,7 @@ HEADERS += \
     src/datamodel/timeline.h \
     src/datamodel/ttime.h \
     src/qtdep_gui/mainwindow.h \
+    src/singeltons.h
 
 FORMS += \
     src/qtdep_gui/mainwindow.ui

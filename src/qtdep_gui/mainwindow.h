@@ -20,6 +20,9 @@ public:
 private slots:
     void on_create_task_btn_clicked();
 
+    //void keyPressEvent(QKeyEvent *event);     // siehe calculator
+    void closeEvent(QCloseEvent *event);
+
 private:
     Ui::MainWindow *ui;
 };
