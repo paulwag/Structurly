@@ -31,7 +31,7 @@
             vector<task *> getTasks() const {return tasks;}
 
             void loadFile();
-            task loadTask(ifstream &in);
+            task *loadTask(ifstream &in);
             void loadLookUpTable();
             void loadCategories();
 

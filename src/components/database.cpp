@@ -16,14 +16,14 @@ void database::start()
 
     std::cout << getName() << " gestartet" << endl;
 
-/*    loadFile();
-    //for debug
-    for(int i = 0; i < tasks.size(); ++i)
+    loadFile();
+
+    for (auto i : tasks)        //for debug
     {
-        std::cout << tasks.at(i).get_identifier() << endl;
-        std::cout << tasks.at(i).get_title() << endl;
-        std::cout << tasks.at(i).get_description() << endl;
-    }*/
+        cout << i->get_identifier() << endl;
+        cout << i->get_title() << endl;
+        cout << i->get_description() << endl;
+    }
 }
 
 
@@ -43,18 +43,21 @@ void database::stop(bool exit)
 
 void database::loadFile()
 {
+    task *newTask;
     string line;
+    string tag;             //Tag without Whitespaces
     ifstream in("/home/frank/Dokumente/TI/5.Semester/Projekt/Structurly/src/datamodel/database.xml");
     //Oeffnen klappt mit absolutem Pfad
     //relativer Pfad ifstream in("../datamodel/database.xml");
-    task newTask;
 
-    if(in)
-        cout << "File open" << endl;
-
-    /*while(getline(in, line))
+    if(!in)
     {
-        string tag;             //Tag without Whitespaces
+        cout << "File not found" << endl;
+        return;
+    }
+
+    while(getline(in, line))
+    {
         for(int i=0; i<line.length(); ++i)
         {
             if((line[i] == ' ' || line[i] == 9) && tag.size() == 0)   // Tabs checken?
@@ -73,14 +76,14 @@ void database::loadFile()
     }
 
     //cout << tag << endl;
-    //Fehlerbehandlung*/
+    //Fehlerbehandlung
 
     in.close();
 }
 
 
 
-task database::loadTask(ifstream &in){
+task *database::loadTask(ifstream &in){
 /*
  * Objekt der Klasse Task erstellen
  * Parameter einzeln einlesen und Objekt zuweisen  ->Funktion fuer jeden einzelnen Parameter?
@@ -90,7 +93,7 @@ task database::loadTask(ifstream &in){
 */
     string tag;
     string line;
-    task newTask;
+    task *newTask = new task();
 
     do
     {
@@ -115,7 +118,7 @@ task database::loadTask(ifstream &in){
             tag.erase(tag.end()-13, tag.end());
             //cout << tag << endl;
             identifier = stoi(tag);
-            newTask.set_identifier(identifier);
+            newTask->set_identifier(identifier);
         }
 
         //title
@@ -127,7 +130,7 @@ task database::loadTask(ifstream &in){
             tag.erase(tag.end()-8, tag.end());
             //cout << tag << endl;
             title = tag;
-            newTask.set_title(title);
+            newTask->set_title(title);
         }
 
         //description
@@ -139,7 +142,7 @@ task database::loadTask(ifstream &in){
             tag.erase(tag.end()-14, tag.end());
             //cout << tag << endl;
             description = tag;
-            newTask.set_description(description);
+            newTask->set_description(description);
         }
 
         //priority
@@ -184,7 +187,7 @@ task database::loadTask(ifstream &in){
 
             tdate date(day, month, year);    //geht ditte?
 
-            newTask.set_date(date);
+            newTask->set_date(date);
         }
 
         //startingtime
@@ -201,7 +204,7 @@ task database::loadTask(ifstream &in){
             minute = stoi(tag.substr(2,2));
             ttime startingtime(hour, minute, 0);    //geht ditte?
 
-            newTask.set_startingtime(startingtime);
+            newTask->set_startingtime(startingtime);
         }
 
         //length
@@ -215,7 +218,7 @@ task database::loadTask(ifstream &in){
             //cout << tag << endl;
             length = stoi(tag);
 
-            newTask.set_length(length);
+            newTask->set_length(length);
         }
 
         //category
@@ -227,7 +230,7 @@ task database::loadTask(ifstream &in){
             tag.erase(tag.end()-11, tag.end());
             //cout << tag << endl;
             category = tag;
-            newTask.set_category(category);
+            newTask->set_category(category);
         }
 
         //ToDo
@@ -236,7 +239,7 @@ task database::loadTask(ifstream &in){
         //Funktionen fuer Umwandlung in time und date struct
         //typecasten auf enum fuer priority?
         //Datum Attribut in Task.h etc
-    }while(tag != "</Task>");
+    } while (tag != "</Task>");
 
 
     return newTask;
