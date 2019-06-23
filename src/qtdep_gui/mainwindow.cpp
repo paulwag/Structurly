@@ -27,9 +27,12 @@ MainWindow::~MainWindow()
 // /////////////////////////////////////////////////////////////////////////////// launch / close
 void MainWindow::launch() {
 
-    mainCntrl.inject(&tm_c);
-    mainCntrl.inject(&ic_c);
-    mainCntrl.start();
+    mainCntrl.inject(&db_c);        // 1. Database
+    mainCntrl.inject(&tm_c);        // 2. taskManager
+    mainCntrl.inject(&cm_c);        // 3. calenderManager
+    mainCntrl.inject(&oc_c);        // 4. outputController
+    mainCntrl.inject(&ic_c);        // 5. inputController
+    mainCntrl.start();              // start components
 
     auto tableWidget = ui->timeline_table;                                      //Timeline erstellen
     tableWidget->setRowCount(96);
