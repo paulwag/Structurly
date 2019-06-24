@@ -45,6 +45,7 @@ SOURCES += \
     src/qtdep_gui/mainwindow.cpp
 
 HEADERS += \
+    src/singletons.h \
     src/components/calender_manager.h \
     src/components/controller_intf.h \
     src/components/database.h \
@@ -57,8 +58,8 @@ HEADERS += \
     src/datamodel/tdate.h \
     src/datamodel/timeline.h \
     src/datamodel/ttime.h \
-    src/qtdep_gui/mainwindow.h \
-    src/singeltons.h
+    src/qtdep_gui/mainwindow.h
+
 
 FORMS += \
     src/qtdep_gui/mainwindow.ui

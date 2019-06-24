@@ -1,5 +1,5 @@
-#ifndef SINGELTONS_H
-    #define SINGELTONS_H
+#ifndef SINGLETONS_H
+    #define SINGLETONS_H
 
     #include "main_controller.h"
     #include "calender_manager.h"

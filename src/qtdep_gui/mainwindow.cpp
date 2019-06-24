@@ -4,7 +4,7 @@
 #include <QApplication>
 #include <QtGui>
 
-#include "singeltons.h"
+#include "singletons.h"
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include "task.h"
