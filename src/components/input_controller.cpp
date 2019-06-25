@@ -2,6 +2,7 @@
 #include "input_controller.h"
 #include "singletons.h"
 
+using namespace std;
 
 
 void input_controller::start()
@@ -11,7 +12,7 @@ void input_controller::start()
 
     setStarted(true);
 
-    std::cout << getName() << " gestartet" << endl;
+    cout << getName() << " gestartet" << endl;
 }
 
 
@@ -23,13 +24,15 @@ void input_controller::stop(bool exit)
 
     setStarted(false);
 
-    std::cout << getName() << " beendet" << endl;
+    cout << getName() << " beendet" << endl;
 }
 
 
 
-void input_controller::buttonPressed()
+void input_controller::buttonPressed(string title)
 {
     cout << "IC: Button pressed..." << endl;
+    //Ui::MainWindow().task_name_edit->setText("asdf");
+    cout << "Task name " << title << endl;
     tm_c.createTask();
 }

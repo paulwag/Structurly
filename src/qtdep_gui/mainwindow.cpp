@@ -7,7 +7,6 @@
 #include "singletons.h"
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
-#include "task.h"
 
 
 
@@ -75,16 +74,13 @@ void MainWindow::launch() {
 void MainWindow::on_create_task_btn_clicked()
 {
     /* Alter Kram von Paul
-    auto erstellterTask = new task();                                           // TASK ERSTELLEN
-    erstellterTask->set_title(ui->task_name_edit->text().toUtf8().constData());
-
     QString qtitle= QString::fromStdString(erstellterTask->get_title());        // TASK AUSGEBEN
     auto task_in_timeline = new QTableWidgetItem(qtitle);
     task_in_timeline->setBackgroundColor("blue");
     ui->timeline_table->setItem(10, 1, task_in_timeline);*/
 
     cout << "Task anlegen geklickt" << endl;
-    ic_c.buttonPressed();
+    ic_c.buttonPressed(ui->task_name_edit->text().toStdString());
 }
 
 

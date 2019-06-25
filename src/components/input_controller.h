@@ -15,7 +15,7 @@
             void start();
             void stop(bool exit = false);
 
-            void buttonPressed();
+            void buttonPressed(string titel);
     };
 
 #endif // INPUT_CONTROLLER_H
