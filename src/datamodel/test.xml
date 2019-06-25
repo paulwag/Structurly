@@ -1,0 +1,34 @@
+<Data>
+    <Tasks>
+        <Task>
+            <identifier>1</identifier>
+            <title>Datenbankaufgabe machen</title>
+            <description>Do Something</description>
+            <priority>3</priority>
+            <date>00000000</date>
+            <startingtime>0000</startingtime>
+            <length>0</length>            <repetition>4</repetition>
+            <category></category>
+        </Task>
+        <Task>
+            <identifier>2</identifier>
+            <title>Dawid Kohlkopf</title>
+            <description>Du bekommst den Muell und musst etwas damit tun</description>
+            <priority>3</priority>
+            <date>00000000</date>
+            <startingtime>0000</startingtime>
+            <length>0</length>            <repetition>4</repetition>
+            <category></category>
+        </Task>
+        <Task>
+            <identifier>3</identifier>
+            <title>Sinnvollen Stuff tun</title>
+            <description>Dummer Scheißdreck blabla</description>
+            <priority>3</priority>
+            <date>18062019</date>
+            <startingtime>1415</startingtime>
+            <length>90</length>            <repetition>4</repetition>
+            <category>Uni</category>
+        </Task>
+    </Tasks>
+</Data>

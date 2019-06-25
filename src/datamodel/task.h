@@ -38,6 +38,7 @@ class task{
         void set_length(int length);
         void set_category( string category);
 
+
         int get_identifier()        {return identifier;}
         string get_title()          {return title;}
         string get_description()    {return description;}
@@ -47,6 +48,8 @@ class task{
         int get_length()            {return length;}
         repetition get_repetition() {return trepetition;}
         string get_category()       {return category;}
+
+        string get_repetition_xml();
 };
 
 #endif // TASK_H

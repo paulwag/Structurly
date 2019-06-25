@@ -2,6 +2,7 @@
 #include <iostream>
 #include <fstream>
 #include <string>
+#include <iomanip> //setfill setw
 
 using namespace std;
 
@@ -17,13 +18,14 @@ void database::start()
     std::cout << getName() << " gestartet" << endl;
 
     loadFile();
-
+    //cout << tasks.at(1)->get_identifier() << endl;
     for (auto i : tasks)        //for debug
     {
         cout << i->get_identifier() << endl;
         cout << i->get_title() << endl;
         cout << i->get_description() << endl;
     }
+    storeFile();
 }
 
 
@@ -43,9 +45,9 @@ void database::stop(bool exit)
 
 void database::loadFile()
 {
-    task *newTask;
+    task *newTask = new task();
     string line;
-    string tag;             //Tag without Whitespaces
+    string tag = "";             //Tag without Whitespaces
     ifstream in("/home/frank/Dokumente/TI/5.Semester/Projekt/Structurly/src/datamodel/database.xml");
     //Oeffnen klappt mit absolutem Pfad
     //relativer Pfad ifstream in("../datamodel/database.xml");
@@ -73,6 +75,7 @@ void database::loadFile()
             newTask = database::loadTask(in);
             tasks.push_back(newTask);
         }
+        tag = "";
     }
 
     //cout << tag << endl;
@@ -167,7 +170,7 @@ task *database::loadTask(ifstream &in){
             tag.erase(tag.end()-13, tag.end());
             //cout << tag << endl;
             //typecasten fuer enum repetition
-            //trepetition = (repetition)tag;
+            //trepetition = tag;
             //newTask.set_repetition(trepetition);
         }
 
@@ -255,7 +258,33 @@ void database::loadCategories()
 
 }
 
-void database::storeFile() {}
+void database::storeFile() {
+    //erstmal nur Tasks speichern
+    ofstream out("/home/frank/Dokumente/TI/5.Semester/Projekt/Structurly/src/datamodel/test.xml");
+
+    out << "<Data>\n";
+    out << "    <Tasks>\n";
+
+    for(auto i: tasks)
+    {
+        out << "        <Task>\n";
+        out << "            <identifier>" << i->get_identifier() << "</identifier>\n";
+        out << "            <title>" << i->get_title() << "</title>\n";
+        out << "            <description>" << i->get_description() << "</description>\n";
+        out << "            <priority>" << i->get_priority() << "</priority>\n";  //casten!! auf string
+
+        out << "            <date>" << setfill('0') << setw(2) << i->get_date().get_day() << setfill('0') << setw(2) << i->get_date().get_month() << setfill('0') << setw(4) << i->get_date().get_year() << "</date>\n";
+        out << "            <startingtime>" << setfill('0') << setw(2) << i->get_startingtime().get_hour() << setfill('0') << setw(2) << i->get_startingtime().get_minute() << "</startingtime>\n";
+        out << "            <length>" <<  i->get_length() << "</length>";
+        out << "            <repetition>" << i->get_repetition() << "</repetition>\n";
+        out << "            <category>" << i->get_category() << "</category>\n";
+        out << "        </Task>\n";
+    }
+    out << "    </Tasks>\n";
+    out << "</Data>";
+
+    out.close();
+}
 
 void database::storeTask(){}
 void database::storeLookUpTable(){}
