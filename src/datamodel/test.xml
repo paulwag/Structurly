@@ -4,30 +4,30 @@
             <identifier>1</identifier>
             <title>Datenbankaufgabe machen</title>
             <description>Do Something</description>
-            <priority>3</priority>
+            <priority>none</priority>
             <date>00000000</date>
             <startingtime>0000</startingtime>
-            <length>0</length>            <repetition>4</repetition>
+            <length>0</length>            <repetition>keine</repetition>
             <category></category>
         </Task>
         <Task>
             <identifier>2</identifier>
             <title>Dawid Kohlkopf</title>
             <description>Du bekommst den Muell und musst etwas damit tun</description>
-            <priority>3</priority>
+            <priority>none</priority>
             <date>00000000</date>
             <startingtime>0000</startingtime>
-            <length>0</length>            <repetition>4</repetition>
+            <length>0</length>            <repetition>keine</repetition>
             <category></category>
         </Task>
         <Task>
             <identifier>3</identifier>
             <title>Sinnvollen Stuff tun</title>
             <description>Dummer Scheißdreck blabla</description>
-            <priority>3</priority>
+            <priority>low</priority>
             <date>18062019</date>
             <startingtime>1415</startingtime>
-            <length>90</length>            <repetition>4</repetition>
+            <length>90</length>            <repetition>Monatlich</repetition>
             <category>Uni</category>
         </Task>
     </Tasks>

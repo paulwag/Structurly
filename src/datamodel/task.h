@@ -37,7 +37,8 @@ class task{
         void set_repetition( repetition trepetition);
         void set_length(int length);
         void set_category( string category);
-
+        void set_repetition_from_string(string tag);
+        void set_priority_from_string(string tag);
 
         int get_identifier()        {return identifier;}
         string get_title()          {return title;}
@@ -49,7 +50,10 @@ class task{
         repetition get_repetition() {return trepetition;}
         string get_category()       {return category;}
 
-        string get_repetition_xml();
+        string get_priority_string();
+        string get_repetition_string();
+
+
 };
 
 #endif // TASK_H

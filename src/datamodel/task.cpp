@@ -74,3 +74,45 @@ void task::set_category( string category)
 {
     this->category = category;
 }
+
+void task::set_repetition_from_string(string tag)
+{
+    if(tag == "Taeglich") this->trepetition = Taeglich;
+    else if(tag =="Woechentlich") this->trepetition = Woechentlich;
+    else if(tag == "Monatlich") this->trepetition = Monatlich;
+    else if(tag == "Jaehrlich") this->trepetition = Jaehrlich;
+    else if(tag == "keine") this->trepetition = keine;
+    else if(tag == "") this->trepetition = keine;
+}
+
+void task::set_priority_from_string(string tag)
+{
+    if(tag == "high") this->tpriority = high;
+    else if(tag =="medium") this->tpriority = medium;
+    else if(tag == "low") this->tpriority = low;
+    else if(tag == "none") this->tpriority = none;
+    else if(tag == "") this->tpriority = none;
+}
+
+string task::get_repetition_string()
+{
+    switch (trepetition)
+    {
+        case Taeglich: return "Taeglich";
+        case Woechentlich: return "Woechentlich";
+        case Monatlich: return "Monatlich";
+        case Jaehrlich: return "Jaehrlich";
+        case keine: return "keine";
+    }
+}
+
+string task::get_priority_string()
+{
+    switch (tpriority)
+    {
+        case high: return "high";
+        case medium: return "medium";
+        case low: return "low";
+        case none: return "none";
+    }
+}

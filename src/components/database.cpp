@@ -157,8 +157,9 @@ task *database::loadTask(ifstream &in){
             tag.erase(tag.end()-11, tag.end());
             //cout << tag << endl;
             //typecasten fuer enum priority
-            //tpriority = (priority)tag;
-            //newTask.set_priority(tpriority);
+
+            //tpriority = stoi(tag);
+            newTask->set_priority_from_string(tag);
         }
 
         //repetition
@@ -168,10 +169,7 @@ task *database::loadTask(ifstream &in){
 
             tag.erase(0,12);
             tag.erase(tag.end()-13, tag.end());
-            //cout << tag << endl;
-            //typecasten fuer enum repetition
-            //trepetition = tag;
-            //newTask.set_repetition(trepetition);
+            newTask->set_repetition_from_string(tag);
         }
 
         //date
@@ -260,7 +258,7 @@ void database::loadCategories()
 
 void database::storeFile() {
     //erstmal nur Tasks speichern
-    ofstream out("/home/frank/Dokumente/TI/5.Semester/Projekt/Structurly/src/datamodel/test.xml");
+    ofstream out("/home/frank/Dokumente/TI/5.Semester/Projekt/Structurly/src/datamodel/database.xml");
 
     out << "<Data>\n";
     out << "    <Tasks>\n";
@@ -271,12 +269,12 @@ void database::storeFile() {
         out << "            <identifier>" << i->get_identifier() << "</identifier>\n";
         out << "            <title>" << i->get_title() << "</title>\n";
         out << "            <description>" << i->get_description() << "</description>\n";
-        out << "            <priority>" << i->get_priority() << "</priority>\n";  //casten!! auf string
+        out << "            <priority>" << i->get_priority_string() << "</priority>\n";  //casten!! auf string
 
         out << "            <date>" << setfill('0') << setw(2) << i->get_date().get_day() << setfill('0') << setw(2) << i->get_date().get_month() << setfill('0') << setw(4) << i->get_date().get_year() << "</date>\n";
         out << "            <startingtime>" << setfill('0') << setw(2) << i->get_startingtime().get_hour() << setfill('0') << setw(2) << i->get_startingtime().get_minute() << "</startingtime>\n";
-        out << "            <length>" <<  i->get_length() << "</length>";
-        out << "            <repetition>" << i->get_repetition() << "</repetition>\n";
+        out << "            <length>" <<  i->get_length() << "</length>\n";
+        out << "            <repetition>" << i->get_repetition_string() << "</repetition>\n";
         out << "            <category>" << i->get_category() << "</category>\n";
         out << "        </Task>\n";
     }
