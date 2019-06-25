@@ -1,3 +1,4 @@
+#include <iostream>
 #include "task_manager.h"
 
 
@@ -28,19 +29,10 @@ void task_manager::stop(bool exit)
 
 void task_manager::createTask()
 {
-
+    cout << "TM: Task wird erstellt..." << endl;
 }
 
 
 
-void task_manager::delTask()
-{
-
-}
-
-
-
-void task_manager::updateTask()
-{
-
-}
+void task_manager::delTask() {}
+void task_manager::updateTask() {}

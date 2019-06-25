@@ -70,29 +70,29 @@ void MainWindow::launch() {
     tableWidget->setItem(10, 1, new QTableWidgetItem("Task 1"));
 }
 
+
+// /////////////////////////////////////////////////////////////////////////////// slot events
+void MainWindow::on_create_task_btn_clicked()
+{
+    /* Alter Kram von Paul
+    auto erstellterTask = new task();                                           // TASK ERSTELLEN
+    erstellterTask->set_title(ui->task_name_edit->text().toUtf8().constData());
+
+    QString qtitle= QString::fromStdString(erstellterTask->get_title());        // TASK AUSGEBEN
+    auto task_in_timeline = new QTableWidgetItem(qtitle);
+    task_in_timeline->setBackgroundColor("blue");
+    ui->timeline_table->setItem(10, 1, task_in_timeline);*/
+
+    cout << "Task anlegen geklickt" << endl;
+    ic_c.buttonPressed();
+}
+
+
+
 void MainWindow::closeEvent(QCloseEvent *event)
 {
     mainCntrl.stop();                                                           // clean up
     event->accept();                                                            // accept finally closes app, event->ignore() would keep it open
 }
-
-
-// /////////////////////////////////////////////////////////////////////////////// buttons klicked
-void MainWindow::on_create_task_btn_clicked()
-{
-    /* TASK ERSTELLEN */
-    auto erstellterTask = new task();
-    erstellterTask->set_title(ui->task_name_edit->text().toUtf8().constData());
-
-    /* TASK AUSGEBEN */
-    QString qtitle= QString::fromStdString(erstellterTask->get_title());
-    auto task_in_timeline = new QTableWidgetItem(qtitle);
-    task_in_timeline->setBackgroundColor("blue");
-    ui->timeline_table->setItem(10, 1, task_in_timeline);
-
-    cout << "create task geklickt" << endl;
-}
-
-
 
 

@@ -12,14 +12,7 @@
         public:
              input_controller(string n) : controller_intf(n) {}
 
-            /**
-             * @brief start zieht alle Tasks und laedt diese in Timelines
-             */
             void start();
-
-            /**
-             * @brief stop
-             */
             void stop(bool exit = false);
 
             void buttonPressed();

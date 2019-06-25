@@ -1,4 +1,6 @@
+#include <iostream>
 #include "input_controller.h"
+#include "singletons.h"
 
 
 
@@ -28,5 +30,6 @@ void input_controller::stop(bool exit)
 
 void input_controller::buttonPressed()
 {
-
+    cout << "IC: Button pressed..." << endl;
+    tm_c.createTask();
 }

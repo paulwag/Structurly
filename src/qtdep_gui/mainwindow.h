@@ -1,30 +1,32 @@
 #ifndef MAINWINDOW_H
-#define MAINWINDOW_H
+    #define MAINWINDOW_H
 
-#include <QMainWindow>
+    #include <QMainWindow>
 
-namespace Ui {
-class MainWindow;
-}
+    namespace Ui {
+    class MainWindow;
+    }
 
-class MainWindow : public QMainWindow
-{
-    Q_OBJECT
 
-public:
-    explicit MainWindow(QWidget *parent = nullptr);
-    ~MainWindow();
 
-    void launch();
+    class MainWindow : public QMainWindow
+    {
+        Q_OBJECT                                        // Qt object (macro).
 
-private slots:
-    void on_create_task_btn_clicked();
+        public:
+            explicit MainWindow(QWidget *parent = nullptr);
+            ~MainWindow();
 
-    //void keyPressEvent(QKeyEvent *event);     // siehe calculator
-    void closeEvent(QCloseEvent *event);
+            void launch();
 
-private:
-    Ui::MainWindow *ui;
-};
+        private slots:
+            void on_create_task_btn_clicked();
 
-#endif // MAINWINDOW_H
+            //void keyPressEvent(QKeyEvent *event);       // Aufgerufen???
+            void closeEvent(QCloseEvent *event);        // Aufgerufen beim Schließen des Fensters
+
+        private:
+            Ui::MainWindow *ui;
+    };
+
+#endif

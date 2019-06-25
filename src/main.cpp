@@ -1,6 +1,6 @@
 #include <QApplication>
 #include "mainwindow.h"
-#include "singeltons.h"
+#include "singletons.h"
 
 mainController mainCntrl("main_controller");
 calender_manager cm_c = calender_manager("calender_manager_component");
