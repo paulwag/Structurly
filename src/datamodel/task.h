@@ -37,6 +37,7 @@ class task{
         void set_repetition( repetition trepetition);
         void set_length(int length);
         void set_category( string category);
+
         void set_repetition_from_string(string tag);
         void set_priority_from_string(string tag);
 
