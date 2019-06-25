@@ -32,7 +32,7 @@
              */
             void stop(bool exit = false);
 
-            vector<task *> getTasks() const {return tasks;}
+            vector<task *>& getTasks() {return tasks;}
 
             void loadFile();
             task *loadTask(ifstream &in);

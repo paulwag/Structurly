@@ -37,6 +37,12 @@ void database::stop(bool exit)
 
     setStarted(false);
 
+    for (auto i : tasks)        //for debug
+    {
+        cout << i->get_identifier() << endl;
+        cout << i->get_title() << endl;
+        cout << i->get_description() << endl;
+    }
     storeFile();
     std::cout << getName() << " beendet" << endl;
 }

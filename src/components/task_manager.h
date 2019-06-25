@@ -2,6 +2,8 @@
     #define TASK_MANAGER_H
 
     #include "controller_intf.h"
+    #include <vector>
+    #include "task.h"
 
     using namespace std;
 
@@ -9,6 +11,7 @@
 
     class task_manager: public controller_intf
     {
+
         public:
              task_manager(string n) : controller_intf(n) {}
 
