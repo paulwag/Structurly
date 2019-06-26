@@ -1,8 +1,10 @@
 #include <iostream>
+#include <string>
 #include "input_controller.h"
 #include "singletons.h"
 
 using namespace std;
+
 
 
 void input_controller::start()
@@ -31,7 +33,6 @@ void input_controller::stop(bool exit)
 
 void input_controller::set_task_parameter(string t, string d)
 {
-    cout << "parameter werden gesetzt..." << endl;
     task_title = t;
     task_description = d;
 }

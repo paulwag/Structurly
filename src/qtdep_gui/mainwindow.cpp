@@ -80,8 +80,8 @@ void MainWindow::on_create_task_btn_clicked()
     task_in_timeline->setBackgroundColor("blue");
     ui->timeline_table->setItem(10, 1, task_in_timeline);*/
 
-    //ic_c.buttonPressed(ui->task_name_edit->text().toStdString());
-
+    ic_c.set_task_parameter(ui->task_name_edit->text().toStdString(),
+                            ui->description_edit->toPlainText().toStdString());
     ic_c.button_pressed(BUT_CREATE);
 }
 
