@@ -36,14 +36,27 @@ void task_manager::createTask()
 
     task *newTask = new task();
 
+    //int identifier = createIdentifier();
     int identifier = tasks.size() + 1; //zunaechst wird der Identifier uber die Groesse des Vektors erstellt, spaeter mit LookupTable
     newTask->set_identifier(identifier);
     tasks.push_back(newTask);
+    //an entsprechende Stelle einfuegen im Vektor! entsprechend identifier
 
     db_c.storeFile(); // Aenderungen speichern
 }
 
 
 
-void task_manager::delTask() {}
+void task_manager::delTask()
+{
+    //aus Vektor entfernen --> an dieser Stelle mit Template arbeiten und dieses ersetzen wenn anderer Task identifier bekommt
+    //identifier/position in LookupTable speichern
+
+}
 void task_manager::updateTask() {}
+
+int task_manager::createIdentifier()
+{
+    //erst in Lookup Table schauen
+    //if LookupTable empty --> return tasks.size() + 1
+}

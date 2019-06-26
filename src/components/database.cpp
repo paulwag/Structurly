@@ -19,13 +19,18 @@ void database::start()
 
     loadFile();
     //cout << tasks.at(1)->get_identifier() << endl;
-    for (auto i : tasks)        //for debug
+    /*for (auto i : tasks)        //for debug
     {
         cout << i->get_identifier() << endl;
         cout << i->get_title() << endl;
         cout << i->get_description() << endl;
     }
-    storeFile();
+    */
+    for(int i=0; i<lookUpTable.size(); ++i)
+    {
+        cout << lookUpTable.at(i) << endl;
+    }
+    //storeFile();
 }
 
 
@@ -81,6 +86,11 @@ void database::loadFile()
             newTask = database::loadTask(in);
             tasks.push_back(newTask);
         }
+
+        if(tag == "<LookUpTable>")
+        {
+            loadLookUpTable(in);
+        }
         tag = "";
     }
 
@@ -98,7 +108,7 @@ task *database::loadTask(ifstream &in){
  * Parameter einzeln einlesen und Objekt zuweisen  ->Funktion fuer jeden einzelnen Parameter?
  * nicht vorhandende Parameter? Leer schreiben? Leere Strings bzw Int = 0
  * Objekt returnen bzw Referenz
- *
+ *ToDo: elseifs schreiben
 */
     string tag;
     string line;
@@ -252,9 +262,37 @@ task *database::loadTask(ifstream &in){
     return newTask;
 }
 
-void database::loadLookUpTable()
+void database::loadLookUpTable(ifstream &in)
 {
+    string tag;
+    string line;
 
+    do
+    {
+        getline(in, line);
+        tag="";             //Tag without Whitespaces
+
+        for(int i=0; i<line.length(); ++i)
+        {
+            if((line[i] == ' ' || line[i] == 9) && tag.size() == 0)   // Tabs checken?
+            {
+            }
+            else
+                tag += line[i];
+        }
+
+        //identifier
+        if(tag.compare(0,12,"<identifier>") == 0)
+        {
+            int identifier;
+
+            tag.erase(0,12);
+            tag.erase(tag.end()-13, tag.end());
+            cout << tag << endl;
+            identifier = stoi(tag);
+            lookUpTable.push_back(identifier);
+        }
+    }while(tag != "</LookUpTable>");
 }
 
 void database::loadCategories()
@@ -264,7 +302,7 @@ void database::loadCategories()
 
 void database::storeFile() {
     //erstmal nur Tasks speichern
-    ofstream out("/home/frank/Dokumente/TI/5.Semester/Projekt/Structurly/src/datamodel/database.xml");
+    ofstream out("/home/frank/Dokumente/TI/5.Semester/Projekt/Structurly/src/datamodel/test.xml");      //for debugging
 
     out << "<Data>\n";
     out << "    <Tasks>\n";
@@ -284,13 +322,22 @@ void database::storeFile() {
         out << "        </Task>\n";
     }
     out << "    </Tasks>\n";
+    storeLookUpTable(out);
     out << "</Data>";
 
     out.close();
 }
 
 void database::storeTask(){}
-void database::storeLookUpTable(){}
+void database::storeLookUpTable(ofstream& out)
+{
+    out << "    <LookUpTable>\n";
+    for(int i=0; i<lookUpTable.size(); ++i)
+    {
+        out << "        <identifier>" << lookUpTable.at(i) << "</identifier>\n";
+    }
+    out << "    </LookUpTable>\n";
+}
 void database::storeCategories(){}
 
 

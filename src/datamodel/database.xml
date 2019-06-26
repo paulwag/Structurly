@@ -34,4 +34,8 @@
             <category>Uni</category>
         </Task>
     </Tasks>
+    <LookUpTable>
+        <identifier>2</identifier>
+        <identifier>4</identifier>
+    </LookUpTable>
 </Data>

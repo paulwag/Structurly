@@ -14,6 +14,7 @@
     class database: public controller_intf
     {
         vector<task *> tasks;
+        vector<int> lookUpTable;
 
         public:
              database(string n) : controller_intf(n) {}
@@ -33,15 +34,16 @@
             void stop(bool exit = false);
 
             vector<task *>& getTasks() {return tasks;}
+            vector<int>& getLookUpTable() {return lookUpTable;}
 
             void loadFile();
             task *loadTask(ifstream &in);
-            void loadLookUpTable();
+            void loadLookUpTable(ifstream &in);
             void loadCategories();
 
             void storeFile();
             void storeTask();
-            void storeLookUpTable();
+            void storeLookUpTable(ofstream &out);
             void storeCategories();
     };
 

@@ -28,6 +28,9 @@
             void createTask();
             void delTask();
             void updateTask();
+
+        private:
+            int createIdentifier();
     };
 
 #endif // TASK_MANAGER_H
