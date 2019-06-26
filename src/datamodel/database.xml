@@ -6,7 +6,7 @@
             <description>Do Something</description>
             <priority>none</priority>
             <date>00000000</date>
-            <startingtime>0000</startingtime>
+            <startingtime>9999</startingtime>
             <length>0</length>
             <repetition>keine</repetition>
             <category></category>
@@ -17,7 +17,7 @@
             <description>Du bekommst den Muell und musst etwas damit tun</description>
             <priority>none</priority>
             <date>00000000</date>
-            <startingtime>0000</startingtime>
+            <startingtime>9999</startingtime>
             <length>0</length>
             <repetition>keine</repetition>
             <category></category>
@@ -32,39 +32,6 @@
             <length>90</length>
             <repetition>Monatlich</repetition>
             <category>Uni</category>
-        </Task>
-        <Task>
-            <identifier>4</identifier>
-            <title></title>
-            <description></description>
-            <priority>none</priority>
-            <date>00000000</date>
-            <startingtime>0000</startingtime>
-            <length>0</length>
-            <repetition>keine</repetition>
-            <category></category>
-        </Task>
-        <Task>
-            <identifier>5</identifier>
-            <title></title>
-            <description></description>
-            <priority>none</priority>
-            <date>00000000</date>
-            <startingtime>0000</startingtime>
-            <length>0</length>
-            <repetition>keine</repetition>
-            <category></category>
-        </Task>
-        <Task>
-            <identifier>6</identifier>
-            <title></title>
-            <description></description>
-            <priority>none</priority>
-            <date>00000000</date>
-            <startingtime>0000</startingtime>
-            <length>0</length>
-            <repetition>keine</repetition>
-            <category></category>
         </Task>
     </Tasks>
 </Data>

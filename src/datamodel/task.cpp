@@ -9,7 +9,7 @@ task::task()
     this->tpriority = none;
     tdate date(0, 0, 0);
     this->date = date;
-    ttime startingtime(0, 0, 0);
+    ttime startingtime(99, 99, 0);
     this->startingtime = startingtime;
     this->length = 0;
     this->trepetition = keine;
