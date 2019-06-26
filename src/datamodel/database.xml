@@ -55,5 +55,16 @@
             <repetition>keine</repetition>
             <category></category>
         </Task>
+        <Task>
+            <identifier>6</identifier>
+            <title></title>
+            <description></description>
+            <priority>none</priority>
+            <date>00000000</date>
+            <startingtime>0000</startingtime>
+            <length>0</length>
+            <repetition>keine</repetition>
+            <category></category>
+        </Task>
     </Tasks>
 </Data>

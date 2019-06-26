@@ -4,6 +4,8 @@
 #include "task.h"
 
 
+vector<task *>& tasks = db_c.getTasks(); //reference to task vector, global lassen oder in createTask? dann wird es jedoch jedes Mal aufgerufen
+
 void task_manager::start()
 {
     if (getStarted())
@@ -32,10 +34,9 @@ void task_manager::createTask()
 {
     cout << "TM: Task wird erstellt..." << endl;
 
-    vector<task *>& tasks = db_c.getTasks(); //reference to task vector
     task *newTask = new task();
 
-    int identifier = tasks.size() + 1; //zunaechst wird der Identifier uber die Groesse des Vektors erstellt
+    int identifier = tasks.size() + 1; //zunaechst wird der Identifier uber die Groesse des Vektors erstellt, spaeter mit LookupTable
     newTask->set_identifier(identifier);
     tasks.push_back(newTask);
 
