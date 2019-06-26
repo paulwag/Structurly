@@ -5,6 +5,7 @@
 
 
 vector<task *>& tasks = db_c.getTasks(); //reference to task vector, global lassen oder in createTask? dann wird es jedoch jedes Mal aufgerufen
+vector<int>& lookUpTable = db_c.getLookUpTable();   // reference to lookUpTable
 
 void task_manager::start()
 {
@@ -32,15 +33,25 @@ void task_manager::stop(bool exit)
 
 void task_manager::createTask()
 {
+    int identifier;
+
     cout << "TM: Task wird erstellt..." << endl;
 
     task *newTask = new task();
 
-    //int identifier = createIdentifier();
-    int identifier = tasks.size() + 1; //zunaechst wird der Identifier uber die Groesse des Vektors erstellt, spaeter mit LookupTable
-    newTask->set_identifier(identifier);
-    tasks.push_back(newTask);
-    //an entsprechende Stelle einfuegen im Vektor! entsprechend identifier
+    if(lookUpTable.size() == 0)
+    {
+        newTask->set_identifier(tasks.size() + 1);
+        tasks.push_back(newTask);                       //Task am Ende einfuegen, Eigenschaften koennen anschließend gesetzt werden oder?
+    }
+    else
+    {
+        int identifier = createIdentifier();
+        newTask->set_identifier(identifier);
+        tasks.erase(tasks.begin() + identifier-1);            // Template an Stelle identifier entfernen
+        tasks.insert(tasks.begin() + identifier-1, newTask);  // Task an entsprechende Stelle fuegen
+    }
+    // restliche Eigenschaften setzen
 
     db_c.storeFile(); // Aenderungen speichern
 }
@@ -57,6 +68,8 @@ void task_manager::updateTask() {}
 
 int task_manager::createIdentifier()
 {
-    //erst in Lookup Table schauen
-    //if LookupTable empty --> return tasks.size() + 1
+    int identifier = lookUpTable.at(1);     //gibt niedrigsten identifier zurueck
+    lookUpTable.erase(lookUpTable.begin());                   //aus lookUpTable entfernen
+
+    return identifier;
 }

@@ -328,7 +328,8 @@ void database::storeFile() {
     out.close();
 }
 
-void database::storeTask(){}
+void database::storeTask(){} // auslagern aus storeFile()
+
 void database::storeLookUpTable(ofstream& out)
 {
     out << "    <LookUpTable>\n";
