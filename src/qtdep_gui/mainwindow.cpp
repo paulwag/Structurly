@@ -4,9 +4,10 @@
 #include <QApplication>
 #include <QtGui>
 
-#include "singletons.h"
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
+#include "singletons.h"
+#include "input_controller.h"
 
 
 
@@ -73,20 +74,20 @@ void MainWindow::launch() {
 // /////////////////////////////////////////////////////////////////////////////// slot events
 void MainWindow::on_create_task_btn_clicked()
 {
-    /* Alter Kram von Paul
+    /* Alter Kram von Paul, vllt noch später nützlich
     QString qtitle= QString::fromStdString(erstellterTask->get_title());        // TASK AUSGEBEN
     auto task_in_timeline = new QTableWidgetItem(qtitle);
     task_in_timeline->setBackgroundColor("blue");
     ui->timeline_table->setItem(10, 1, task_in_timeline);*/
 
-    cout << "Task anlegen geklickt" << endl;
-    ic_c.buttonPressed(ui->task_name_edit->text().toStdString());
-}
+    //ic_c.buttonPressed(ui->task_name_edit->text().toStdString());
 
+    ic_c.button_pressed(BUT_CREATE);
+}
 
 void MainWindow::on_printTasks_clicked()
 {
-
+    ic_c.button_pressed(BUT_PRINT);
 }
 
 void MainWindow::closeEvent(QCloseEvent *event)

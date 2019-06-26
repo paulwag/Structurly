@@ -29,10 +29,23 @@ void input_controller::stop(bool exit)
 
 
 
-void input_controller::buttonPressed(string title)
+void input_controller::set_task_parameter(string t, string d)
+{
+    cout << "parameter werden gesetzt..." << endl;
+    task_title = t;
+    task_description = d;
+}
+
+
+
+void input_controller::button_pressed(int button)
 {
     cout << "IC: Button pressed..." << endl;
+    switch(button)
+    {
+        case BUT_CREATE:    cout << "...Task anlegen" << endl;      break;
+        case BUT_PRINT:     cout << "...print Tasks" << endl;    break;
+    }
     //Ui::MainWindow().task_name_edit->setText("asdf");
-    cout << "Task name " << title << endl;
-    tm_c.createTask();
+    //tm_c.createTask();
 }
