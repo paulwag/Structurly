@@ -4,8 +4,12 @@
 #include "task.h"
 
 
+
 //vector<task *>& tasks = db_c.getTasks(); //reference to task vector, global lassen oder in createTask? dann wird es jedoch jedes Mal aufgerufen
 // Peter: der Vector kommt als Attribut in die Klasse, da der taskManager ja die Tasks beinhalten soll
+
+// vector<int>& lookUpTable = db_c.getLookUpTable();   // reference to lookUpTable
+
 
 void task_manager::start()
 {
@@ -43,6 +47,23 @@ void task_manager::createTask(string title, string description)
 
     tasks.push_back(newTask);                   // In Vector speichern
     //db_c.storeFile();                         // In Datenbank übertragen
+
+
+
+    /* Stuff vom Conflict (Peter)
+    if(lookUpTable.size() == 0)
+    {
+        newTask->set_identifier(tasks.size() + 1);
+        tasks.push_back(newTask);                       //Task am Ende einfuegen, Eigenschaften koennen anschließend gesetzt werden oder?
+    }
+    else
+    {
+        int identifier = createIdentifier();
+        newTask->set_identifier(identifier);
+        tasks.erase(tasks.begin() + identifier-1);            // Template an Stelle identifier entfernen
+        tasks.insert(tasks.begin() + identifier-1, newTask);  // Task an entsprechende Stelle fuegen
+    }
+    // restliche Eigenschaften setzen*/
 }
 
 
@@ -57,5 +78,19 @@ void task_manager::printTasks() // Kann später weg, wenn wirklich alles funktio
 
 
 
-void task_manager::delTask() {}
+void task_manager::delTask()
+{
+    //aus Vektor entfernen --> an dieser Stelle mit Template arbeiten und dieses ersetzen wenn anderer Task identifier bekommt
+    //identifier/position in LookupTable speichern
+
+}
 void task_manager::updateTask() {}
+
+/* Stuff vom Conflict (Peter)
+int task_manager::createIdentifier()
+{
+    int identifier = lookUpTable.at(1);     //gibt niedrigsten identifier zurueck
+    lookUpTable.erase(lookUpTable.begin());                   //aus lookUpTable entfernen
+
+    return identifier;
+}*/

@@ -6,8 +6,9 @@
             <description>Do Something</description>
             <priority>none</priority>
             <date>00000000</date>
-            <startingtime>0000</startingtime>
-            <length>0</length>            <repetition>keine</repetition>
+            <startingtime>9999</startingtime>
+            <length>0</length>
+            <repetition>keine</repetition>
             <category></category>
         </Task>
         <Task>
@@ -16,8 +17,9 @@
             <description>Du bekommst den Muell und musst etwas damit tun</description>
             <priority>none</priority>
             <date>00000000</date>
-            <startingtime>0000</startingtime>
-            <length>0</length>            <repetition>keine</repetition>
+            <startingtime>9999</startingtime>
+            <length>0</length>
+            <repetition>keine</repetition>
             <category></category>
         </Task>
         <Task>
@@ -27,8 +29,13 @@
             <priority>low</priority>
             <date>18062019</date>
             <startingtime>1415</startingtime>
-            <length>90</length>            <repetition>Monatlich</repetition>
+            <length>90</length>
+            <repetition>Monatlich</repetition>
             <category>Uni</category>
         </Task>
     </Tasks>
+    <LookUpTable>
+        <identifier>2</identifier>
+        <identifier>4</identifier>
+    </LookUpTable>
 </Data>
