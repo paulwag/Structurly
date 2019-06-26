@@ -84,11 +84,14 @@ void MainWindow::on_create_task_btn_clicked()
 }
 
 
+void MainWindow::on_printTasks_clicked()
+{
+
+}
 
 void MainWindow::closeEvent(QCloseEvent *event)
 {
     mainCntrl.stop();                                                           // clean up
     event->accept();                                                            // accept finally closes app, event->ignore() would keep it open
 }
-
 
