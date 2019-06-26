@@ -1,6 +1,7 @@
 #include "task.h"
 
-//initial values
+
+
 task::task()
 {
     this->identifier = 0;
@@ -16,7 +17,7 @@ task::task()
     this->category = "";
 }
 
-task::task(int identifier, string title, string description, priority tpriority,tdate date, ttime startingtime, int length, repetition trepetition, string category)     //if not set, empty string?
+task::task(unsigned long identifier, string title, string description, priority tpriority, tdate date, ttime startingtime, int length, repetition trepetition, string category)     //if not set, empty string?
 {
     this->identifier    = identifier;
     this->title         = title;
@@ -29,7 +30,7 @@ task::task(int identifier, string title, string description, priority tpriority,
     this->category      = category;
 }
 
-void task::set_identifier(int identifier)
+void task::set_identifier(unsigned long identifier)
 {
     this->identifier = identifier;
 }

@@ -1,5 +1,4 @@
 #include <iostream>
-#include <string>
 #include "input_controller.h"
 #include "singletons.h"
 
@@ -41,12 +40,9 @@ void input_controller::set_task_parameter(string t, string d)
 
 void input_controller::button_pressed(int button)
 {
-    cout << "IC: Button pressed..." << endl;
     switch(button)
     {
-        case BUT_CREATE:    cout << "...Task anlegen" << endl;      break;
-        case BUT_PRINT:     cout << "...print Tasks" << endl;    break;
+        case BUT_CREATE:    tm_c.createTask(task_title, task_description);  break;
+        case BUT_PRINT:     tm_c.printTasks();                              break;
     }
-    //Ui::MainWindow().task_name_edit->setText("asdf");
-    //tm_c.createTask();
 }

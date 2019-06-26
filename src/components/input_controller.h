@@ -2,7 +2,6 @@
     #define INPUT_CONTROLLER_H
 
     #include "controller_intf.h"
-    #include <string>
 
     using namespace std;
 

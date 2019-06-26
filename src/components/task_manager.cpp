@@ -4,7 +4,8 @@
 #include "task.h"
 
 
-vector<task *>& tasks = db_c.getTasks(); //reference to task vector, global lassen oder in createTask? dann wird es jedoch jedes Mal aufgerufen
+//vector<task *>& tasks = db_c.getTasks(); //reference to task vector, global lassen oder in createTask? dann wird es jedoch jedes Mal aufgerufen
+// Peter: der Vector kommt als Attribut in die Klasse, da der taskManager ja die Tasks beinhalten soll
 
 void task_manager::start()
 {
@@ -12,6 +13,8 @@ void task_manager::start()
             return;
 
     setStarted(true);
+
+    // Hier müssen die Daten aus der Datenbank geladen werden (Und damit meine ich: geladen! Also keine Referenz darauf!)
 
     std::cout << getName() << " gestartet" << endl;
 }
@@ -30,17 +33,26 @@ void task_manager::stop(bool exit)
 
 
 
-void task_manager::createTask()
+void task_manager::createTask(string title, string description)
 {
-    cout << "TM: Task wird erstellt..." << endl;
-
     task *newTask = new task();
 
-    int identifier = tasks.size() + 1; //zunaechst wird der Identifier uber die Groesse des Vektors erstellt, spaeter mit LookupTable
-    newTask->set_identifier(identifier);
-    tasks.push_back(newTask);
+    newTask->set_title(title);                  // quick and dirty, sollte gleich beim Anlegen passieren, Konstruktor und so (Peter)
+    newTask->set_description(description);
+    newTask->set_identifier(tasks.size()+1);
 
-    db_c.storeFile(); // Aenderungen speichern
+    tasks.push_back(newTask);                   // In Vector speichern
+    //db_c.storeFile();                         // In Datenbank übertragen
+}
+
+
+
+void task_manager::printTasks() // Kann später weg, wenn wirklich alles funktioniert (Peter)
+{
+    for (auto task : tasks)
+        cout << "ID: " << task->get_identifier() << " | Titel: " << task->get_title() << " | Beschreibung: " << task->get_description() << endl;
+
+    cout << "--------------------------------------------------------------------------------" << endl;
 }
 
 

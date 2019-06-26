@@ -23,12 +23,12 @@
              }
 
             /**
-             * @brief start zieht alle Tasks und laedt diese in Timelines
+             * @brief Lädt die Daten aus einer XML-File
              */
             void start();
 
             /**
-             * @brief stop
+             * @brief Speichert die Daten in eine XML-File
              */
             void stop(bool exit = false);
 
