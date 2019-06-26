@@ -25,7 +25,9 @@
             //void keyPressEvent(QKeyEvent *event);       // Aufgerufen???
             void closeEvent(QCloseEvent *event);        // Aufgerufen beim Schließen des Fensters
 
-        private:
+            void on_printTasks_clicked();
+
+    private:
             Ui::MainWindow *ui;
     };
 

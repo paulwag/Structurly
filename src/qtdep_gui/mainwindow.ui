@@ -324,6 +324,13 @@ border-radius: 10px;
         </widget>
        </item>
        <item>
+        <widget class="QPushButton" name="printTasks">
+         <property name="text">
+          <string>print Tasks</string>
+         </property>
+        </widget>
+       </item>
+       <item>
         <widget class="QLabel" name="status_label">
          <property name="styleSheet">
           <string notr="true">color: lightgreen;
