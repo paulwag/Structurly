@@ -1,26 +1,39 @@
-#include "output_controller.h"
+#include <iostream>
+#include "singletons.h"
 
+using namespace std;
+
+
+
+// /////////////////////////////////////////////////////////////////////////// Singleton Stuff
+output_controller output_controller::oc_instance;
+output_controller& output_controller::get_instance()
+{
+    return oc_instance;
+}
+
+
+// /////////////////////////////////////////////////////////////////////////// Start | Stop
 void output_controller::start()
 {
     if (getStarted())
-            return;
+        return;
 
     setStarted(true);
 
-    std::cout << getName() << " gestartet" << endl;
+    cout << getName() << " gestartet" << endl;
 }
 
 void output_controller::stop(bool exit)
 {
     if (!getStarted())
-            return;
+        return;
 
     setStarted(false);
 
-    std::cout << getName() << " beendet" << endl;
+    cout << getName() << " beendet" << endl;
 }
 
-void output_controller::updateGUI()
-{
 
-}
+// /////////////////////////////////////////////////////////////////////////// Methods
+void output_controller::updateGUI() {}

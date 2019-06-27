@@ -1,11 +1,19 @@
 #include <iostream>
-#include "input_controller.h"
 #include "singletons.h"
 
 using namespace std;
 
 
 
+// /////////////////////////////////////////////////////////////////////////// Singleton Stuff
+input_controller input_controller::ic_instance;
+input_controller& input_controller::get_instance()
+{
+    return ic_instance;
+}
+
+
+// /////////////////////////////////////////////////////////////////////////// Start | Stop
 void input_controller::start()
 {
     if (getStarted())
@@ -15,8 +23,6 @@ void input_controller::start()
 
     cout << getName() << " gestartet" << endl;
 }
-
-
 
 void input_controller::stop(bool exit)
 {
@@ -29,14 +35,12 @@ void input_controller::stop(bool exit)
 }
 
 
-
+// /////////////////////////////////////////////////////////////////////////// Methods
 void input_controller::set_task_parameter(string t, string d)
 {
     task_title = t;
     task_description = d;
 }
-
-
 
 void input_controller::button_pressed(int button)
 {

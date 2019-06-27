@@ -11,8 +11,8 @@
     extern mainController mainCntrl;
     extern calender_manager cm_c;
     extern database db_c;
-    extern input_controller ic_c;
-    extern output_controller oc_c;
+    extern input_controller& ic_c;
+    extern output_controller& oc_c;
     extern task_manager tm_c;
 
-#endif // SINGELTONS_H
+#endif
