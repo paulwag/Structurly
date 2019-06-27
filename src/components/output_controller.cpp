@@ -1,5 +1,5 @@
 #include <iostream>
-#include "singletons.h"
+#include "output_controller.h"
 
 using namespace std;
 
