@@ -53,6 +53,10 @@ void database::stop(bool exit)
 }
 
 
+void database::addTasktoVektor(task *newTask)
+{
+    tasks.push_back(newTask);
+}
 
 void database::loadFile()
 {
@@ -322,7 +326,7 @@ void database::storeFile() {
         out << "        </Task>\n";
     }
     out << "    </Tasks>\n";
-    storeLookUpTable(out);
+    //storeLookUpTable(out);        //ready to test
     out << "</Data>";
 
     out.close();

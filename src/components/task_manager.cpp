@@ -19,6 +19,7 @@ void task_manager::start()
     setStarted(true);
 
     // Hier müssen die Daten aus der Datenbank geladen werden (Und damit meine ich: geladen! Also keine Referenz darauf!)
+    tasks = db_c.getTasks(); //Peter sooooo? :P
 
     std::cout << getName() << " gestartet" << endl;
 }
@@ -46,6 +47,7 @@ void task_manager::createTask(string title, string description)
     newTask->set_identifier(tasks.size()+1);
 
     tasks.push_back(newTask);                   // In Vector speichern
+    db_c.addTasktoVektor(newTask);              // Task im Vektor der Datenbank Komponente speichern
     //db_c.storeFile();                         // In Datenbank übertragen
 
 

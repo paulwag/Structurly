@@ -33,13 +33,15 @@
              */
             void stop(bool exit = false);
 
-            vector<task *>& getTasks() {return tasks;}
+            vector<task *> getTasks() {return tasks;}
             vector<int>& getLookUpTable() {return lookUpTable;}
 
             void loadFile();
             task *loadTask(ifstream &in);
             void loadLookUpTable(ifstream &in);
             void loadCategories();
+
+            void addTasktoVektor(task *newTask);
 
             void storeFile();
             void storeTask();
