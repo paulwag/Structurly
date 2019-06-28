@@ -27,7 +27,6 @@ void task_manager::stop(bool exit)
             return;
 
     setStarted(false);
-    //freeTasks();
     std::cout << getName() << " beendet" << endl;
 }
 
@@ -92,8 +91,3 @@ int task_manager::createIdentifier()
     return identifier;
 }*/
 
-void task_manager::freeTasks()
-{
-    for(auto task: tasks)
-        delete task;
-}
