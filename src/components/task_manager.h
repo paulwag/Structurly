@@ -26,6 +26,7 @@
              */
             void stop(bool exit = false);
 
+            vector<task *>& getTasks() {return tasks;}      //Referenz auf Vektor fuer calendar_manager
             void createTask(string title, string description);
             void printTasks();  // Kann später weg, wenn wirklich alles funktioniert (Peter)
 
