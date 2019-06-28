@@ -6,8 +6,6 @@
 
 using namespace std;
 
-
-
 void database::start()
 {
     if (getStarted())
@@ -49,13 +47,14 @@ void database::stop(bool exit)
         cout << i->get_description() << endl;
     }
     storeFile();
+    freeTasks();
     std::cout << getName() << " beendet" << endl;
 }
 
 
-void database::addTasktoVektor(task *newTask)
+void database::addTasktoVektor(task *Task)
 {
-    tasks.push_back(newTask);
+    tasks.push_back(Task);                 //Adresse uebergeben
 }
 
 void database::loadFile()
@@ -345,6 +344,11 @@ void database::storeLookUpTable(ofstream& out)
 }
 void database::storeCategories(){}
 
+void database::freeTasks()
+{
+    for(auto task: tasks)
+        delete task;
+}
 
 /*
 <Data>

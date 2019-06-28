@@ -41,12 +41,13 @@
             void loadLookUpTable(ifstream &in);
             void loadCategories();
 
-            void addTasktoVektor(task *newTask);
+            void addTasktoVektor(task *Task);
 
             void storeFile();
             void storeTask();
             void storeLookUpTable(ofstream &out);
             void storeCategories();
+            void freeTasks();
     };
 
 #endif // DATABASE_H

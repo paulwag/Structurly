@@ -34,6 +34,7 @@
 
         private:
             int createIdentifier();
+            void freeTasks();
     };
 
 #endif // TASK_MANAGER_H

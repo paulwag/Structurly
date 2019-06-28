@@ -3,11 +3,6 @@
 #include "singletons.h"
 #include "task.h"
 
-
-
-//vector<task *>& tasks = db_c.getTasks(); //reference to task vector, global lassen oder in createTask? dann wird es jedoch jedes Mal aufgerufen
-// Peter: der Vector kommt als Attribut in die Klasse, da der taskManager ja die Tasks beinhalten soll
-
 // vector<int>& lookUpTable = db_c.getLookUpTable();   // reference to lookUpTable
 
 
@@ -32,7 +27,7 @@ void task_manager::stop(bool exit)
             return;
 
     setStarted(false);
-
+    //freeTasks();
     std::cout << getName() << " beendet" << endl;
 }
 
@@ -47,7 +42,7 @@ void task_manager::createTask(string title, string description)
     newTask->set_identifier(tasks.size()+1);
 
     tasks.push_back(newTask);                   // In Vector speichern
-    db_c.addTasktoVektor(newTask);              // Task im Vektor der Datenbank Komponente speichern
+    db_c.addTasktoVektor(newTask);              // Task im Vektor der Datenbank Komponente speichern, nicht Pointer uebergeben sondern ganzen Task(wegen free)
     //db_c.storeFile();                         // In Datenbank übertragen
 
 
@@ -96,3 +91,9 @@ int task_manager::createIdentifier()
 
     return identifier;
 }*/
+
+void task_manager::freeTasks()
+{
+    for(auto task: tasks)
+        delete task;
+}
