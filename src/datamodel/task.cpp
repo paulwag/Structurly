@@ -1,13 +1,10 @@
 #include "task.h"
 
-
-
 task::task()
 : identifier(0), title(""), description(""), tpriority(none), date(0, 0, 0), startingtime(99, 99, 0), length(0), trepetition(keine), category("") {}
 
 task::task(unsigned long id, string t, string des, priority p, tdate d, ttime tim, int l, repetition r, string c)                   //if not set, empty string?
 : identifier(id), title(t), description(des), tpriority(p), date(d), startingtime(tim), length(l), trepetition(r), category(c) {}
-
 
 
 void task::set_repetition_from_string(string tag)

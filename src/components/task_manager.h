@@ -22,7 +22,7 @@
             void start();
 
             /**
-             * @brief stop speichert alle Daten bei Programmende (Paul) //unnötig, da neue Tasks sowieso sofort in die DB gespeichert werden (Peter))
+             * @brief stop speichert alle Daten bei Programmende (Paul) //unnötig, da neue Tasks sowieso sofort in die DB gespeichert werden (Peter)) // immer diese Umlaute....(Frank)
              */
             void stop(bool exit = false);
 

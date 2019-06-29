@@ -8,7 +8,7 @@
 
 using namespace std;
 
-#define maxtasks 96 //solange noch keine Ueberschneidungen moeglich sind(24 * 4)
+#define MAXTASKS 96 //solange noch keine Ueberschneidungen moeglich sind(24 * 4)
 
 class timeline{
     private:

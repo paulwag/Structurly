@@ -20,7 +20,7 @@ class task{
         priority        tpriority;
         tdate           date;
         ttime           startingtime;
-        int             length;                 //in minutes
+        uint             length;                 //in minutes
         repetition      trepetition;
         string          category;
 
