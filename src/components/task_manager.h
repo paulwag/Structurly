@@ -1,9 +1,11 @@
 #ifndef TASK_MANAGER_H
     #define TASK_MANAGER_H
 
-    #include "controller_intf.h"
     #include <vector>
+    #include "controller_intf.h"
     #include "task.h"
+    #include "tdate.h"
+    #include "ttime.h"
 
     using namespace std;
 
@@ -22,7 +24,7 @@
 
             vector<task *>& getTasks() {return tasks;}              // Referenz auf Vektor fuer calendar_manager
 
-            void createTask(string title, string description);
+            void createTask(string title, string description, tdate date, ttime starttime);
             void delTask();
             void updateTask();
 

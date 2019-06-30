@@ -29,7 +29,7 @@ ostream &operator<< (ostream &ostr, const tdate &d)
 }
 
 /////////////////////////////////////////////////////////// setter
-inline void tdate::set_date(int d, int m, int y)
+void tdate::set_date(int d, int m, int y)
 {
     day = d;
     month = m;

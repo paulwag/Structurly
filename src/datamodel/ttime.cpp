@@ -36,7 +36,7 @@ ostream &operator<< (ostream &ostr, const ttime &t)
 }
 
 /////////////////////////////////////////////////////////// setter
-inline void ttime::set_time(int h, int m, int s)
+void ttime::set_time(int h, int m, int s)
 {
     hour = h;
     minute = m;

@@ -36,18 +36,21 @@ void input_controller::stop(bool exit)
 
 
 // /////////////////////////////////////////////////////////////////////////// Methods
-void input_controller::set_task_parameter(string name, string description, int hour, int minute, int day, int month, int year)
+void input_controller::set_task_parameter(string title, string description, int hour, int minute, int day, int month, int year)
 {
-    task_title = name;
+    task_title = title;
     task_description = description;
-
+    task_date.set_date(day, minute, year);
+    task_time.set_time(hour, minute);
 }
 
 void input_controller::button_pressed(int button)
 {
     switch(button)
     {
-        case BUT_CREATE:    tm_c.createTask(task_title, task_description);  break;
-        case BUT_PRINT:     tm_c.printTasks();                              break;
+        case BUT_CREATE:    tm_c.createTask(task_title, task_description, task_date, task_time);
+                            break;
+        case BUT_PRINT:     tm_c.printTasks();
+                            break;
     }
 }
