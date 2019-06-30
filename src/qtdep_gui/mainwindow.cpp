@@ -89,8 +89,8 @@ void MainWindow::on_create_task_btn_clicked()
     int month = ui->date_time_edit->date().month();
     int year = ui->date_time_edit->date().year();
 
-    ic_c.set_task_parameter(name, description, start_hour, start_minute, day, month, year);
-    ic_c.button_pressed(BUT_CREATE);
+    if (ic_c.set_task_parameter(name, description, start_hour, start_minute, day, month, year) == 0)
+        ic_c.button_pressed(BUT_CREATE);
 }
 
 void MainWindow::on_printTasks_clicked()

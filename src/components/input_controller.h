@@ -35,7 +35,7 @@
             void start();
             void stop(bool exit = false);
 
-            void set_task_parameter(string title, string decription, int hour, int minute, int day, int month, int year);
+            int set_task_parameter(string title, string decription, int hour, int minute, int day, int month, int year);
             void button_pressed(int button);
     };
 
