@@ -315,7 +315,17 @@ task *database::loadTask(ifstream &in){
     out << "    </LookUpTable>\n";
 }*/
 
+/* READY
+void database::deleteTask(int position)
+{
+    tasks.at(position-1) = NULL;
+}
 
+void database::save_position_in_LUT(int identifier)
+{
+    lookUpTable.push_back(identifier);
+}
+*/
 
 void database::freeTasks()
 {

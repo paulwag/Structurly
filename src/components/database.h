@@ -26,13 +26,17 @@
             void stop(bool exit = false);
 
             void save_task_in_DB(task *Task);
+
             void storeFile();
             void loadFile();
             vector<task *> get_tasks_from_DB()  const {return tasks;}
 
-            //vector<int>& getLookUpTable() {return lookUpTable;}           // Lookup table stuff, WIP
+            //vector<int> getLookUpTable() {return lookUpTable;}           // Lookup table stuff, WIP
             //void loadLookUpTable(ifstream &in);
             //void storeLookUpTable(ofstream &out);
+
+            //void save_position_in_LUT(int position);                        // bekommt Wert von task_manager
+            //void deleteTask(int position);
     };
 
 #endif
