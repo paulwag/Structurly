@@ -54,22 +54,24 @@ void database::storeFile()
 
     //ofstream out("database.xml");                                                                         // is saving database.xml in build/debug
     ofstream out("../../database/database.xml");
+    //ofstream out("../../database/test.xml");
 
     out << "<Data>\n";
     out << "    <Tasks>\n";
 
     for (auto i: tasks)
     {
+        string random = "";
         out << "        <Task>\n";
         out << "            <identifier>"   << i->get_identifier() << "</identifier>\n";
-        out << "            <title>"        << i->get_title() << " </title>\n";
-        out << "            <description>"  << i->get_description() << " </description>\n";
+        out << "            <title>"        << i->get_title() << "</title>\n";
+        out << "            <description>"  << i->get_description() << "</description>\n";
         out << "            <priority>"     << i->get_priority_string() << "</priority>\n";
         out << "            <date>"         << setfill('0') << setw(2) << i->get_date().get_day() << setfill('0') << setw(2) << i->get_date().get_month() << setfill('0') << setw(4) << i->get_date().get_year() << "</date>\n";
         out << "            <startingtime>" << setfill('0') << setw(2) << i->get_startingtime().get_hour() << setfill('0') << setw(2) << i->get_startingtime().get_minute() << "</startingtime>\n";
         out << "            <length>"       << i->get_length() << "</length>\n";
         out << "            <repetition>"   << i->get_repetition_string() << "</repetition>\n";
-        out << "            <category>"     << i->get_category() << " </category>\n";
+        out << "            <category>"     << i->get_category() << "</category>\n";
         out << "        </Task>\n";
     }
     out << "    </Tasks>\n";
@@ -89,6 +91,7 @@ void database::loadFile()
     string tag = "";             //Tag without Whitespaces
 
     ifstream in("../../database/database.xml");
+    //ifstream in("../../database/test.xml");
 
     if(!in)
     {
