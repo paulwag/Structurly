@@ -12,6 +12,7 @@
     class task_manager: public controller_intf
     {
         vector<task *> tasks;
+        //vector<int> lookUpTable;
 
         public:
             task_manager(string n) : controller_intf(n) {}

@@ -11,8 +11,8 @@ void task_manager::start()
 
     setStarted(true);
 
-    tasks = db_c.get_tasks_from_DB();           // Tasks aus der Datenbank holen
-
+    tasks = db_c.get_tasks_from_DB();                           // Tasks aus der Datenbank holen
+    //lookUpTable = db_c.getLookUpTable();                      // LookUpTable aus Datenbank holen
     std::cout << getName() << " gestartet" << endl;
 }
 
@@ -34,12 +34,12 @@ void task_manager::createTask(string title, string description)
 {
     task *newTask = new task();
 
-    newTask->set_title(title);                  // quick and dirty, sollte gleich beim Anlegen passieren, Konstruktor und so (Peter)
+    newTask->set_title(title);                                  // quick and dirty, sollte gleich beim Anlegen passieren, Konstruktor und so (Peter)
     newTask->set_description(description);
     newTask->set_identifier(tasks.size()+1);
 
-    tasks.push_back(newTask);                   // In eigenen Vector speichern
-    db_c.save_task_in_DB(newTask);              // In Datenbank Vektor speichern
+    tasks.push_back(newTask);                                   // In eigenen Vector speichern
+    db_c.save_task_in_DB(newTask);                              // In Datenbank Vektor speichern
 
 
 
@@ -53,7 +53,6 @@ void task_manager::createTask(string title, string description)
     {
         int identifier = createIdentifier();
         newTask->set_identifier(identifier);
-        tasks.erase(tasks.begin() + identifier-1);            // Template an Stelle identifier entfernen
         tasks.insert(tasks.begin() + identifier-1, newTask);  // Task an entsprechende Stelle fuegen
     }
     // restliche Eigenschaften setzen*/
@@ -73,9 +72,14 @@ void task_manager::printTasks() // Kann später weg, wenn wirklich alles funktio
 
 void task_manager::delTask()
 {
-    //aus Vektor entfernen --> an dieser Stelle mit Template arbeiten und dieses ersetzen wenn anderer Task identifier bekommt
-    //identifier/position in LookupTable speichern
-
+    //bekommt die Funktion als Parameter den Identifier(damit die Position im Vektor?)
+    /*int identifier;
+    tasks.at(identifier-1) = NULL;  //Zeiger im Vektor auf NULL setzen
+    db_c.deleteTask(identifier);    //Zeiger im Vektor der DB auch aktualisieren
+    //Position in LookupTable vermerken
+    lookUpTable.push_back(identifier);
+    db_c.save_position_in_LUT(identifier);
+    */
 }
 void task_manager::updateTask() {}
 

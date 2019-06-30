@@ -13,14 +13,11 @@ void database::start()
 
     setStarted(true);
 
+    loadFile();
     std::cout << getName() << " gestartet" << endl;
 
-    //loadFile();
-    /*
-    for(int i=0; i<lookUpTable.size(); ++i)
-    {
-        cout << lookUpTable.at(i) << endl;
-    }*/
+    /*for(int i=0; i<lookUpTable.size(); ++i)
+        cout << lookUpTable.at(i) << endl;*/
 }
 
 
@@ -87,9 +84,8 @@ void database::loadFile()
     task *newTask = new task();
     string line;
     string tag = "";             //Tag without Whitespaces
-    ifstream in("/home/frank/Dokumente/TI/5.Semester/Projekt/Structurly/src/datamodel/database.xml");
-    //Oeffnen klappt mit absolutem Pfad
-    //relativer Pfad ifstream in("../datamodel/database.xml");
+
+    ifstream in("../../database/database.xml");
 
     if(!in)
     {
@@ -319,7 +315,17 @@ task *database::loadTask(ifstream &in){
     out << "    </LookUpTable>\n";
 }*/
 
+/* READY
+void database::deleteTask(int position)
+{
+    tasks.at(position-1) = NULL;
+}
 
+void database::save_position_in_LUT(int identifier)
+{
+    lookUpTable.push_back(identifier);
+}
+*/
 
 void database::freeTasks()
 {
