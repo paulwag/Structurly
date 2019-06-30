@@ -16,38 +16,30 @@
         vector<task *> tasks;
         vector<int> lookUpTable;
 
+        void freeTasks();                                                   // Lieber als Funktion in .cpp und nicht als Methode??? (Peter)
+        task *loadTask(ifstream &in);
+
         public:
              database(string n) : controller_intf(n) {}
-             ~database()
-             {
-                 // Tasks im Vector freigeben
-             }
 
             /**
              * @brief Lädt die Daten aus einer XML-File
              */
             void start();
 
-            /**
-             * @brief Speichert die Daten in eine XML-File
-             */
+
+
+
             void stop(bool exit = false);
 
-            vector<task *> getTasks() {return tasks;}
-            vector<int>& getLookUpTable() {return lookUpTable;}
-
-            void loadFile();
-            task *loadTask(ifstream &in);
-            void loadLookUpTable(ifstream &in);
-            void loadCategories();
-
-            void addTasktoVektor(task *Task);
-
+            void save_task_in_DB(task *Task);
             void storeFile();
-            void storeTask();
-            void storeLookUpTable(ofstream &out);
-            void storeCategories();
-            void freeTasks();
+            void loadFile();
+            vector<task *> get_tasks_from_DB()  const {return tasks;}
+
+            //vector<int>& getLookUpTable() {return lookUpTable;}           // Lookup table stuff, WIP
+            //void loadLookUpTable(ifstream &in);
+            //void storeLookUpTable(ofstream &out);
     };
 
-#endif // DATABASE_H
+#endif

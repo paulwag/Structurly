@@ -15,7 +15,7 @@ void database::start()
 
     std::cout << getName() << " gestartet" << endl;
 
-    loadFile();
+    //loadFile();
     /*
     for(int i=0; i<lookUpTable.size(); ++i)
     {
@@ -32,22 +32,55 @@ void database::stop(bool exit)
 
     setStarted(false);
 
-    for (auto i : tasks)        //for debug
-    {
-        cout << i->get_identifier() << endl;
-        cout << i->get_title() << endl;
-        cout << i->get_description() << endl;
-    }
     storeFile();
     freeTasks();
     std::cout << getName() << " beendet" << endl;
 }
 
 
-void database::addTasktoVektor(task *Task)
+
+void database::save_task_in_DB(task *Task)
 {
     tasks.push_back(Task);                  //Task an Vektor anhaengen
 }
+
+
+
+void database::storeFile()
+{
+    // erstmal nur Tasks speichern
+    // ToDo: Probleme mit leeren Strings bei title, description, category aktuell fixed mit Space
+    //       storeTask() auslagern aus storeFile(), bzw nur fuer Schreiben eines Tasks an bestimmte Position
+
+    //ofstream out("database.xml");                                                                         // is saving database.xml in build/debug
+    ofstream out("../../database/database.xml");
+
+    out << "<Data>\n";
+    out << "    <Tasks>\n";
+
+    for (auto i: tasks)
+    {
+        out << "        <Task>\n";
+        out << "            <identifier>"   << i->get_identifier() << "</identifier>\n";
+        out << "            <title>"        << i->get_title() << " </title>\n";
+        out << "            <description>"  << i->get_description() << " </description>\n";
+        out << "            <priority>"     << i->get_priority_string() << "</priority>\n";
+        out << "            <date>"         << setfill('0') << setw(2) << i->get_date().get_day() << setfill('0') << setw(2) << i->get_date().get_month() << setfill('0') << setw(4) << i->get_date().get_year() << "</date>\n";
+        out << "            <startingtime>" << setfill('0') << setw(2) << i->get_startingtime().get_hour() << setfill('0') << setw(2) << i->get_startingtime().get_minute() << "</startingtime>\n";
+        out << "            <length>"       << i->get_length() << "</length>\n";
+        out << "            <repetition>"   << i->get_repetition_string() << "</repetition>\n";
+        out << "            <category>"     << i->get_category() << " </category>\n";
+        out << "        </Task>\n";
+    }
+    out << "    </Tasks>\n";
+
+    //storeLookUpTable(out);        //ready to test
+    out << "</Data>";
+
+    out.close();
+}
+
+
 
 void database::loadFile()
 {
@@ -82,10 +115,10 @@ void database::loadFile()
             tasks.push_back(newTask);
         }
 
-        if(tag == "<LookUpTable>")
+        /*if(tag == "<LookUpTable>")            // lookuptable stuff, WIP
         {
             loadLookUpTable(in);
-        }
+        }*/
         tag = "";
     }
 
@@ -239,7 +272,9 @@ task *database::loadTask(ifstream &in){
     return newTask;
 }
 
-void database::loadLookUpTable(ifstream &in)
+
+
+/*void database::loadLookUpTable(ifstream &in)
 {
     string tag;
     string line;
@@ -270,46 +305,11 @@ void database::loadLookUpTable(ifstream &in)
             lookUpTable.push_back(identifier);
         }
     }while(tag != "</LookUpTable>");
-}
+}*/
 
-void database::loadCategories()
-{
 
-}
 
-void database::storeFile() {
-    //erstmal nur Tasks speichern
-    // ToDo: Probleme mit leeren Strings bei title, description, category aktuell fixed mit Space
-    ofstream out("/home/frank/Dokumente/TI/5.Semester/Projekt/Structurly/src/datamodel/test.xml");      //for debugging
-
-    out << "<Data>\n";
-    out << "    <Tasks>\n";
-
-    for(auto i: tasks)
-    {
-        out << "        <Task>\n";
-        out << "            <identifier>"   << i->get_identifier() << "</identifier>\n";
-        out << "            <title>"        << i->get_title() << " </title>\n";
-        out << "            <description>"  << i->get_description() << " </description>\n";
-        out << "            <priority>"     << i->get_priority_string() << "</priority>\n";
-        out << "            <date>"         << setfill('0') << setw(2) << i->get_date().get_day() << setfill('0') << setw(2) << i->get_date().get_month() << setfill('0') << setw(4) << i->get_date().get_year() << "</date>\n";
-        out << "            <startingtime>" << setfill('0') << setw(2) << i->get_startingtime().get_hour() << setfill('0') << setw(2) << i->get_startingtime().get_minute() << "</startingtime>\n";
-        out << "            <length>"       << i->get_length() << "</length>\n";
-        out << "            <repetition>"   << i->get_repetition_string() << "</repetition>\n";
-        out << "            <category>"     << i->get_category() << " </category>\n";
-        out << "        </Task>\n";
-    }
-    out << "    </Tasks>\n";
-
-    //storeLookUpTable(out);        //ready to test
-    out << "</Data>";
-
-    out.close();
-}
-
-void database::storeTask(){} // auslagern aus storeFile() , bzw nur fuer Schreiben eines Tasks an bestimmte Position
-
-void database::storeLookUpTable(ofstream& out)
+/*void database::storeLookUpTable(ofstream& out)
 {
     out << "    <LookUpTable>\n";
     for(uint i=0; i<lookUpTable.size(); ++i)
@@ -317,8 +317,9 @@ void database::storeLookUpTable(ofstream& out)
         out << "        <identifier>" << lookUpTable.at(i) << "</identifier>\n";
     }
     out << "    </LookUpTable>\n";
-}
-void database::storeCategories(){}
+}*/
+
+
 
 void database::freeTasks()
 {

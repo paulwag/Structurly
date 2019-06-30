@@ -14,27 +14,18 @@
         vector<task *> tasks;
 
         public:
-             task_manager(string n) : controller_intf(n) {}
+            task_manager(string n) : controller_intf(n) {}
 
-            /**
-             * @brief start liest bei Start alle Daten aus der Datenbank aus (Paul) <-- Wichtig
-             */
             void start();
-
-            /**
-             * @brief stop speichert alle Daten bei Programmende (Paul) //unnötig, da neue Tasks sowieso sofort in die DB gespeichert werden (Peter)) // immer diese Umlaute....(Frank)
-             */
             void stop(bool exit = false);
 
-            vector<task *>& getTasks() {return tasks;}      //Referenz auf Vektor fuer calendar_manager
-            void createTask(string title, string description);
-            void printTasks();  // Kann später weg, wenn wirklich alles funktioniert (Peter)
+            vector<task *>& getTasks() {return tasks;}              // Referenz auf Vektor fuer calendar_manager
 
+            void createTask(string title, string description);
             void delTask();
             void updateTask();
 
-        private:
-            int createIdentifier();
+            void printTasks();                                      // Kann später weg, wenn wirklich alles funktioniert (Peter)
     };
 
 #endif // TASK_MANAGER_H

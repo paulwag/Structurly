@@ -1,9 +1,7 @@
 #include <iostream>
-#include "task_manager.h"
 #include "singletons.h"
 #include "task.h"
 
-// vector<int>& lookUpTable = db_c.getLookUpTable();   // reference to lookUpTable
 
 
 void task_manager::start()
@@ -13,8 +11,7 @@ void task_manager::start()
 
     setStarted(true);
 
-    // Hier müssen die Daten aus der Datenbank geladen werden (Und damit meine ich: geladen! Also keine Referenz darauf!)
-    tasks = db_c.getTasks(); //Peter sooooo? :P
+    tasks = db_c.get_tasks_from_DB();           // Tasks aus der Datenbank holen
 
     std::cout << getName() << " gestartet" << endl;
 }
@@ -27,6 +24,7 @@ void task_manager::stop(bool exit)
             return;
 
     setStarted(false);
+
     std::cout << getName() << " beendet" << endl;
 }
 
@@ -40,9 +38,8 @@ void task_manager::createTask(string title, string description)
     newTask->set_description(description);
     newTask->set_identifier(tasks.size()+1);
 
-    tasks.push_back(newTask);                   // In Vector speichern
-    db_c.addTasktoVektor(newTask);              // Task im Vektor der Datenbank Komponente speichern, nicht Pointer uebergeben sondern ganzen Task(wegen free)
-    //db_c.storeFile();                         // In Datenbank übertragen
+    tasks.push_back(newTask);                   // In eigenen Vector speichern
+    db_c.save_task_in_DB(newTask);              // In Datenbank Vektor speichern
 
 
 
@@ -91,3 +88,4 @@ int task_manager::createIdentifier()
     return identifier;
 }*/
 
+int createIdentifier() {}
