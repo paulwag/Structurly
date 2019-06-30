@@ -56,6 +56,8 @@ void task_manager::createTask(string title, string description)
         tasks.insert(tasks.begin() + identifier-1, newTask);  // Task an entsprechende Stelle fuegen
     }
     // restliche Eigenschaften setzen*/
+
+    // db_c.save_task_in_DB(newTask)                         // am Ende in DB auch speichern
 }
 
 
@@ -86,10 +88,10 @@ void task_manager::updateTask() {}
 /* Stuff vom Conflict (Peter)
 int task_manager::createIdentifier()
 {
-    int identifier = lookUpTable.at(1);     //gibt niedrigsten identifier zurueck
-    lookUpTable.erase(lookUpTable.begin());                   //aus lookUpTable entfernen
+    int identifier = lookUpTable.at(0);                       // gibt niedrigsten identifier zurueck
+    lookUpTable.erase(lookUpTable.begin());                   // aus lookUpTable entfernen
+    db_c.remove_from_LUT();                                   // evtl sinnvoller die LUT erst am Ende der DB zu geben
 
     return identifier;
 }*/
 
-int createIdentifier() {}

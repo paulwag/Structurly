@@ -39,6 +39,9 @@ void database::stop(bool exit)
 void database::save_task_in_DB(task *Task)
 {
     tasks.push_back(Task);                  //Task an Vektor anhaengen
+    // Erweiterung wenn Delete moeglich ist:
+    // int identifier = Task->get_identifier;
+    // tasks.insert(tasks.begin() + identifier-1, newTask);
 }
 
 
@@ -325,8 +328,13 @@ void database::save_position_in_LUT(int identifier)
 {
     lookUpTable.push_back(identifier);
 }
-*/
 
+
+void database::remove_from_LUT()
+{
+    lookUpTable.erase(lookUpTable.begin());
+}
+*/
 void database::freeTasks()
 {
     for(auto task: tasks)
