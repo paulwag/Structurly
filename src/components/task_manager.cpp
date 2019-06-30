@@ -11,8 +11,7 @@ void task_manager::start()
 
     setStarted(true);
 
-    tasks = db_c.get_tasks_from_DB();           // Tasks aus der Datenbank holen
-
+    tasks = db_c.get_tasks_from_DB();                           // Tasks aus der Datenbank holen
     std::cout << getName() << " gestartet" << endl;
 }
 
@@ -34,12 +33,12 @@ void task_manager::createTask(string title, string description)
 {
     task *newTask = new task();
 
-    newTask->set_title(title);                  // quick and dirty, sollte gleich beim Anlegen passieren, Konstruktor und so (Peter)
+    newTask->set_title(title);                                  // quick and dirty, sollte gleich beim Anlegen passieren, Konstruktor und so (Peter)
     newTask->set_description(description);
     newTask->set_identifier(tasks.size()+1);
 
-    tasks.push_back(newTask);                   // In eigenen Vector speichern
-    db_c.save_task_in_DB(newTask);              // In Datenbank Vektor speichern
+    tasks.push_back(newTask);                                   // In eigenen Vector speichern
+    db_c.save_task_in_DB(newTask);                              // In Datenbank Vektor speichern
 
 
 

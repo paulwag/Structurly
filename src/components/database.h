@@ -22,14 +22,7 @@
         public:
              database(string n) : controller_intf(n) {}
 
-            /**
-             * @brief Lädt die Daten aus einer XML-File
-             */
             void start();
-
-
-
-
             void stop(bool exit = false);
 
             void save_task_in_DB(task *Task);
