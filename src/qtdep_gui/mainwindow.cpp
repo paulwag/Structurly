@@ -80,8 +80,16 @@ void MainWindow::on_create_task_btn_clicked()
     task_in_timeline->setBackgroundColor("blue");
     ui->timeline_table->setItem(10, 1, task_in_timeline);*/
 
-    ic_c.set_task_parameter(ui->task_name_edit->text().toStdString(),
-                            ui->description_edit->toPlainText().toStdString());
+    // Parameter for task creation
+    std::string name = ui->task_name_edit->text().toStdString();
+    std::string description = ui->description_edit->toPlainText().toStdString();
+    int start_hour = ui->date_time_edit->time().hour();
+    int start_minute = ui->date_time_edit->time().minute();
+    int day = ui->date_time_edit->date().day();
+    int month = ui->date_time_edit->date().month();
+    int year = ui->date_time_edit->date().year();
+
+    ic_c.set_task_parameter(name, description, start_hour, start_minute, day, month, year);
     ic_c.button_pressed(BUT_CREATE);
 }
 

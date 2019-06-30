@@ -36,10 +36,11 @@ void input_controller::stop(bool exit)
 
 
 // /////////////////////////////////////////////////////////////////////////// Methods
-void input_controller::set_task_parameter(string t, string d)
+void input_controller::set_task_parameter(string name, string description, int hour, int minute, int day, int month, int year)
 {
-    task_title = t;
-    task_description = d;
+    task_title = name;
+    task_description = description;
+
 }
 
 void input_controller::button_pressed(int button)

@@ -228,14 +228,7 @@ color: #eee;</string>
         </widget>
        </item>
        <item>
-        <widget class="QTimeEdit" name="start_time_edit">
-         <property name="styleSheet">
-          <string notr="true">color: #eee;
-border: none;
-margin: 0 20px;
-</string>
-         </property>
-        </widget>
+        <widget class="QDateTimeEdit" name="date_time_edit"/>
        </item>
        <item>
         <widget class="QLabel" name="time_needed_label">
