@@ -1,6 +1,14 @@
 #include "calender_manager.h"
 
 
+// /////////////////////////////////////////////////////////////////////////// Singleton Stuff
+calender_manager calender_manager::cm_instance;
+calender_manager& calender_manager::get_instance()
+{
+    return cm_instance;
+}
+// ///////////////////////////////////////////////////////////////////////////
+
 
 void calender_manager::start()
 {

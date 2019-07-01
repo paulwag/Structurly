@@ -3,7 +3,7 @@
 #include "singletons.h"
 
 mainController mainCntrl("main_controller");                                    // Muss noch zum Singleton werden!!!
-calender_manager cm_c = calender_manager("calender_manager_component");         // Muss noch zum Singleton werden!!!
+calender_manager& cm_c = calender_manager::get_instance();         // Muss noch zum Singleton werden!!!
 database db_c = database("database_component");                                 // Muss noch zum Singleton werden!!!
 input_controller& ic_c = input_controller::get_instance();
 output_controller& oc_c = output_controller::get_instance();

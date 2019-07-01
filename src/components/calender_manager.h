@@ -9,8 +9,16 @@
 
     class calender_manager: public controller_intf
     {
+        calender_manager() : calender_manager("calender_manager") {}                // Singleton Stuff
+        calender_manager(string n) : controller_intf(n) {}
+
+        calender_manager(const calender_manager& orig) = delete;                    // Singleton: disable copy constructor
+        const calender_manager& operator= (const calender_manager& orig) = delete;  // Singleton: disable " operator
+
+        static calender_manager cm_instance;
+
         public:
-             calender_manager(string n) : controller_intf(n) {}
+            static calender_manager& get_instance();
 
             /**
              * @brief start zieht alle Tasks und laedt diese in Timelines
