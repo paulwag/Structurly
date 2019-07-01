@@ -3,7 +3,9 @@
 #include "task.h"
 
 
-
+// Frage allgemein: Wie wollen wir Aenderungen der Vektoren zwischen TaskManager und Database waehrend
+// der Laufzeit handlen? Entweder schickt Task Manager dann den Vektor(bad) oder ruft entsprechende Funktion in Database auf
+// "save_task_in_DB" - muss noch angepasst werden
 void task_manager::start()
 {
     if (getStarted())
@@ -85,7 +87,18 @@ void task_manager::delTask()
 }
 void task_manager::updateTask() {}
 
-/* Stuff vom Conflict (Peter)
+/*void task_manager::editTask(int identifier, string title, string description, tdate date, ttime starttime)
+{
+    tasks.at(identifier)->set_title(title);
+    tasks.at(identifier)->set_description(description);
+    tasks.at(identifier)->set_date(date);
+    tasks.at(identifier)->set_startingtime(starttime);
+    // ToDo Aenderung auch in DB speichern, nicht erst beim stoppen
+}
+
+
+
+ Stuff vom Conflict (Peter)
 int task_manager::createIdentifier()
 {
     int identifier = lookUpTable.at(0);                       // gibt niedrigsten identifier zurueck

@@ -27,6 +27,7 @@
             void createTask(string title, string description, tdate date, ttime starttime);
             void delTask();
             void updateTask();
+            //void editTask(int identifier);  //better name for changing a task(Frank)
 
             void printTasks();                                      // Kann später weg, wenn wirklich alles funktioniert (Peter)
     };
