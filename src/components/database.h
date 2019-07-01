@@ -31,7 +31,7 @@
             void loadFile();
             vector<task *> get_tasks_from_DB()  const {return tasks;}
 
-            //vector<int> getLookUpTable() {return lookUpTable;}           // Lookup table stuff, WIP
+            //vector<int> getLookUpTable() {return lookUpTable;}           //Preparation for deleted Tasks
             //void loadLookUpTable(ifstream &in);
             //void storeLookUpTable(ofstream &out);
 

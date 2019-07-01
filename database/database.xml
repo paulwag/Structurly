@@ -77,5 +77,16 @@
             <repetition>keine</repetition>
             <category></category>
         </Task>
+        <Task>
+            <identifier>8</identifier>
+            <title>Test</title>
+            <description>stil working</description>
+            <priority>none</priority>
+            <date>01002000</date>
+            <startingtime>0000</startingtime>
+            <length>0</length>
+            <repetition>keine</repetition>
+            <category></category>
+        </Task>
     </Tasks>
 </Data>

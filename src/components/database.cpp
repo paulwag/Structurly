@@ -39,7 +39,7 @@ void database::stop(bool exit)
 void database::save_task_in_DB(task *Task)
 {
     tasks.push_back(Task);                  //Task an Vektor anhaengen
-    // Erweiterung wenn Delete moeglich ist:
+    // Preparation for deleted Tasks
     // int identifier = Task->get_identifier;
     // tasks.insert(tasks.begin() + identifier-1, newTask);
 }
@@ -61,6 +61,7 @@ void database::storeFile()
 
     for (auto i: tasks)
     {
+        //if(i != NULL){        Preparation for deleted Tasks
         string random = "";
         out << "        <Task>\n";
         out << "            <identifier>"   << i->get_identifier() << "</identifier>\n";
@@ -73,6 +74,7 @@ void database::storeFile()
         out << "            <repetition>"   << i->get_repetition_string() << "</repetition>\n";
         out << "            <category>"     << i->get_category() << "</category>\n";
         out << "        </Task>\n";
+        //}                     Preparation for deleted Tasks
     }
     out << "    </Tasks>\n";
 
@@ -114,10 +116,21 @@ void database::loadFile()
         if(tag == "<Task>")
         {
             newTask = database::loadTask(in);
+            //if(newTask->identifier == (tasks.size() + 1))     Preparation for deleted Tasks
             tasks.push_back(newTask);
+
+            /*else                                              Preparation for deleted Tasks
+            {
+                //alles vor Task mit Identifier bekommt Nullzeiger
+                while(tasks.size() != (newTask->identifier - 1))
+                    tasks.push_back(NULL);
+
+                tasks.push_back(newTask);
+            }
+            */
         }
 
-        /*if(tag == "<LookUpTable>")            // lookuptable stuff, WIP
+        /*if(tag == "<LookUpTable>")                            Preparation for deleted Tasks
         {
             loadLookUpTable(in);
         }*/
@@ -276,7 +289,7 @@ task *database::loadTask(ifstream &in){
 
 
 
-/*void database::loadLookUpTable(ifstream &in)
+/*void database::loadLookUpTable(ifstream &in)          Preparation for deleted Tasks
 {
     string tag;
     string line;
@@ -311,7 +324,7 @@ task *database::loadTask(ifstream &in){
 
 
 
-/*void database::storeLookUpTable(ofstream& out)
+/*void database::storeLookUpTable(ofstream& out)            Preparation for deleted Tasks
 {
     out << "    <LookUpTable>\n";
     for(uint i=0; i<lookUpTable.size(); ++i)
@@ -322,18 +335,18 @@ task *database::loadTask(ifstream &in){
 }*/
 
 /* READY
-void database::deleteTask(int position)
+void database::deleteTask(int position)                     Preparation for deleted Tasks
 {
     tasks.at(position-1) = NULL;
 }
 
-void database::save_position_in_LUT(int identifier)
+void database::save_position_in_LUT(int identifier)         Preparation for deleted Tasks
 {
     lookUpTable.push_back(identifier);
 }
 
 
-void database::remove_from_LUT()
+void database::remove_from_LUT()                            Preparation for deleted Tasks
 {
     lookUpTable.erase(lookUpTable.begin());
 }
