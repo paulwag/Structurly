@@ -40,13 +40,24 @@ void input_controller::stop(bool exit)
 // /////////////////////////////////////////////////////////////////////////// Methods
 int input_controller::set_task_parameter(string title, string description, int hour, int minute, int day, int month, int year)
 {
+    int minute_to_set;
+
     if (check_task_parameter(title, description))
         return -1;
 
+    if (minute < 15)
+        minute_to_set = 0;
+    else if (minute < 30)
+        minute_to_set = 15;
+    else if (minute < 45)
+        minute_to_set = 30;
+    else
+        minute_to_set = 45;
+
     task_title = title;
     task_description = description;
-    task_date.set_date(day, minute, year);
-    task_time.set_time(hour, minute);
+    task_date.set_date(day, month, year);
+    task_time.set_time(hour, minute_to_set);
 
     return 0;
 }
