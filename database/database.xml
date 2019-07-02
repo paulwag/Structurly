@@ -1,7 +1,7 @@
 <Data>
     <Tasks>
         <Task>
-            <identifier>4</identifier>
+            <identifier>2</identifier>
             <title>time3</title>
             <description>time3</description>
             <priority>none</priority>
@@ -12,20 +12,20 @@
             <category>   </category>
         </Task>
         <Task>
-            <identifier>8</identifier>
+            <identifier>3</identifier>
             <title>Test</title>
-            <description>stil working</description>
+            <description>still working</description>
             <priority>none</priority>
-            <date>01002000</date>
-            <startingtime>0000</startingtime>
+            <date>29062019</date>
+            <startingtime>1930</startingtime>
             <length>0</length>
             <repetition>keine</repetition>
             <category></category>
         </Task>
         <Task>
-            <identifier>9</identifier>
+            <identifier>6</identifier>
             <title>test</title>
-            <description>9 minuten</description>
+            <description>09 minuten</description>
             <priority>none</priority>
             <date>01012001</date>
             <startingtime>1500</startingtime>
@@ -34,7 +34,7 @@
             <category></category>
         </Task>
         <Task>
-            <identifier>10</identifier>
+            <identifier>7</identifier>
             <title>test</title>
             <description>18 minuten</description>
             <priority>none</priority>
@@ -45,7 +45,7 @@
             <category></category>
         </Task>
         <Task>
-            <identifier>11</identifier>
+            <identifier>8</identifier>
             <title>test</title>
             <description>33 minuten</description>
             <priority>none</priority>
@@ -56,23 +56,12 @@
             <category></category>
         </Task>
         <Task>
-            <identifier>12</identifier>
+            <identifier>9</identifier>
             <title>test</title>
             <description>56 minuten</description>
             <priority>none</priority>
             <date>01012001</date>
             <startingtime>1545</startingtime>
-            <length>0</length>
-            <repetition>keine</repetition>
-            <category></category>
-        </Task>
-        <Task>
-            <identifier>7</identifier>
-            <title>Singleton</title>
-            <description>Database is now a Singleton</description>
-            <priority>none</priority>
-            <date>01012000</date>
-            <startingtime>0000</startingtime>
             <length>0</length>
             <repetition>keine</repetition>
             <category></category>

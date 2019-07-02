@@ -17,9 +17,8 @@
 
         public:
             timeline(int identifier);
-            ~timeline();
 
-            int get_identifier() const {return id;}
+            int get_id() const {return id;}
 
             void insert_task(task *new_task);
     };

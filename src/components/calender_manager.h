@@ -1,7 +1,9 @@
 #ifndef CALENDER_MANAGER_H
     #define CALENDER_MANAGER_H
 
+    #include <vector>
     #include "controller_intf.h"
+    #include "timeline.h"
 
     using namespace std;
 
@@ -17,6 +19,9 @@
 
         static calender_manager cm_instance;
 
+        vector<timeline *> timelines;
+
+
         public:
             static calender_manager& get_instance();
 
@@ -26,11 +31,11 @@
             void start();
 
             /**
-             * @brief stop
+             * @brief stop gibt Timelines frei.
              */
             void stop(bool exit = false);
 
             void updateTimelines();
     };
 
-#endif // CALENDER_MANAGER_H
+#endif
