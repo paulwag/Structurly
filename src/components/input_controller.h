@@ -19,7 +19,7 @@
         : controller_intf(n), task_title(""), task_description(""), task_date(0, 0, 0), task_time(0, 0) {}
 
         input_controller(const input_controller& orig) = delete;                    // Singleton: disable copy constructor
-        const input_controller& operator= (const input_controller& orig) = delete;  // Singleton: disable " operator
+        const input_controller& operator= (const input_controller& orig) = delete;  // Singleton: disable = operator
 
         static input_controller ic_instance;                                        // Singleton: important static
 
