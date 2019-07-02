@@ -13,6 +13,14 @@
 
     class database: public controller_intf
     {
+        database() : database("database") {}
+        database(string n) : controller_intf(n) {}
+
+        database(const database& orig) = delete;                    // Singleton: disable copy constructor
+        const database& operator= (const database& orig) = delete;  // Singleton: disable " operator
+
+        static database db_instance;
+
         vector<task *> tasks;
         vector<int> lookUpTable;
 
@@ -20,7 +28,7 @@
         task *loadTask(ifstream &in);
 
         public:
-             database(string n) : controller_intf(n) {}
+            static database& get_instance();
 
             void start();
             void stop(bool exit = false);

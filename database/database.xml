@@ -66,5 +66,16 @@
             <repetition>keine</repetition>
             <category></category>
         </Task>
+        <Task>
+            <identifier>7</identifier>
+            <title>Singleton</title>
+            <description>Database is now a Singleton</description>
+            <priority>none</priority>
+            <date>01012000</date>
+            <startingtime>0000</startingtime>
+            <length>0</length>
+            <repetition>keine</repetition>
+            <category></category>
+        </Task>
     </Tasks>
 </Data>

@@ -6,6 +6,12 @@
 
 using namespace std;
 
+database database::db_instance;
+database& database::get_instance()
+{
+    return db_instance;
+}
+
 void database::start()
 {
     if (getStarted())
