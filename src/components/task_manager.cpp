@@ -85,7 +85,7 @@ void task_manager::delTask()
 {
     //bekommt die Funktion als Parameter den Identifier(damit die Position im Vektor?)
     /*int identifier;
-    tasks.at(identifier-1) = NULL;  //Zeiger im Vektor auf NULL setzen
+    tasks.at(identifier-1) = nullptr;  //Zeiger im Vektor auf NULL setzen
     db_c.deleteTask(identifier);    //Zeiger im Vektor der DB auch aktualisieren
     //Position in LookupTable vermerken
     lookUpTable.push_back(identifier);
