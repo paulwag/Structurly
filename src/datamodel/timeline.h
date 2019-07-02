@@ -12,15 +12,16 @@
 
     class timeline
     {
-        vector<task *> timeslots;   // muss im constructor mit NULL initialisiert werden
         int id;                     // wird im constructor gesetzt, anschließend fix
+        vector<task *> timeslots;   // muss im constructor mit NULL initialisiert werden
 
         public:
             timeline(int identifier);
+            ~timeline();
 
-            int get_identifier() const {return identifier;}
+            int get_identifier() const {return id;}
 
-            void instert_task(task *new_task);
+            void insert_task(task *new_task);
     };
 
 #endif

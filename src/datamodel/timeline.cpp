@@ -3,18 +3,18 @@
 
 
 timeline::timeline(int identifier)
-: id(identifiert)
+: id(identifier)
 {
     for (int i = 0; i < MAXSLOTS; i++)      // set 96 empty timeslots
-        timeslots.push_back(nullprt);
+        timeslots.push_back(nullptr);
 }
 
 
 
 void timeline::insert_task(task *new_task)
 {
-    int hour = new_task->get_starttime().get_hour;
-    int minute = new_task->get_starttime().get_minute;
+    int hour = new_task->get_startingtime().get_hour();
+    int minute = new_task->get_startingtime().get_minute();
 
     int minute_offset;
     if (minute == 0)
@@ -26,6 +26,6 @@ void timeline::insert_task(task *new_task)
     else
         minute_offset = 3;
 
-    int slot = (4*hour) + minute_offset;
+    unsigned long slot = static_cast<unsigned long>(4*hour + minute_offset);
     timeslots.at(slot) = new_task;
 }
