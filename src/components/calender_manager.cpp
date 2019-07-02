@@ -4,7 +4,7 @@
 using namespace std;
 
 int calc_id(tdate date);
-int tl_existing(int id, vector<timeline *> &timelines);
+timeline *check_for_tl_existence(const int id, vector<timeline *> &timelines);
 
 
 
@@ -25,14 +25,15 @@ void calender_manager::start()
     setStarted(true);
 
     int id;
-    timeline *new_tl;
+    timeline *new_tl, *existing;
     vector<task *> tasks_from_task_manager = tm_c.getTasks();
 
     for (auto task: tasks_from_task_manager)
     {
         id = calc_id(task->get_date());
+        existing = check_for_tl_existence(id, timelines);
 
-        if (tl_existing(id, timelines))
+        if (existing)
         {
             // insert taks in existing timeline
         }
@@ -79,13 +80,13 @@ int calc_id(tdate date)
     return id;
 }
 
-int tl_existing(const int id, vector<timeline *> &timelines)
+timeline *check_for_tl_existence(const int id, vector<timeline *> &timelines)
 {
     for (auto tl: timelines)
     {
         if (tl->get_id() == id)
-            return 1;
+            return tl;
     }
 
-    return 0;
+    return nullptr;
 }
