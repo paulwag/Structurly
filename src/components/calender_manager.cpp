@@ -3,7 +3,6 @@
 
 using namespace std;
 
-int calc_id(tdate date);
 timeline *check_for_tl_existence(const int id, vector<timeline *> &timelines);
 
 

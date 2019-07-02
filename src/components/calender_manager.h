@@ -7,6 +7,7 @@
 
     using namespace std;
 
+    int calc_id(tdate date);    // Prototyp, wird auch im output_controller benoetigt
 
 
     class calender_manager: public controller_intf

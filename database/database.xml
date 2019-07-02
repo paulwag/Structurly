@@ -1,6 +1,17 @@
 <Data>
     <Tasks>
         <Task>
+            <identifier>1</identifier>
+            <title>Pauls Geburtstag</title>
+            <description>HAPPY BIRTHDAY!!!!</description>
+            <priority>none</priority>
+            <date>02072019</date>
+            <startingtime>2000</startingtime>
+            <length>0</length>
+            <repetition>keine</repetition>
+            <category></category>
+        </Task>
+        <Task>
             <identifier>2</identifier>
             <title>time3</title>
             <description>time3</description>
@@ -9,7 +20,7 @@
             <startingtime>1930</startingtime>
             <length>0</length>
             <repetition>keine</repetition>
-            <category>   </category>
+            <category></category>
         </Task>
         <Task>
             <identifier>3</identifier>
