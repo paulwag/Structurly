@@ -13,11 +13,19 @@
 
     class task_manager: public controller_intf
     {
+        task_manager() : task_manager("task_manager") {}
+        task_manager(string n) : controller_intf(n) {}
+
+        task_manager(const task_manager& orig) = delete;                    // Singleton: disable copy constructor
+        const task_manager& operator= (const task_manager& orig) = delete;  // Singleton: disable " operator
+
+        static task_manager task_manager_instance;
+
         vector<task *> tasks;
         //vector<int> lookUpTable;
 
         public:
-            task_manager(string n) : controller_intf(n) {}
+            static task_manager& get_instance();
 
             void start();
             void stop(bool exit = false);
