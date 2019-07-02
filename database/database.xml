@@ -1,39 +1,6 @@
 <Data>
     <Tasks>
         <Task>
-            <identifier>1</identifier>
-            <title>task1</title>
-            <description>beschreibung1</description>
-            <priority>none</priority>
-            <date>00000000</date>
-            <startingtime>9999</startingtime>
-            <length>0</length>
-            <repetition>keine</repetition>
-            <category>                   </category>
-        </Task>
-        <Task>
-            <identifier>2</identifier>
-            <title>task2</title>
-            <description>beschreibung2</description>
-            <priority>none</priority>
-            <date>00000000</date>
-            <startingtime>9999</startingtime>
-            <length>0</length>
-            <repetition>keine</repetition>
-            <category>                   </category>
-        </Task>
-        <Task>
-            <identifier>3</identifier>
-            <title>time1</title>
-            <description>timetest1</description>
-            <priority>none</priority>
-            <date>00000000</date>
-            <startingtime>9999</startingtime>
-            <length>0</length>
-            <repetition>keine</repetition>
-            <category>        </category>
-        </Task>
-        <Task>
             <identifier>4</identifier>
             <title>time3</title>
             <description>time3</description>
@@ -43,39 +10,6 @@
             <length>0</length>
             <repetition>keine</repetition>
             <category>   </category>
-        </Task>
-        <Task>
-            <identifier>5</identifier>
-            <title>time5</title>
-            <description>time5</description>
-            <priority>none</priority>
-            <date>05052005</date>
-            <startingtime>0505</startingtime>
-            <length>0</length>
-            <repetition>keine</repetition>
-            <category> </category>
-        </Task>
-        <Task>
-            <identifier>6</identifier>
-            <title>time6</title>
-            <description>time6</description>
-            <priority>none</priority>
-            <date>06062006</date>
-            <startingtime>0606</startingtime>
-            <length>0</length>
-            <repetition>keine</repetition>
-            <category></category>
-        </Task>
-        <Task>
-            <identifier>7</identifier>
-            <title>asdf</title>
-            <description>fdsa</description>
-            <priority>none</priority>
-            <date>01012001</date>
-            <startingtime>0101</startingtime>
-            <length>0</length>
-            <repetition>keine</repetition>
-            <category></category>
         </Task>
         <Task>
             <identifier>8</identifier>
