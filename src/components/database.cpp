@@ -67,7 +67,7 @@ void database::storeFile()
 
     for (auto i: tasks)
     {
-        //if(i != NULL){        Preparation for deleted Tasks
+        //if(i != nullptr){        Preparation for deleted Tasks
         string random = "";
         out << "        <Task>\n";
         out << "            <identifier>"   << i->get_identifier() << "</identifier>\n";
@@ -129,7 +129,7 @@ void database::loadFile()
             {
                 //alles vor Task mit Identifier bekommt Nullzeiger
                 while(tasks.size() != (newTask->identifier - 1))
-                    tasks.push_back(NULL);
+                    tasks.push_back(nullptr);
 
                 tasks.push_back(newTask);
             }
@@ -343,7 +343,7 @@ task *database::loadTask(ifstream &in){
 /* READY
 void database::deleteTask(int position)                     Preparation for deleted Tasks
 {
-    tasks.at(position-1) = NULL;
+    tasks.at(position-1) = nullptr;
 }
 
 void database::save_position_in_LUT(int identifier)         Preparation for deleted Tasks

@@ -6,6 +6,13 @@
 // Frage allgemein: Wie wollen wir Aenderungen der Vektoren zwischen TaskManager und Database waehrend
 // der Laufzeit handlen? Entweder schickt Task Manager dann den Vektor(bad) oder ruft entsprechende Funktion in Database auf
 // "save_task_in_DB" - muss noch angepasst werden
+
+task_manager task_manager::task_manager_instance;
+task_manager& task_manager::get_instance()
+{
+    return task_manager_instance;
+}
+
 void task_manager::start()
 {
     if (getStarted())
@@ -78,7 +85,7 @@ void task_manager::delTask()
 {
     //bekommt die Funktion als Parameter den Identifier(damit die Position im Vektor?)
     /*int identifier;
-    tasks.at(identifier-1) = NULL;  //Zeiger im Vektor auf NULL setzen
+    tasks.at(identifier-1) = nullptr;  //Zeiger im Vektor auf NULL setzen
     db_c.deleteTask(identifier);    //Zeiger im Vektor der DB auch aktualisieren
     //Position in LookupTable vermerken
     lookUpTable.push_back(identifier);
