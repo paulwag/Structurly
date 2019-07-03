@@ -34,15 +34,12 @@ void calender_manager::start()
 
         if (existing)
         {
-            // insert taks in existing timeline
             existing->insert_task(task);
-
         }
         else
         {
             new_tl = new timeline(id);
             new_tl->insert_task(task);
-            // insert taks in new timeline
             timelines.push_back(new_tl);
         }
 
@@ -69,10 +66,8 @@ void calender_manager::stop(bool exit)
     setStarted(false);
 
     for (auto tl : timelines)
-    {
-        cout << "CM: Timeline ID(" << tl->get_id() << ") wird geloescht..." << endl;
         delete tl;
-    }
+
     std::cout << getName() << " beendet" << endl;
 }
 

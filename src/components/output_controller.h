@@ -33,14 +33,16 @@
             void start();
             void stop(bool exit = false);
 
-            void set_tl_for_gui(timeline *tl)                       {tl_for_gui = tl;}
             void set_date_seen_on_gui(int day, int month, int year) {date_seen_on_gui.set_date(day, month, year);}
+            void set_tl_for_gui(timeline *tl)                       {tl_for_gui = tl;}
+
+            timeline *get_timeline_for_gui() const {return tl_for_gui;}
 
             //changeStates getChangeFlag() { return changeFlag; }
             //void setChangeFlag(changeStates new_state) { changeFlag = new_state; }
 
             void update_gui_new_task();                                                 // nachdem Timeline vom calenderManager übergeben -> gui refresh
-            void update_gui_date_changed();                                             // nachdem ein anderes Datum in der gui ausgewaehlt -> gui refresh
+            int update_gui_date_changed();                                             // nachdem ein anderes Datum in der gui ausgewaehlt -> gui refresh
 
             /* Erklaerung:
              * Fall 1:  start()
@@ -52,7 +54,7 @@
              *          - gui ruft update_gui_date_changed auf:
              *              - output_controller holt sich alle daten, die im calenderManager vorhanden sind
              *              - output_controller durchsucht diese timelines und zeigt (irgendwie) den timeline des ausgewählten tages in der gui an
-             * Fall 2:  timeline wurde aktualisiert, weil neuer task wird angelegt wurde
+             * Fall 3:  timeline wurde aktualisiert, weil neuer task wird angelegt wurde
              *          - calenderManager setzt tl_for_gui auf die aktualisierte timeline
              *          - calenderManager ruft update_gui_date_changed auf:
              *              - output_controller checkt, ob die aktualisierte timeline gerade überhaupt auf der gui zu sehen ist

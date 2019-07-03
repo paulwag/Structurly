@@ -9,7 +9,7 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include "singletons.h"
-#include "input_controller.h"
+#include "timeline.h"
 
 
 
@@ -103,7 +103,7 @@ void MainWindow::launch() {
         }
 }
 void MainWindow::timelineChanged() {
-    oc_c.update_gui_date_changed();
+    oc_c.update_gui_date_changed(); // wenn überhaupt: get_timeline_for_gui(), die timeline auseinandernehmen, anzeigen
 }*/
 
 
@@ -136,13 +136,18 @@ void MainWindow::on_printTasks_clicked()
 
 void MainWindow::on_calendar_selectionChanged()
 {
-    QDate date = ui->calendar->selectedDate();
-    int day = date.day();
-    int month = date.month();
-    int year = date.year();
 
-    oc_c.set_date_seen_on_gui(day, month, year);
-    oc_c.update_gui_date_changed();
+    QDate date = ui->calendar->selectedDate();
+
+    oc_c.set_date_seen_on_gui(date.day(), date.month(), date.year());
+
+    if (oc_c.update_gui_date_changed())
+    {
+        timeline *tl = oc_c.get_timeline_for_gui();
+        cout << "gui hat timeline (ID: " << tl->get_id() << ") erhalten" << endl;
+    }
+
+    // Tasks aus der Timeline auslesen und in der tabelle anzeigen lassen
 }
 
 void MainWindow::closeEvent(QCloseEvent *event)
