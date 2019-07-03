@@ -1,5 +1,6 @@
 #include <iostream>
 #include <QTableWidget>
+#include <QDateTime>
 #include <QHeaderView>
 #include <QApplication>
 #include <QtGui>
@@ -42,6 +43,22 @@ void MainWindow::launch() {
     tableWidget->setShowGrid(false);
     tableWidget->setContentsMargins(0,0,0,0);
 
+    QDateTime cur_date_time = QDateTime::currentDateTime();     // aktuelles Datum + Uhrzeit System
+
+    ui->day_edit->setValue(cur_date_time.date().day());                     // aktuelles Datum und Uhrzeit als Standardeinstellung bei Taskerstellung
+    ui->month_edit->setValue( cur_date_time.date().month());
+    ui->year_edit->setValue( cur_date_time.date().year());
+    ui->hour_edit->setValue(cur_date_time.time().hour());
+    ui->minute_edit->setValue(cur_date_time.time().minute());
+
+    // Construct timeline label
+    std::string timeline_label = "Timeline ";
+    timeline_label += std::to_string(cur_date_time.date().day()) + ".";       // Tag hinzufügen
+    timeline_label += std::to_string(cur_date_time.date().month()) + ".";       // Tag hinzufügen
+    timeline_label += std::to_string(cur_date_time.date().year()) + ".";       // Tag hinzufügen
+    ui->timeline_date->setText(QString::fromStdString(timeline_label));
+
+
     int current_hour = 0;                                                       // Zeit aufbauen
     for(int i = 0; i < 96; i++)
     {
@@ -83,14 +100,19 @@ void MainWindow::on_create_task_btn_clicked()
     // Parameter for task creation
     std::string name = ui->task_name_edit->text().toStdString();
     std::string description = ui->description_edit->toPlainText().toStdString();
-    int start_hour = ui->date_time_edit->time().hour();
-    int start_minute = ui->date_time_edit->time().minute();
-    int day = ui->date_time_edit->date().day();
-    int month = ui->date_time_edit->date().month();
-    int year = ui->date_time_edit->date().year();
+    int start_hour = ui->hour_edit->value();
+    int start_minute = ui->minute_edit->value();
+    int day = ui->day_edit->value();
+    int month = ui->month_edit->value();
+    int year = ui->year_edit->value();
 
+<<<<<<< Updated upstream
     if (ic_c.set_task_parameter(name, description, start_hour, start_minute, day, month, year) == 0)
         ic_c.button_pressed(BUT_CREATE);
+=======
+    ic_c.set_task_parameter(name, description, start_hour, start_minute, day, month, year);
+    ic_c.button_pressed(BUT_CREATE);
+>>>>>>> Stashed changes
 }
 
 void MainWindow::on_printTasks_clicked()
