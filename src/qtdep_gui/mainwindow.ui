@@ -28,7 +28,7 @@
      <rect>
       <x>20</x>
       <y>10</y>
-      <width>1102</width>
+      <width>1146</width>
       <height>685</height>
      </rect>
     </property>
@@ -61,8 +61,8 @@ background-color: #2D2D2D;</string>
          <rect>
           <x>0</x>
           <y>0</y>
-          <width>316</width>
-          <height>475</height>
+          <width>266</width>
+          <height>438</height>
          </rect>
         </property>
         <widget class="QTableWidget" name="timeline_table">
@@ -157,6 +157,9 @@ color: #EA526F;</string>
            <horstretch>0</horstretch>
            <verstretch>0</verstretch>
           </sizepolicy>
+         </property>
+         <property name="mouseTracking">
+          <bool>false</bool>
          </property>
          <property name="autoFillBackground">
           <bool>false</bool>
@@ -622,7 +625,7 @@ height: 50px;
      <x>0</x>
      <y>0</y>
      <width>1146</width>
-     <height>22</height>
+     <height>23</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuStructurly">

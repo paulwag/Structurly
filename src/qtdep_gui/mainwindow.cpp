@@ -59,8 +59,6 @@ void MainWindow::launch() {
     timeline_label += std::to_string(cur_date_time.date().year()) + ".";       // Tag hinzufügen
     ui->timeline_date->setText(QString::fromStdString(timeline_label));
 
-    oc_c.set_date_seen_on_gui(cur_date_time.date().day(), cur_date_time.date().month(), cur_date_time.date().year());    // set current date in Output Controller
-
     int current_hour = 0;                                                       // Zeit aufbauen
     for(int i = 0; i < 96; i++)
     {
@@ -89,13 +87,13 @@ void MainWindow::launch() {
     tableWidget->setItem(10, 1, new QTableWidgetItem("Task 1"));
 
     // /// create Update Timer
-    QTimer *timer = new QTimer(this);
-    connect(timer, SIGNAL(timeout()), this, SLOT(checkForUpdate()));
-    timer->start(500);
+    //QTimer *timer = new QTimer(this);
+    //connect(timer, SIGNAL(timeout()), this, SLOT(checkForUpdate()));
+    //timer->start(500);
 }
 
 // /////////////////////////////////////////////////////////////////////////////// Update functions
-void MainWindow::checkForUpdate() {
+/*void MainWindow::checkForUpdate() {
         switch(oc_c.getChangeFlag()) {
             case 0:                                         // no changes
                 break;
@@ -106,7 +104,7 @@ void MainWindow::checkForUpdate() {
 }
 void MainWindow::timelineChanged() {
     oc_c.update_gui_date_changed();
-}
+}*/
 
 
 // /////////////////////////////////////////////////////////////////////////////// slot events
@@ -136,9 +134,22 @@ void MainWindow::on_printTasks_clicked()
     ic_c.button_pressed(BUT_PRINT);
 }
 
+void MainWindow::on_calendar_selectionChanged()
+{
+    QDate date = ui->calendar->selectedDate();
+    int day = date.day();
+    int month = date.month();
+    int year = date.year();
+
+    oc_c.set_date_seen_on_gui(day, month, year);
+    oc_c.update_gui_date_changed();
+}
+
 void MainWindow::closeEvent(QCloseEvent *event)
 {
     mainCntrl.stop();                                                           // clean up
     event->accept();                                                            // accept finally closes app, event->ignore() would keep it open
 }
+
+
 

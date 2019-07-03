@@ -19,21 +19,21 @@
 
             void launch();
 
-        public slots:
-            void checkForUpdate();
+        //public slots:
+            //void checkForUpdate();
 
         private slots:
             void on_create_task_btn_clicked();
             void on_printTasks_clicked();
+            void on_calendar_selectionChanged();
 
-            //void keyPressEvent(QKeyEvent *event);       // Aufgerufen???
             void closeEvent(QCloseEvent *event);        // Aufgerufen beim Schließen des Fensters
 
     private:
             Ui::MainWindow *ui;
 
-            // Update functionen
-            void timelineChanged();
+            // // Update functionen
+            //void timelineChanged();
     };
 
 #endif

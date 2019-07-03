@@ -8,6 +8,10 @@
 
     using namespace std;
 
+    enum changeStates { no_changes, new_timeline };               // possible states of change
+
+
+
     class output_controller: public controller_intf
     {
         output_controller() : output_controller("output_controller") {}
@@ -21,8 +25,7 @@
 
         tdate date_seen_on_gui;                                                         // Tag, der gerade auf der GUI zu sehen ist
         timeline *tl_for_gui;                                                           // Timeline, die sich geändert hat, übergeben
-        enum changeStates { no_changes, new_timeline };               // possible states of change
-        changeStates changeFlag = no_changes;                              // change Flag
+        //changeStates changeFlag = no_changes;                              // change Flag
 
         public:
             static output_controller& get_instance();
@@ -33,8 +36,8 @@
             void set_tl_for_gui(timeline *tl)                       {tl_for_gui = tl;}
             void set_date_seen_on_gui(int day, int month, int year) {date_seen_on_gui.set_date(day, month, year);}
 
-            changeStates getChangeFlag() { return changeFlag; }
-            void setChangeFlag(changeStates new_state) { changeFlag = new_state; }
+            //changeStates getChangeFlag() { return changeFlag; }
+            //void setChangeFlag(changeStates new_state) { changeFlag = new_state; }
 
             void update_gui_new_task();                                                 // nachdem Timeline vom calenderManager übergeben -> gui refresh
             void update_gui_date_changed();                                             // nachdem ein anderes Datum in der gui ausgewaehlt -> gui refresh
@@ -65,7 +68,6 @@
              *        2. a) timelineChanged ruft oc_c.update_gui_date_changed und erhält ein entsprechendes Array für tag zurück
              *        2. b) timelineChanged updated mit dem Array die ui timeline
              *  3. UI ruft setChangeFlag auf und setzt es auf no_changes
-             * PS: Hab setze bei launch von mainWindow jetzt das aktuelle Datum hier
              */
     };
 
