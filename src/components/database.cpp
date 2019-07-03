@@ -85,7 +85,7 @@ void database::storeFile()
     out << "    </Tasks>\n";
 
     //storeLookUpTable(out);        //ready to test
-    out << "</Data>";
+    out << "</Data>\n";
 
     out.close();
 }
