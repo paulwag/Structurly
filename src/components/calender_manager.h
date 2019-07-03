@@ -30,6 +30,8 @@
             void stop(bool exit = false);
 
             void updateTimelines();
+
+            vector<timeline *> get_timelines() const {return timelines;}
     };
 
 #endif

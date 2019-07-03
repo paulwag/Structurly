@@ -35,10 +35,13 @@ void calender_manager::start()
         if (existing)
         {
             // insert taks in existing timeline
+            existing->insert_task(task);
+
         }
         else
         {
             new_tl = new timeline(id);
+            new_tl->insert_task(task);
             // insert taks in new timeline
             timelines.push_back(new_tl);
         }
@@ -46,6 +49,16 @@ void calender_manager::start()
     }
 
     cout << getName() << " gestartet" << endl;
+/*
+    //YEAH Timelines with tasks!!!!!!!11!!1!
+    for(auto test: timelines){
+        cout << "Timeline: " << test->get_id() << endl;
+        for(int i = 0; i < MAXSLOTS; i++){
+            task *x;
+            if((x = test->get_task(i)))
+                cout << "\tTask: "<< x->get_title() << endl;
+        }
+    }*/
 }
 
 void calender_manager::stop(bool exit)

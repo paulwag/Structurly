@@ -21,6 +21,11 @@
             int get_id() const {return id;}
 
             void insert_task(task *new_task);
+            /*
+             *  get_task returns *task, needs a slot (0-95) as index
+             *  ts : index
+             */
+            task *get_task(int ts);
     };
 
 #endif

@@ -98,6 +98,7 @@ void database::loadFile()
     string line;
     string tag = "";             //Tag without Whitespaces
 
+    //ifstream in("../../../../../database/database.xml");
     ifstream in("../../database/database.xml");
     //ifstream in("../../database/test.xml");
 
