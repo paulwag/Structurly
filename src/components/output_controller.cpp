@@ -63,5 +63,6 @@ void output_controller::update_gui_date_changed()
     //    }
     //}
 
-    // irgendwie an die elemente der GUI kommen und Daten übergeben
+    // Daten an GUI übergeben (Array mit 96 Slots und Namen dazu)
+    // return 96 Slots mit Namen
 }

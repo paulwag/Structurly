@@ -19,6 +19,9 @@
 
             void launch();
 
+        public slots:
+            void checkForUpdate();
+
         private slots:
             void on_create_task_btn_clicked();
             void on_printTasks_clicked();
@@ -28,6 +31,9 @@
 
     private:
             Ui::MainWindow *ui;
+
+            // Update functionen
+            void timelineChanged();
     };
 
 #endif

@@ -4,6 +4,7 @@
 #include <QHeaderView>
 #include <QApplication>
 #include <QtGui>
+#include <QTimer>
 
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
@@ -58,6 +59,7 @@ void MainWindow::launch() {
     timeline_label += std::to_string(cur_date_time.date().year()) + ".";       // Tag hinzufügen
     ui->timeline_date->setText(QString::fromStdString(timeline_label));
 
+    oc_c.set_date_seen_on_gui(cur_date_time.date().day(), cur_date_time.date().month(), cur_date_time.date().year());    // set current date in Output Controller
 
     int current_hour = 0;                                                       // Zeit aufbauen
     for(int i = 0; i < 96; i++)
@@ -85,6 +87,25 @@ void MainWindow::launch() {
         tableWidget->setItem(i, 1, new QTableWidgetItem(""));
     }
     tableWidget->setItem(10, 1, new QTableWidgetItem("Task 1"));
+
+    // /// create Update Timer
+    QTimer *timer = new QTimer(this);
+    connect(timer, SIGNAL(timeout()), this, SLOT(checkForUpdate()));
+    timer->start(500);
+}
+
+// /////////////////////////////////////////////////////////////////////////////// Update functions
+void MainWindow::checkForUpdate() {
+        switch(oc_c.getChangeFlag()) {
+            case 0:                                         // no changes
+                break;
+            case 1:                                         // new_timeline
+                timelineChanged();
+                break;
+        }
+}
+void MainWindow::timelineChanged() {
+    oc_c.update_gui_date_changed();
 }
 
 
@@ -106,13 +127,8 @@ void MainWindow::on_create_task_btn_clicked()
     int month = ui->month_edit->value();
     int year = ui->year_edit->value();
 
-<<<<<<< Updated upstream
     if (ic_c.set_task_parameter(name, description, start_hour, start_minute, day, month, year) == 0)
         ic_c.button_pressed(BUT_CREATE);
-=======
-    ic_c.set_task_parameter(name, description, start_hour, start_minute, day, month, year);
-    ic_c.button_pressed(BUT_CREATE);
->>>>>>> Stashed changes
 }
 
 void MainWindow::on_printTasks_clicked()
