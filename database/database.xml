@@ -77,5 +77,27 @@
             <repetition>keine</repetition>
             <category></category>
         </Task>
+        <Task>
+            <identifier>10</identifier>
+            <title>Wichtiger als Pauls BDay</title>
+            <description>Waesche beim waschen zuschauen</description>
+            <priority>none</priority>
+            <date>02072019</date>
+            <startingtime>1500</startingtime>
+            <length>0</length>
+            <repetition>keine</repetition>
+            <category></category>
+        </Task>
+        <Task>
+            <identifier>11</identifier>
+            <title>03.07.2019 Arbeit Arbeit</title>
+            <description>Arbeit ist vollbracht!</description>
+            <priority>none</priority>
+            <date>03072019</date>
+            <startingtime>0800</startingtime>
+            <length>0</length>
+            <repetition>keine</repetition>
+            <category></category>
+        </Task>
     </Tasks>
 </Data>

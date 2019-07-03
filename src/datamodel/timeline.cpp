@@ -29,3 +29,11 @@ void timeline::insert_task(task *new_task)
     unsigned long slot = static_cast<unsigned long>(4*hour + minute_offset);
     timeslots.at(slot) = new_task;
 }
+
+task *timeline::get_task(int ts){
+    if(timeslots[ts]){
+        return timeslots[ts];
+    }
+    return nullptr;
+}
+

@@ -52,16 +52,18 @@ void output_controller::update_gui_date_changed()
     int today_id = calc_id(date_seen_on_gui);                                       // id vom in der gui angezeigten tag berechnen
     cout << "OC: neue ID von gui: " << today_id << endl;
 
-    //vector<timeline *> timelines_from_calender_manager = cm_c.get_timelines();    // alle vorhandenen Timelines laden
+    //Der Stuff lauft soweit, der oc bekommt saemtliche aus der Database geladene Timelines
+    vector<timeline *> timelines_from_calender_manager = cm_c.get_timelines();    // alle vorhandenen Timelines laden
+    timeline* tl_for_update = nullptr;
 
-    //for (auto tl: timelines_from_calender_manager)                                // timeleines durchgehen und schauen, ob es für den tag eine gibt
-    //{
-    //    if (tl->get_id() == today_id)                                             // wenn ja -> zum updaten vormerken...
-    //    {
-    //        tl_for_update = tl;
-    //        break;
-    //    }
-    //}
+    for (auto tl: timelines_from_calender_manager)                                // timeleines durchgehen und schauen, ob es für den tag eine gibt
+    {
+        if (tl->get_id() == today_id)                                             // wenn ja -> zum updaten vormerken...
+        {
+            tl_for_update = tl;
+            break;
+        }
+    }
 
     // Daten an GUI übergeben (Array mit 96 Slots und Namen dazu)
     // return 96 Slots mit Namen
