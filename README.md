@@ -15,7 +15,7 @@ Dieses Projekt ist als Semesterprojektarbeit im Modul Software Engineering II an
 
 ## Benutzung :point_down:
 
->Für die Erstellung von ** Structurly ** wurde die IDE 'Qt Creator' verwendet.
+>Für die Erstellung von **Structurly** wurde die IDE 'Qt Creator' verwendet.
 Die *.pro-Dateien können mit dieser IDE geöffnet werden und müssen vom User
 anschließend konfiguriert werden:
 
@@ -24,13 +24,13 @@ anschließend konfiguriert werden:
 
 ## Workaround für Mac-User :exclamation: 
 
->Der relative Pfad für die Datenbank(XML-Datei) muss in der * database.cpp * in
-void database::storeFile() und void database::loadFile() verändert werden!
-Also --> ifstream in("../../../../../database/database.xml")
+>Der relative Pfad für die Datenbank(XML-Datei) muss in der *database.cpp* in/
+*void database::storeFile()* und *void database::loadFile()* verändert werden!/
+Also --> ifstream in("../../../../../database/database.xml")/
 Die entsprechende Variante auswählen und die andere auskommentieren.
 
 ## Autoren: :busts_in_silhouette:
-* Frank Ehlert (@
+* Frank Ehlert 
 * Peter Hanne
 * Dawid Kohl
 * Paul Wagner <br/>
