@@ -48,6 +48,7 @@
             void set_timeline_label(QDate date);
             void showTimeline();
             void showTimeline(timeline* tl);
+            void resetInputs();
 
             QTableWidget* tableWidget = new QTableWidget (96, 2, this);                                      //Timeline erstellen
 

@@ -94,6 +94,16 @@ void MainWindow::showTimeline() {
         tableWidget->setItem(int (i), 1, new QTableWidgetItem(""));
 }
 
+void MainWindow::resetInputs() {
+    ui->name_edit->setText("");
+    ui->description_edit->setText("");
+
+    QDate date = QDate::currentDate();
+    ui->date_edit->setDate(date);
+    QTime time = QTime::currentTime();
+    ui->time_edit->setTime(time);
+}
+
 // /////////////////////////////////////////////////////////////////////////////// slot events
 void MainWindow::closeEvent(QCloseEvent *event)
 {
@@ -115,6 +125,8 @@ void MainWindow::on_calendarWidget_selectionChanged()
         showTimeline(tl);
     } else
         showTimeline();
+
+    ui->date_edit->setDate(sel_date);
 }
 
 void MainWindow::on_create_task_button_clicked()
@@ -134,6 +146,7 @@ void MainWindow::on_create_task_button_clicked()
     timeline *tl = oc_c.get_timeline_for_gui();
     cout << "gui hat timeline (ID: " << tl->get_id() << ") erhalten" << endl;
     showTimeline(tl);
+    resetInputs();
 }
 
 void MainWindow::on_print_task_clicked()
