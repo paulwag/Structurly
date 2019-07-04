@@ -73,7 +73,31 @@ void calender_manager::stop(bool exit)
 
 
 // /////////////////////////////////////////////////////////////////////////// Methods
-void calender_manager::updateTimelines() {}
+void calender_manager::updateTimelines(task *new_task)
+{
+    cout << "CM: updateTimelines()..." << endl;
+
+    int id = calc_id(new_task->get_date());
+    timeline *existing = check_for_tl_existence(id, timelines);
+
+    if (existing)
+    {
+        cout << "...timeline gibt es schon! -> Task wird eingefügt" << endl;
+        existing->insert_task(new_task);
+        oc_c.set_tl_for_gui(existing);
+
+    }
+    else
+    {
+        cout << "...neue timeline!" << endl;
+        timeline *new_tl = new timeline(id);
+        new_tl->insert_task(new_task);
+        timelines.push_back(new_tl);
+        oc_c.set_tl_for_gui(new_tl);
+    }
+
+
+}
 
 
 // /////////////////////////////////////////////////////////////////////////// Functions

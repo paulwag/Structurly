@@ -29,9 +29,9 @@
             void start();
             void stop(bool exit = false);
 
-            void updateTimelines();
-
             vector<timeline *> get_timelines() const {return timelines;}
+
+            void updateTimelines(task *new_task);
     };
 
 #endif

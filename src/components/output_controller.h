@@ -25,7 +25,6 @@
 
         tdate date_seen_on_gui;                                                         // Tag, der gerade auf der GUI zu sehen ist
         timeline *tl_for_gui;                                                           // Timeline, die sich geändert hat, übergeben
-        //changeStates changeFlag = no_changes;                              // change Flag
 
         public:
             static output_controller& get_instance();
@@ -34,15 +33,11 @@
             void stop(bool exit = false);
 
             void set_date_seen_on_gui(int day, int month, int year) {date_seen_on_gui.set_date(day, month, year);}
-            void set_tl_for_gui(timeline *tl)                       {tl_for_gui = tl;}
+            void set_tl_for_gui(timeline *tl)                       {tl_for_gui = tl; cout << "OC: timeline (ID " << tl_for_gui->get_id() << ") vom CM bekommen" << endl;}
 
             timeline *get_timeline_for_gui() const {return tl_for_gui;}
 
-            //changeStates getChangeFlag() { return changeFlag; }
-            //void setChangeFlag(changeStates new_state) { changeFlag = new_state; }
-
-            void update_gui_new_task();                                                 // nachdem Timeline vom calenderManager übergeben -> gui refresh
-            int update_gui_date_changed();                                             // nachdem ein anderes Datum in der gui ausgewaehlt -> gui refresh
+            int update_gui_date_changed();                                              // nachdem ein anderes Datum in der gui ausgewaehlt -> gui refresh
 
             /* Erklaerung:
              * Fall 1:  start()
@@ -60,16 +55,6 @@
              *              - output_controller checkt, ob die aktualisierte timeline gerade überhaupt auf der gui zu sehen ist
              *              - wenn nein -> nichts tun
              *              - wenn ja -> gui aktualisieren
-             * ------------------------------------------
-             *  Erweiterung für meine Changes
-             * Überlegung: OC bekommt keinen direkten Zugriff auf UI - übersetzt aber die Daten des Models für GUI (z.B. bei Timeline durch Aufbau in Array für GUI Zuordnung)
-             * Lösung: UI hat timer mit 0.5s Interval - dann checkForUpdate slot das Flag hier checkt. (oben als enum für verschiedene Fälle die später bei UI Update passieren können)
-             * Umsetzung:
-             *  1. wenn sich etwas verändert (Task wird erstellt und in Timeline eingefügt, andere Timeline wird ausgewählt, ...) wird Flag hier gesetzt
-             *  2. UI erkennt mit checkForUpdate gesetztes Flag und ruft entsprechende Funktion auf (z.b. timelineChanged)
-             *        2. a) timelineChanged ruft oc_c.update_gui_date_changed und erhält ein entsprechendes Array für tag zurück
-             *        2. b) timelineChanged updated mit dem Array die ui timeline
-             *  3. UI ruft setChangeFlag auf und setzt es auf no_changes
              */
     };
 

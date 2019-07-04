@@ -37,16 +37,6 @@ void output_controller::stop(bool exit)
 
 
 // /////////////////////////////////////////////////////////////////////////// Methods
-void output_controller::update_gui_new_task()
-{
-    int id_seen_on_gui = calc_id(date_seen_on_gui);
-
-    if (id_seen_on_gui != tl_for_gui->get_id())
-        return;
-
-    // irgendwie an die elemente der GUI kommen und Daten übergeben
-}
-
 int output_controller::update_gui_date_changed()
 {
     int today_id = calc_id(date_seen_on_gui);                                       // id vom in der gui angezeigten tag berechnen

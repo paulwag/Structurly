@@ -127,6 +127,14 @@ void MainWindow::on_create_task_btn_clicked()
 
     if (ic_c.set_task_parameter(name, description, start_hour, start_minute, day, month, year) == 0)
         ic_c.button_pressed(BUT_CREATE);
+
+    timeline *tl = oc_c.get_timeline_for_gui();
+    cout << "gui hat timeline (ID: " << tl->get_id() << ") erhalten" << endl;
+
+    // if (timeline gerade zu sehen?)
+    //     Tasks aus der Timeline auslesen und in der tabelle anzeigen lassen
+
+    // wenn das datum der timeline sowieso gerade nicht zu sehen ist, braucht auch ja nicht gemacht werden...
 }
 
 void MainWindow::on_printTasks_clicked()
