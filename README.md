@@ -21,5 +21,5 @@ Dieses Projekt ist als Semesterprojektarbeit im Modul Software Engineering II an
 * Frank Ehlert
 * Peter Hanne
 * Dawid Kohl
-* Paul Wagner
+* Paul Wagner <br/>
 unter der Leitung von Prof. Dr.-Ing. habil. Sven Graupner
