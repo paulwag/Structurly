@@ -1,6 +1,6 @@
-#Structurly
+# Structurly
 
-Was ist Structurly?
+## Was ist Structurly?
 
 Mit unserem Projekt eines Personal Management Systems - auch Structurly genannt - möchten wir den Nutzern
 eine einfache, schnelle und intuitive Lösung zur Verfügung stellen, um ihren Alltag zu organisieren.
@@ -13,9 +13,9 @@ Desktop-Version entwickelt und soll später auch auf mobilen Geräten zur Verfü
 plattformübergreifend synchronisierbar sein.
 Dieses Projekt ist als Semesterprojektarbeit im Modul Software Engineering II an der Beuth Hochschule für Technik entstanden.
 
-build-Informationen:
+## build-Informationen:
 
-Workaround für Mac-User:
+## Workaround für Mac-User:
 
-Autoren:
+## Autoren:
 
