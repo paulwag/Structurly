@@ -73,8 +73,6 @@ void MainWindow::launch() {
         timeline *tl = oc_c.get_timeline_for_gui();
         showTimeline(tl);
     }
-    else
-        showTimeline();
 }
 
 // /////////////////////////////////////////////////////////////////////////////// Update functions
