@@ -133,6 +133,7 @@ void MainWindow::on_create_task_button_clicked()
 
     timeline *tl = oc_c.get_timeline_for_gui();
     cout << "gui hat timeline (ID: " << tl->get_id() << ") erhalten" << endl;
+    showTimeline(tl);
 }
 
 void MainWindow::on_print_task_clicked()
