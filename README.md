@@ -18,4 +18,8 @@ Dieses Projekt ist als Semesterprojektarbeit im Modul Software Engineering II an
 ## Workaround für Mac-User:
 
 ## Autoren:
-
+* Frank Ehlert
+* Peter Hanne
+* Dawid Kohl
+* Paul Wagner
+unter der Leitung von Prof. Dr.-Ing. habil. Sven Graupner
