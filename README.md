@@ -13,7 +13,14 @@ Desktop-Version entwickelt und soll später auch auf mobilen Geräten zur Verfü
 plattformübergreifend synchronisierbar sein.
 Dieses Projekt ist als Semesterprojektarbeit im Modul Software Engineering II an der Beuth Hochschule für Technik entstanden.
 
-## build-Informationen:
+## Benutzung:
+
+>Für die Erstellung von ** Structurly ** wurde die IDE 'Qt Creator' verwendet.
+Die *.pro-Dateien können mit dieser IDE geöffnet werden und müssen vom User
+anschließend konfiguriert werden:
+
+    - Release-Pfad: /build/release
+    - Debug-Pfad:   /build/debug
 
 ## Workaround für Mac-User:
 
@@ -22,4 +29,5 @@ Dieses Projekt ist als Semesterprojektarbeit im Modul Software Engineering II an
 * Peter Hanne
 * Dawid Kohl
 * Paul Wagner <br/>
+<br/>
 unter der Leitung von Prof. Dr.-Ing. habil. Sven Graupner
