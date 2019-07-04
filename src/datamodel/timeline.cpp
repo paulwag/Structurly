@@ -27,7 +27,11 @@ void timeline::insert_task(task *new_task)
         minute_offset = 3;
 
     unsigned long slot = static_cast<unsigned long>(4*hour + minute_offset);
-    timeslots.at(slot) = new_task;
+
+    if (timeslots.at(slot) == nullptr)
+        timeslots.at(slot) = new_task;
+    else
+        cout << "timeslot in timeline schon belegt..." << endl;
 }
 
 task *timeline::get_task(u_int ts){

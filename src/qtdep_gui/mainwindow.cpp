@@ -89,12 +89,10 @@ void MainWindow::showTimeline(timeline* tl) {
             tableWidget->setItem(int (i), 1, new QTableWidgetItem(""));
     }
 }
-
 void MainWindow::showTimeline() {
     for(u_int i = 0; i < 96; i++)
         tableWidget->setItem(int (i), 1, new QTableWidgetItem(""));
 }
-
 
 // /////////////////////////////////////////////////////////////////////////////// slot events
 void MainWindow::closeEvent(QCloseEvent *event)
@@ -132,6 +130,9 @@ void MainWindow::on_create_task_button_clicked()
 
     if (ic_c.set_task_parameter(name, description, start_hour, start_minute, day, month, year) == 0)
         ic_c.button_pressed(BUT_CREATE);
+
+    timeline *tl = oc_c.get_timeline_for_gui();
+    cout << "gui hat timeline (ID: " << tl->get_id() << ") erhalten" << endl;
 }
 
 void MainWindow::on_print_task_clicked()

@@ -41,6 +41,8 @@ void task_manager::stop(bool exit)
 
 void task_manager::createTask(string title, string description, tdate date, ttime starttime)
 {
+    cout << "TM: createTask()" << endl;
+
     task *newTask = new task();
 
     newTask->set_title(title);                                  // quick and dirty, sollte gleich beim Anlegen passieren, Konstruktor und so (Peter)
@@ -50,6 +52,7 @@ void task_manager::createTask(string title, string description, tdate date, ttim
     newTask->set_startingtime(starttime);
 
     tasks.push_back(newTask);                                   // In eigenen Vector speichern
+    cm_c.updateTimelines(newTask);                              // An den calenderManger weiterreichen
     db_c.save_task_in_DB(newTask);                              // In Datenbank Vektor speichern
 
 
