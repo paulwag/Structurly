@@ -349,23 +349,23 @@ task *database::loadTask(ifstream &in){
     out << "    </LookUpTable>\n";
 }*/
 
-/* READY
-void database::deleteTask(int position)                     Preparation for deleted Tasks
+
+void database::deleteTask(int position)
 {
     tasks.at(position-1) = nullptr;
 }
 
-void database::save_position_in_LUT(int identifier)         Preparation for deleted Tasks
+void database::save_position_in_LUT(int identifier)
 {
     lookUpTable.push_back(identifier);
 }
 
 
-void database::remove_from_LUT()                            Preparation for deleted Tasks
+void database::remove_from_LUT()
 {
     lookUpTable.erase(lookUpTable.begin());
 }
-*/
+
 void database::freeTasks()
 {
     for(auto task: tasks)

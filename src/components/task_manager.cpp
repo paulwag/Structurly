@@ -93,16 +93,14 @@ void task_manager::printTasks() // Kann später weg, wenn wirklich alles funktio
 
 
 
-void task_manager::delTask()
+void task_manager::delTask(int identifier)
 {
-    //bekommt die Funktion als Parameter den Identifier(damit die Position im Vektor?)
-    /*int identifier;
+    //bekommt die Funktion als Parameter den Identifier
     tasks.at(identifier-1) = nullptr;  //Zeiger im Vektor auf NULL setzen
-    db_c.deleteTask(identifier);    //Zeiger im Vektor der DB auch aktualisieren
+    db_c.deleteTask(identifier);       //Zeiger im Vektor der DB auch aktualisieren
     //Position in LookupTable vermerken
     lookUpTable.push_back(identifier);
     db_c.save_position_in_LUT(identifier);
-    */
 }
 void task_manager::updateTask() {}
 
@@ -115,9 +113,8 @@ void task_manager::updateTask() {}
     // ToDo Aenderung auch in DB speichern, nicht erst beim stoppen
 }
 
+*/
 
-
- Stuff vom Conflict (Peter)
 int task_manager::createIdentifier()
 {
     int identifier = lookUpTable.at(0);                       // gibt niedrigsten identifier zurueck
@@ -125,5 +122,5 @@ int task_manager::createIdentifier()
     db_c.remove_from_LUT();                                   // evtl sinnvoller die LUT erst am Ende der DB zu geben
 
     return identifier;
-}*/
+}
 
