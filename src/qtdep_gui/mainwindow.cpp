@@ -19,12 +19,12 @@ MainWindow::~MainWindow()
 // /////////////////////////////////////////////////////////////////////////////// launch / close
 void MainWindow::launch() {
 
-    mainCntrl.inject(&db_c);        // 1. Database
-    mainCntrl.inject(&tm_c);        // 2. taskManager
-    mainCntrl.inject(&cm_c);        // 3. calenderManager
-    mainCntrl.inject(&oc_c);        // 4. outputController
-    mainCntrl.inject(&ic_c);        // 5. inputController
-    mainCntrl.start();              // start components
+    mc_c.inject(&db_c);     // 1. Database
+    mc_c.inject(&tm_c);     // 2. taskManager
+    mc_c.inject(&cm_c);     // 3. calenderManager
+    mc_c.inject(&oc_c);     // 4. outputController
+    mc_c.inject(&ic_c);     // 5. inputController
+    mc_c.start();           // start components
 
     connect(tableWidget, SIGNAL(clicked(const QModelIndex &)), this, SLOT(onTableClicked(const QModelIndex &)));
 
@@ -131,7 +131,7 @@ void MainWindow::onTableClicked(const QModelIndex &index)
 // /////////////////////////////////////////////////////////////////////////////// slot events
 void MainWindow::closeEvent(QCloseEvent *event)
 {
-    mainCntrl.stop();                                                           // clean up
+    mc_c.stop();                                                                // clean up
     event->accept();                                                            // accept finally closes app, event->ignore() would keep it open
 }
 
