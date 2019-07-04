@@ -85,11 +85,5 @@ int check_task_parameter(string title, string description)
         err = -1;
     }
 
-    if (description == "")
-    {
-        cout << "description input error" << endl;
-        err = -1;
-    }
-
     return err;
 }
