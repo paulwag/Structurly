@@ -123,7 +123,7 @@
         </Task>
         <Task>
             <identifier>12</identifier>
-            <title>testtesttesttest</title>
+            <title>test show todays tasks 1</title>
             <description></description>
             <priority>none</priority>
             <date>04072019</date>
@@ -134,11 +134,22 @@
         </Task>
         <Task>
             <identifier>13</identifier>
-            <title>testtesttesttest</title>
+            <title>test show todays tasks 2</title>
             <description></description>
             <priority>none</priority>
             <date>04072019</date>
             <startingtime>2045</startingtime>
+            <length>0</length>
+            <repetition>keine</repetition>
+            <category></category>
+        </Task>
+        <Task>
+            <identifier>17</identifier>
+            <title>interface test</title>
+            <description></description>
+            <priority>none</priority>
+            <date>04072019</date>
+            <startingtime>0345</startingtime>
             <length>0</length>
             <repetition>keine</repetition>
             <category></category>

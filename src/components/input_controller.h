@@ -1,7 +1,7 @@
 #ifndef INPUT_CONTROLLER_H
     #define INPUT_CONTROLLER_H
 
-    #include "controller_intf.h"
+    #include "input_controller_intf.h"
     #include "tdate.h"
     #include "ttime.h"
 
@@ -12,11 +12,11 @@
 
 
 
-    class input_controller: public controller_intf
+    class input_controller: public input_controller_intf
     {
         input_controller() : input_controller("input_controller") {}                // Singleton: both constructors are needed
         input_controller(string n)
-        : controller_intf(n), task_title(""), task_description(""), task_date(0, 0, 0), task_time(0, 0) {}
+        : input_controller_intf(n), task_title(""), task_description(""), task_date(0, 0, 0), task_time(0, 0) {}
 
         input_controller(const input_controller& orig) = delete;                    // Singleton: disable copy constructor
         const input_controller& operator= (const input_controller& orig) = delete;  // Singleton: disable = operator
