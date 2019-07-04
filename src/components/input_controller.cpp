@@ -3,7 +3,7 @@
 
 using namespace std;
 
-int check_task_parameter(string title, string description);
+int check_task_parameter(string title);     // Prototype
 
 
 
@@ -42,7 +42,7 @@ int input_controller::set_task_parameter(string title, string description, int h
 {
     int minute_to_set;
 
-    if (check_task_parameter(title, description))                           // check important parameters
+    if (check_task_parameter(title))                           // check important parameters
         return -1;
 
     if (minute < 15)                                                        // setting minute to 0 | 15 | 30 | 45. important for timeline
@@ -75,7 +75,7 @@ void input_controller::button_pressed(int button)
 
 
 // /////////////////////////////////////////////////////////////////////////// Functions
-int check_task_parameter(string title, string description)
+int check_task_parameter(string title)
 {
     int err = 0;
 
