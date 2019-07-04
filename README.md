@@ -1,6 +1,6 @@
 # Structurly :watch:
 
-## Was ist Structurly? :grey_question:
+## Was ist Structurly :grey_question:
 
 Mit unserem Projekt eines Personal Management Systems - auch Structurly genannt - möchten wir den Nutzern
 eine einfache, schnelle und intuitive Lösung zur Verfügung stellen, um ihren Alltag zu organisieren.
@@ -13,7 +13,7 @@ Desktop-Version entwickelt und soll später auch auf mobilen Geräten zur Verfü
 plattformübergreifend synchronisierbar sein.
 Dieses Projekt ist als Semesterprojektarbeit im Modul Software Engineering II an der Beuth Hochschule für Technik entstanden.
 
-## Benutzung: :point_down:
+## Benutzung :point_down:
 
 >Für die Erstellung von ** Structurly ** wurde die IDE 'Qt Creator' verwendet.
 Die *.pro-Dateien können mit dieser IDE geöffnet werden und müssen vom User
