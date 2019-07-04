@@ -30,9 +30,9 @@ void timeline::insert_task(task *new_task)
     timeslots.at(slot) = new_task;
 }
 
-task *timeline::get_task(int ts){
-    if(timeslots[ts]){
-        return timeslots[ts];
+task *timeline::get_task(u_int ts){
+    if(timeslots.at(ts)){
+        return timeslots.at(ts);
     }
     return nullptr;
 }

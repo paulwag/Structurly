@@ -25,7 +25,7 @@
              *  get_task returns *task, needs a slot (0-95) as index
              *  ts : index
              */
-            task *get_task(int ts);
+            task *get_task(u_int ts);
     };
 
 #endif
