@@ -26,7 +26,9 @@ void MainWindow::launch() {
     mainCntrl.inject(&ic_c);        // 5. inputController
     mainCntrl.start();              // start components
 
-    ui->timeline_area->setWidget(tableWidget);
+    connect(tableWidget, SIGNAL(clicked(const QModelIndex &)), this, SLOT(onTableClicked(const QModelIndex &)));
+
+    ui->timeline_area->setWidget(tableWidget);                      // init timeline
     tableWidget->verticalHeader()->setVisible(false);
     tableWidget->horizontalHeader()->setVisible(false);
     tableWidget->horizontalHeader()->setStretchLastSection( true );
@@ -79,11 +81,13 @@ void MainWindow::set_timeline_label(QDate date) {
 }
 
 void MainWindow::showTimeline(timeline* tl) {
+    QBrush brush(QColor::fromRgb(12,108,232));
+
     for(u_int i = 0; i < 96; i++) {
         if(tl->get_task(i)) {
             QString task_name = QString::fromStdString(tl->get_task(i)->get_title());
             tableWidget->setItem(int (i), 1, new QTableWidgetItem(task_name));
-            tableWidget->item(int (i), 1)->setBackground(Qt::blue);
+            tableWidget->item(int (i), 1)->setBackground(brush);
             tableWidget->item(int (i), 1)->setTextColor(Qt::white);
         } else
             tableWidget->setItem(int (i), 1, new QTableWidgetItem(""));
@@ -102,6 +106,20 @@ void MainWindow::resetInputs() {
     ui->date_edit->setDate(date);
     QTime time = QTime::currentTime();
     ui->time_edit->setTime(time);
+}
+
+void MainWindow::onTableClicked(const QModelIndex &index)
+{
+    if (index.isValid()) {
+        int row = index.row();
+
+        QTableWidgetItem *item = tableWidget->item(row, 0);
+        std::string item_text = item->text().toStdString();
+        int hour = std::stoi(item_text.substr(0,2));
+        int minute = std::stoi(item_text.substr(3,5));
+        QTime sel_time(hour, minute);
+        ui->time_edit->setTime(sel_time);
+    }
 }
 
 // /////////////////////////////////////////////////////////////////////////////// slot events

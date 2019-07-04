@@ -41,6 +41,8 @@
 
             void on_print_task_clicked();
 
+            void onTableClicked(const QModelIndex &);
+
     private:
             Ui::MainWindow *ui;
 
