@@ -24,9 +24,9 @@ anschließend konfiguriert werden:
 
 ## Workaround für Mac-User :exclamation: 
 
->Der relative Pfad für die Datenbank(XML-Datei) muss in der *database.cpp* in/
-*void database::storeFile()* und *void database::loadFile()* verändert werden!/
-Also --> ifstream in("../../../../../database/database.xml")/
+>Der relative Pfad für die Datenbank(XML-Datei) muss in der *database.cpp* in<br/>
+*void database::storeFile()* und *void database::loadFile()* verändert werden!<br/>
+Also --> ifstream in("../../../../../database/database.xml")<br/>
 Die entsprechende Variante auswählen und die andere auskommentieren.
 
 ## Autoren: :busts_in_silhouette:
