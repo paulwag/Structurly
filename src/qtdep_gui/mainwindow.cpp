@@ -35,14 +35,12 @@ void MainWindow::launch() {
     tableWidget->setShowGrid(false);
     //tableWidget->setContentsMargins(0,0,0,0);
 
-    QDateTime cur_date_time = QDateTime::currentDateTime();     // aktuelles Datum + Uhrzeit System
 
+    QDateTime cur_date_time = QDateTime::currentDateTime();                     // aktuelles Datum + Uhrzeit System
     QDate date = QDate::currentDate();
     ui->date_edit->setDate(date);
     QTime time = QTime::currentTime();
     ui->time_edit->setTime(time);
-
-    set_timeline_label(date);
 
     int current_hour = 0;                                                       // Zeit aufbauen
     for(int i = 0; i < 96; i++)
@@ -68,6 +66,14 @@ void MainWindow::launch() {
         daytime = hours + minutes;
         tableWidget->setItem(i, 0, new QTableWidgetItem(daytime));
         tableWidget->setItem(i, 1, new QTableWidgetItem(""));
+
+    }
+
+    set_timeline_label(date);
+    if (oc_c.update_gui_date_changed())
+    {
+        timeline *tl = oc_c.get_timeline_for_gui();
+        showTimeline(tl);
     }
 }
 

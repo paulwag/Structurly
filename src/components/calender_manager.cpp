@@ -42,7 +42,6 @@ void calender_manager::start()
             new_tl->insert_task(task);
             timelines.push_back(new_tl);
         }
-
     }
 
     cout << getName() << " gestartet" << endl;
@@ -85,7 +84,6 @@ void calender_manager::updateTimelines(task *new_task)
         cout << "...timeline gibt es schon! -> Task wird eingefügt" << endl;
         existing->insert_task(new_task);
         oc_c.set_tl_for_gui(existing);
-
     }
     else
     {
@@ -95,8 +93,6 @@ void calender_manager::updateTimelines(task *new_task)
         timelines.push_back(new_tl);
         oc_c.set_tl_for_gui(new_tl);
     }
-
-
 }
 
 
