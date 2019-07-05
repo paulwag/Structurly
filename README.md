@@ -1,6 +1,6 @@
-# Structurly :watch:
+# Structurly 
 
-## Was ist Structurly :grey_question:
+## Was ist Structurly 
 
 Mit unserem Projekt eines Personal Management Systems - auch Structurly genannt - möchten wir den Nutzern
 eine einfache, schnelle und intuitive Lösung zur Verfügung stellen, um ihren Alltag zu organisieren.
@@ -13,7 +13,7 @@ Desktop-Version entwickelt und soll später auch auf mobilen Geräten zur Verfü
 plattformübergreifend synchronisierbar sein. <br/>
 Dieses Projekt ist als Semesterprojektarbeit im Modul Software Engineering II an der Beuth Hochschule für Technik entstanden.
 
-## Benutzung :point_down:
+## Benutzung 
 
 >Für die Erstellung von **Structurly** wurde die IDE 'Qt Creator' verwendet.
 Die *.pro-Dateien können mit dieser IDE geöffnet werden und müssen vom User
@@ -22,14 +22,14 @@ anschließend konfiguriert werden:
 >     Release-Pfad: /build/release
 >     Debug-Pfad:   /build/debug
 
-## Workaround für Mac-User :exclamation: 
+## Workaround für Mac-User  
 
 >Der relative Pfad für die Datenbank(XML-Datei) muss in der *database.cpp* in<br/>
 *void database::storeFile()* und *void database::loadFile()* verändert werden!<br/>
 Also --> ifstream in("../../../../../database/database.xml")<br/>
 Die entsprechende Variante auswählen und die andere auskommentieren.
 
-## Autoren: :busts_in_silhouette:
+## Autoren:
 * Frank Ehlert 
 * Peter Hanne
 * Dawid Kohl
