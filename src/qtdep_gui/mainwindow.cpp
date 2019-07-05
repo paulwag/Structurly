@@ -136,6 +136,7 @@ void MainWindow::onTableClicked(const QModelIndex &index)
         ui->time_edit->setTime(sel_time);
 
         QString task_id = task_item->statusTip();                               // get task_id of clicked
+        cout << "task_id " << task_id.toInt() << endl;
     }
 }
 
