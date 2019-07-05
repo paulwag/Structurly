@@ -92,7 +92,14 @@ void MainWindow::showTimeline(timeline* tl) {
     for(u_int i = 0; i < 96; i++) {
         if(tl->get_task(i)) {
             QString task_name = QString::fromStdString(tl->get_task(i)->get_title());
-            tableWidget->setItem(int (i), 1, new QTableWidgetItem(task_name));
+            QString task_description = QString::fromStdString(tl->get_task(i)->get_description());
+            QString task_id = QString::number(tl->get_task(i)->get_identifier());
+
+            tableWidget->setItem(int (i), 1, new QTableWidgetItem(""));
+            QTableWidgetItem *item = tableWidget->item(int (i), 1);
+            item->setData(0, task_name);
+            item->setData(3, task_description);
+            item->setData(4, task_id);
             tableWidget->item(int (i), 1)->setBackground(brush);
             tableWidget->item(int (i), 1)->setTextColor(Qt::white);
         } else
@@ -119,12 +126,16 @@ void MainWindow::onTableClicked(const QModelIndex &index)
     if (index.isValid()) {
         int row = index.row();
 
-        QTableWidgetItem *item = tableWidget->item(row, 0);
-        std::string item_text = item->text().toStdString();
-        int hour = std::stoi(item_text.substr(0,2));
-        int minute = std::stoi(item_text.substr(3,5));
+        QTableWidgetItem *time_item = tableWidget->item(row, 0);     // get clicked item
+        QTableWidgetItem *task_item = tableWidget->item(row, 1);     // get clicked item
+
+        std::string time_item_text = time_item->text().toStdString();           // read time and set edit_time to chosen
+        int hour = std::stoi(time_item_text.substr(0,2));
+        int minute = std::stoi(time_item_text.substr(3,5));
         QTime sel_time(hour, minute);
         ui->time_edit->setTime(sel_time);
+
+        QString task_id = task_item->statusTip();                               // get task_id of clicked
     }
 }
 
