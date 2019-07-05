@@ -59,8 +59,12 @@ void database::storeFile()
     //       storeTask() auslagern aus storeFile(), bzw nur fuer Schreiben eines Tasks an bestimmte Position
 
     //ofstream out("database.xml");                                                                         // is saving database.xml in build/debug
-    ofstream out("../../database/database.xml");
-    //ofstream out("../../database/test.xml");
+    //ofstream out("../../database/database.xml");
+    #if defined(__APPLE__) && defined(__MACH__)
+        ofstream out("../../../../../database/database.xml");
+    #else
+        ofstream out("../../database/database.xml");
+    #endif
 
     out << "<Data>\n";
     out << "    <Tasks>\n";
@@ -98,9 +102,12 @@ void database::loadFile()
     string line;
     string tag = "";             //Tag without Whitespaces
 
-    //ifstream in("../../../../../database/database.xml");
-    ifstream in("../../database/database.xml");
-    //ifstream in("../../database/test.xml");
+    //ifstream in("../../database/database.xml");
+    #if defined(__APPLE__) && defined(__MACH__)
+        ifstream in("../../../../../database/database.xml");
+    #else
+        ifstream in("../../database/database.xml");
+    #endif
 
     if(!in)
     {
