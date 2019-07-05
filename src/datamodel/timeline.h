@@ -8,8 +8,6 @@
 
     #define MAXSLOTS 96
 
-
-
     class timeline
     {
         int id;                     // wird im constructor gesetzt, anschließend fix
@@ -26,6 +24,9 @@
              *  ts : index
              */
             task *get_task(u_int ts);
+
+            //WIP Stuff for deletion
+            void remove_task(task *removed_task);
     };
 
 #endif

@@ -9,6 +9,15 @@
 
     int calc_id(tdate date);    // Prototyp, wird auch im output_controller benoetigt
 
+    /**
+     * @brief The calender_manager class is used to generate the needed Timelines for the GUI
+     *        from the loaded Task Vector. It creates the Timelines for every different day that
+     *        has Tasks located in the Database. It also updates Timelines if a new Task is
+     *        created.
+     *
+     * authors: Peter Hanne, Dawid Kohl
+     * @last update: 04.07.2019
+     */
 
     class calender_manager: public controller_intf
     {
@@ -32,6 +41,9 @@
             vector<timeline *> get_timelines() const {return timelines;}
 
             void updateTimelines(task *new_task);
+
+            //WIP Stuff for deleted Tasks
+            void deleteTaskFromTL(task *removed_task);
     };
 
 #endif

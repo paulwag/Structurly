@@ -7,12 +7,21 @@
     using namespace std;
 
 
-    class mainController: public controller_intf
+
+    class main_controller: public controller_intf
     {
+        main_controller() : main_controller("main_controller") {}
+        main_controller(string n) : controller_intf(n) {}
+
+        main_controller(const main_controller& orig) = delete;
+        const main_controller& operator= (const main_controller& orig) = delete;
+
+        static main_controller mc_instance;
+
         vector <controller_intf *> injected_components;
 
         public:
-            mainController(string n) : controller_intf(n) {}
+            static main_controller& get_instance();
 
             void start();
             void stop(bool exit = false);

@@ -22,7 +22,7 @@
         static task_manager task_manager_instance;
 
         vector<task *> tasks;
-        //vector<int> lookUpTable;
+        vector<int> lookUpTable;
 
         public:
             static task_manager& get_instance();
@@ -33,7 +33,8 @@
             vector<task *>& getTasks() {return tasks;}              // Referenz auf Vektor fuer calendar_manager
 
             void createTask(string title, string description, tdate date, ttime starttime);
-            void delTask();
+            void delTask(int identifier);
+            int createIdentifier();
             void updateTask();
             //void editTask(int identifier);  //better name for changing a task(Frank)
 

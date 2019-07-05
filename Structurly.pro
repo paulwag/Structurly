@@ -28,6 +28,7 @@ INCLUDEPATH += \
     src \
     src/components \
     src/datamodel \
+    src/interfaces \
     src/qtdep_gui
 
 SOURCES += \
@@ -47,7 +48,6 @@ SOURCES += \
 HEADERS += \
     src/singletons.h \
     src/components/calender_manager.h \
-    src/components/controller_intf.h \
     src/components/database.h \
     src/components/database_intf.h \
     src/components/input_controller.h \
@@ -58,6 +58,8 @@ HEADERS += \
     src/datamodel/tdate.h \
     src/datamodel/timeline.h \
     src/datamodel/ttime.h \
+    src/interfaces/controller_intf.h \
+    src/interfaces/input_controller_intf.h \
     src/qtdep_gui/mainwindow.h
 
 

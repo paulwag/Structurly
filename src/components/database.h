@@ -43,9 +43,9 @@
             //void loadLookUpTable(ifstream &in);
             //void storeLookUpTable(ofstream &out);
 
-            //void save_position_in_LUT(int position);                        // bekommt Wert von task_manager
-            //void deleteTask(int position);
-            //void remove_from_LUT();
+            void save_position_in_LUT(int position);                        // bekommt Wert von task_manager
+            void deleteTask(int position);
+            void remove_from_LUT();
     };
 
 #endif

@@ -3,7 +3,15 @@
 
 
 
-void mainController::start()
+main_controller main_controller::mc_instance;
+main_controller& main_controller::get_instance()
+{
+    return mc_instance;
+}
+
+
+
+void main_controller::start()
 {
     if (getStarted())
             return;
@@ -18,7 +26,7 @@ void mainController::start()
 
 
 
-void mainController::stop(bool exit)
+void main_controller::stop(bool exit)
 {
     if (!getStarted())
             return;
@@ -34,7 +42,7 @@ void mainController::stop(bool exit)
 
 
 
-void mainController::inject(controller_intf *component)
+void main_controller::inject(controller_intf *component)
 {
     for (auto i : injected_components)
     {

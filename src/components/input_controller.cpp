@@ -3,11 +3,11 @@
 
 using namespace std;
 
-int check_task_parameter(string title, string description);
+int check_task_parameter(string title);     // Prototype
 
 
 
-// /////////////////////////////////////////////////////////////////////////// Singleton Stuff
+// /////////////////////////////////////////////////////////////////////////// important singleton stuff
 input_controller input_controller::ic_instance;
 input_controller& input_controller::get_instance()
 {
@@ -18,22 +18,22 @@ input_controller& input_controller::get_instance()
 // /////////////////////////////////////////////////////////////////////////// Start | Stop
 void input_controller::start()
 {
-    if (getStarted())
+    if (getStarted())                                                       // Dont start again, if already running
         return;
 
     setStarted(true);
 
-    cout << getName() << " gestartet" << endl;
+    cout << getName() << " gestartet" << endl;                              // Information in Terminal
 }
 
 void input_controller::stop(bool exit)
 {
-    if (!getStarted())
+    if (!getStarted())                                                      // Dont stop again, if not running
         return;
 
     setStarted(false);
 
-    cout << getName() << " beendet" << endl;
+    cout << getName() << " beendet" << endl;                                // Information in Terminal
 }
 
 
@@ -42,10 +42,10 @@ int input_controller::set_task_parameter(string title, string description, int h
 {
     int minute_to_set;
 
-    if (check_task_parameter(title, description))
+    if (check_task_parameter(title))                           // check important parameters
         return -1;
 
-    if (minute < 15)
+    if (minute < 15)                                                        // setting minute to 0 | 15 | 30 | 45. important for timeline
         minute_to_set = 0;
     else if (minute < 30)
         minute_to_set = 15;
@@ -54,7 +54,7 @@ int input_controller::set_task_parameter(string title, string description, int h
     else
         minute_to_set = 45;
 
-    task_title = title;
+    task_title = title;                                                     // set task info buffer
     task_description = description;
     task_date.set_date(day, month, year);
     task_time.set_time(hour, minute_to_set);
@@ -75,11 +75,11 @@ void input_controller::button_pressed(int button)
 
 
 // /////////////////////////////////////////////////////////////////////////// Functions
-int check_task_parameter(string title, string description)
+int check_task_parameter(string title)
 {
     int err = 0;
 
-    if (title == "")
+    if (title == "")                                                        // error, if so titel is set
     {
         cout << "title input error" << endl;
         err = -1;

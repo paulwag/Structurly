@@ -45,16 +45,6 @@ void calender_manager::start()
     }
 
     cout << getName() << " gestartet" << endl;
-/*
-    //YEAH Timelines with tasks!!!!!!!11!!1!
-    for(auto test: timelines){
-        cout << "Timeline: " << test->get_id() << endl;
-        for(int i = 0; i < MAXSLOTS; i++){
-            task *x;
-            if((x = test->get_task(i)))
-                cout << "\tTask: "<< x->get_title() << endl;
-        }
-    }*/
 }
 
 void calender_manager::stop(bool exit)
@@ -92,6 +82,18 @@ void calender_manager::updateTimelines(task *new_task)
         new_tl->insert_task(new_task);
         timelines.push_back(new_tl);
         oc_c.set_tl_for_gui(new_tl);
+    }
+}
+
+
+void calender_manager::deleteTaskFromTL(task *removed_task){
+
+    int id = calc_id(removed_task->get_date());
+    timeline *tl = check_for_tl_existence(id, timelines);
+
+    if(tl){
+        tl->remove_task(removed_task);
+        oc_c.set_tl_for_gui(tl);
     }
 }
 

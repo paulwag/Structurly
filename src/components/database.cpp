@@ -1,3 +1,11 @@
+/* Komponente "Database"
+ * Autor: Frank Ehlert
+ * Beschreibung:    Die Datenbankkomponente ist fuer das Laden und Sichern der in "Structurly"
+ *                  angelegten Tasks zustaendig, sodass nach Schließen des Programms, die Tasks
+ *                  in einem externen File gesichtert sind. Zu Programmstart werden diese aus-
+ *                  gelesen und dem Task-Manager fuer die weitere Verarbeitung uebergeben.
+ */
+
 #include "database.h"
 #include <iostream>
 #include <fstream>
@@ -341,23 +349,23 @@ task *database::loadTask(ifstream &in){
     out << "    </LookUpTable>\n";
 }*/
 
-/* READY
-void database::deleteTask(int position)                     Preparation for deleted Tasks
+
+void database::deleteTask(int position)
 {
     tasks.at(position-1) = nullptr;
 }
 
-void database::save_position_in_LUT(int identifier)         Preparation for deleted Tasks
+void database::save_position_in_LUT(int identifier)
 {
     lookUpTable.push_back(identifier);
 }
 
 
-void database::remove_from_LUT()                            Preparation for deleted Tasks
+void database::remove_from_LUT()
 {
     lookUpTable.erase(lookUpTable.begin());
 }
-*/
+
 void database::freeTasks()
 {
     for(auto task: tasks)
