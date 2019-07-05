@@ -1,12 +1,3 @@
-/* Komponente "Task_Manager"
- * Autor: Frank Ehlert
- * Beschreibung:    Der Task_Manager haelt die Tasks zur Programmlaufzeit.
- *                  Saemtliche Task-Operationen werden hier ausgefuehrt.
- *                  Aenderungen werden der Database zur Sicherung mitgeteilt.
- *                  Außerdem bekommt der Calendar_Manager die Tasks fuer die
- *                  Timelines von der Task_Manager - Komponente.
- */
-
 #include <iostream>
 #include "singletons.h"
 #include "task.h"

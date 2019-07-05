@@ -1,11 +1,3 @@
-/* Komponente "Database"
- * Autor: Frank Ehlert
- * Beschreibung:    Die Datenbankkomponente ist fuer das Laden und Sichern der in "Structurly"
- *                  angelegten Tasks zustaendig, sodass nach Schließen des Programms, die Tasks
- *                  in einem externen File gesichtert sind. Zu Programmstart werden diese aus-
- *                  gelesen und dem Task-Manager fuer die weitere Verarbeitung uebergeben.
- */
-
 #include "database.h"
 #include <iostream>
 #include <fstream>

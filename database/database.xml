@@ -146,7 +146,7 @@
         <Task>
             <identifier>14</identifier>
             <title>Review </title>
-            <description>Software Engineering II Rewiev </description>
+            <description>Software Engineering II Review </description>
             <priority>none</priority>
             <date>05072019</date>
             <startingtime>1200</startingtime>
@@ -168,10 +168,43 @@
         <Task>
             <identifier>16</identifier>
             <title>Paul Abgabe  Aufgabe 1</title>
-            <description></description>
+            <description>Tolle Note bekommen</description>
             <priority>none</priority>
             <date>05072019</date>
             <startingtime>1130</startingtime>
+            <length>0</length>
+            <repetition>keine</repetition>
+            <category></category>
+        </Task>
+        <Task>
+            <identifier>17</identifier>
+            <title>Klausur Projektmanagement</title>
+            <description></description>
+            <priority>none</priority>
+            <date>05072019</date>
+            <startingtime>1600</startingtime>
+            <length>0</length>
+            <repetition>keine</repetition>
+            <category></category>
+        </Task>
+        <Task>
+            <identifier>18</identifier>
+            <title>Mittagessen</title>
+            <description></description>
+            <priority>none</priority>
+            <date>05072019</date>
+            <startingtime>1300</startingtime>
+            <length>0</length>
+            <repetition>keine</repetition>
+            <category></category>
+        </Task>
+        <Task>
+            <identifier>19</identifier>
+            <title>Programmierbare Logik</title>
+            <description></description>
+            <priority>none</priority>
+            <date>06072019</date>
+            <startingtime>1200</startingtime>
             <length>0</length>
             <repetition>keine</repetition>
             <category></category>
