@@ -22,13 +22,6 @@ anschließend konfiguriert werden:
 >     Release-Pfad: /build/release
 >     Debug-Pfad:   /build/debug
 
-## Workaround für Mac-User  
-
->Der relative Pfad für die Datenbank(XML-Datei) muss in der *database.cpp* in<br/>
-*void database::storeFile()* und *void database::loadFile()* verändert werden!<br/>
-Also --> ifstream in("../../../../../database/database.xml")<br/>
-Die entsprechende Variante auswählen und die andere auskommentieren.
-
 ## Autoren:
 * Frank Ehlert 
 * Peter Hanne
