@@ -19,10 +19,19 @@ void database::start()
 
     setStarted(true);
 
-    loadFile();
     std::cout << getName() << " gestartet" << endl;
 
-    for(int i=0; i<lookUpTable.size(); ++i)
+    loadFile();
+
+    for (auto task : tasks)
+    {
+        if(task != nullptr)
+            cout << "ID: " << task->get_identifier() << " | Titel: " << task->get_title() << " | Beschreibung: " << task->get_description() << " | Datum: " << task->get_date() << " | Startzeit: " << task->get_startingtime() << endl;
+    }
+    cout << "--------------------------------------------------------------------------------" << endl;
+
+
+    for(uint i=0; i<lookUpTable.size(); ++i)
         cout << lookUpTable.at(i) << endl;
 }
 
@@ -44,10 +53,10 @@ void database::stop(bool exit)
 
 void database::save_task_in_DB(task *Task)
 {
-    tasks.push_back(Task);                  //Task an Vektor anhaengen
-    // Preparation for deleted Tasks
-    // int identifier = Task->get_identifier;
-    // tasks.insert(tasks.begin() + identifier-1, newTask);
+    if(Task->get_identifier() == (tasks.size() + 1))
+        tasks.push_back(Task);
+    else
+        tasks.at(Task->get_identifier() -1) = Task;
 }
 
 
@@ -130,19 +139,20 @@ void database::loadFile()
 
         if(tag == "<Task>")
         {
+            cout << tasks.size() << endl;
             newTask = database::loadTask(in);
-            //if(newTask->identifier == (tasks.size() + 1))     Preparation for deleted Tasks
-            tasks.push_back(newTask);
-
-            /*else                                              Preparation for deleted Tasks
+            if(newTask->get_identifier() == (tasks.size() + 1))
+                tasks.push_back(newTask);
+            else if(newTask->get_identifier() > (tasks.size() +1))
             {
                 //alles vor Task mit Identifier bekommt Nullzeiger
-                while(tasks.size() != (newTask->identifier - 1))
+                while(tasks.size() != (newTask->get_identifier() - 1))
                     tasks.push_back(nullptr);
 
                 tasks.push_back(newTask);
             }
-            */
+            else
+                tasks.at(newTask->get_identifier() -1) = newTask;
         }
 
         if(tag == "<LookUpTable>")
@@ -342,9 +352,14 @@ void database::loadLookUpTable(ifstream &in)
 void database::storeLookUpTable(ofstream& out)
 {
     out << "    <LookUpTable>\n";
-    for(uint i=0; i<lookUpTable.size(); ++i)
+    if(lookUpTable.size() == 0)
+        out << "\n";
+    else
     {
-        out << "        <identifier>" << lookUpTable.at(i) << "</identifier>\n";
+        for(uint i=0; i<lookUpTable.size(); ++i)
+        {
+            out << "        <identifier>" << lookUpTable.at(i) << "</identifier>\n";
+        }
     }
     out << "    </LookUpTable>\n";
 }

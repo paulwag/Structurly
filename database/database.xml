@@ -100,28 +100,6 @@
             <category></category>
         </Task>
         <Task>
-            <identifier>10</identifier>
-            <title>fff</title>
-            <description>f</description>
-            <priority>none</priority>
-            <date>03072019</date>
-            <startingtime>2300</startingtime>
-            <length>0</length>
-            <repetition>keine</repetition>
-            <category></category>
-        </Task>
-        <Task>
-            <identifier>11</identifier>
-            <title>testtesttest</title>
-            <description>arwetaertg</description>
-            <priority>none</priority>
-            <date>04072019</date>
-            <startingtime>1845</startingtime>
-            <length>0</length>
-            <repetition>keine</repetition>
-            <category></category>
-        </Task>
-        <Task>
             <identifier>12</identifier>
             <title>test show todays tasks 1</title>
             <description></description>
@@ -231,9 +209,19 @@
             <repetition>keine</repetition>
             <category></category>
         </Task>
+        <Task>
+            <identifier>4</identifier>
+            <title>Test LookupTable</title>
+            <description>nix</description>
+            <priority>none</priority>
+            <date>09072019</date>
+            <startingtime>1715</startingtime>
+            <length>0</length>
+            <repetition>keine</repetition>
+            <category></category>
+        </Task>
     </Tasks>
     <LookUpTable>
-        <identifier>4</identifier>
         <identifier>5</identifier>
     </LookUpTable>
 </Data>

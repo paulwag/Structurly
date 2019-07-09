@@ -231,9 +231,29 @@
             <repetition>keine</repetition>
             <category></category>
         </Task>
+        <Task>
+            <identifier>4</identifier>
+            <title>Test LookupTable</title>
+            <description>nix</description>
+            <priority>none</priority>
+            <date>09072019</date>
+            <startingtime>1715</startingtime>
+            <length>0</length>
+            <repetition>keine</repetition>
+            <category></category>
+        </Task>
+        <Task>
+            <identifier>5</identifier>
+            <title>Blabla</title>
+            <description>test</description>
+            <priority>none</priority>
+            <date>09072019</date>
+            <startingtime>1800</startingtime>
+            <length>0</length>
+            <repetition>keine</repetition>
+            <category></category>
+        </Task>
     </Tasks>
     <LookUpTable>
-        <identifier>4</identifier>
-        <identifier>5</identifier>
     </LookUpTable>
 </Data>
