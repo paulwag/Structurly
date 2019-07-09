@@ -81,7 +81,7 @@ void database::storeFile()
 
     for (auto i: tasks)
     {
-        //if(i != nullptr){        Preparation for deleted Tasks
+        if(i != nullptr){
         string random = "";
         out << "        <Task>\n";
         out << "            <identifier>"   << i->get_identifier() << "</identifier>\n";
@@ -94,7 +94,7 @@ void database::storeFile()
         out << "            <repetition>"   << i->get_repetition_string() << "</repetition>\n";
         out << "            <category>"     << i->get_category() << "</category>\n";
         out << "        </Task>\n";
-        //}                     Preparation for deleted Tasks
+        }
     }
     out << "    </Tasks>\n";
 
