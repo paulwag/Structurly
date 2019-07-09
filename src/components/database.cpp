@@ -22,8 +22,8 @@ void database::start()
     loadFile();
     std::cout << getName() << " gestartet" << endl;
 
-    /*for(int i=0; i<lookUpTable.size(); ++i)
-        cout << lookUpTable.at(i) << endl;*/
+    for(int i=0; i<lookUpTable.size(); ++i)
+        cout << lookUpTable.at(i) << endl;
 }
 
 
@@ -59,11 +59,12 @@ void database::storeFile()
     //       storeTask() auslagern aus storeFile(), bzw nur fuer Schreiben eines Tasks an bestimmte Position
 
     //ofstream out("database.xml");                                                                         // is saving database.xml in build/debug
-    //ofstream out("../../database/database.xml");
+
     #if defined(__APPLE__) && defined(__MACH__)
         ofstream out("../../../../../database/database.xml");
     #else
-        ofstream out("../../database/database.xml");
+        //ofstream out("../../database/database.xml");
+         ofstream out("../../database/test.xml");
     #endif
 
     out << "<Data>\n";
@@ -88,7 +89,7 @@ void database::storeFile()
     }
     out << "    </Tasks>\n";
 
-    //storeLookUpTable(out);        //ready to test
+    storeLookUpTable(out);        //ready to test
     out << "</Data>\n";
 
     out.close();
@@ -144,10 +145,10 @@ void database::loadFile()
             */
         }
 
-        /*if(tag == "<LookUpTable>")                            Preparation for deleted Tasks
+        if(tag == "<LookUpTable>")
         {
             loadLookUpTable(in);
-        }*/
+        }
         tag = "";
     }
 
@@ -303,7 +304,7 @@ task *database::loadTask(ifstream &in){
 
 
 
-/*void database::loadLookUpTable(ifstream &in)          Preparation for deleted Tasks
+void database::loadLookUpTable(ifstream &in)
 {
     string tag;
     string line;
@@ -334,11 +335,11 @@ task *database::loadTask(ifstream &in){
             lookUpTable.push_back(identifier);
         }
     }while(tag != "</LookUpTable>");
-}*/
+}
 
 
 
-/*void database::storeLookUpTable(ofstream& out)            Preparation for deleted Tasks
+void database::storeLookUpTable(ofstream& out)
 {
     out << "    <LookUpTable>\n";
     for(uint i=0; i<lookUpTable.size(); ++i)
@@ -346,7 +347,7 @@ task *database::loadTask(ifstream &in){
         out << "        <identifier>" << lookUpTable.at(i) << "</identifier>\n";
     }
     out << "    </LookUpTable>\n";
-}*/
+}
 
 
 void database::deleteTask(int position)

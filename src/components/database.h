@@ -46,9 +46,9 @@
             void loadFile();
             vector<task *> get_tasks_from_DB()  const {return tasks;}
 
-            //vector<int> getLookUpTable() {return lookUpTable;}           //Preparation for deleted Tasks
-            //void loadLookUpTable(ifstream &in);
-            //void storeLookUpTable(ofstream &out);
+            vector<int> getLookUpTable() {return lookUpTable;}           //Preparation for deleted Tasks
+            void loadLookUpTable(ifstream &in);
+            void storeLookUpTable(ofstream &out);
 
             void save_position_in_LUT(int position);                        // bekommt Wert von task_manager
             void deleteTask(int position);
