@@ -189,3 +189,13 @@ void MainWindow::on_print_task_clicked()
 {
     ic_c.button_pressed(BUT_PRINT);
 }
+
+void MainWindow::on_edit_btn_clicked()
+{
+     ic_c.button_pressed(BUT_EDIT);
+}
+
+void MainWindow::on_delete_btn_clicked()
+{
+     ic_c.button_pressed(BUT_DELETE);
+}

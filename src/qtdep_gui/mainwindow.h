@@ -43,6 +43,10 @@
 
             void onTableClicked(const QModelIndex &);
 
+            void on_edit_btn_clicked();
+
+            void on_delete_btn_clicked();
+
     private:
             Ui::MainWindow *ui;
 

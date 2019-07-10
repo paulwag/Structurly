@@ -24,53 +24,12 @@
   </property>
   <widget class="QWidget" name="centralWidget">
    <layout class="QGridLayout" name="gridLayout">
-    <item row="1" column="3">
-     <layout class="QVBoxLayout" name="verticalLayout_3">
-      <item>
-       <widget class="QLabel" name="timeline_label">
-        <property name="font">
-         <font>
-          <pointsize>20</pointsize>
-          <weight>75</weight>
-          <bold>true</bold>
-         </font>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">color: rgba(0,176,254, 255);
-</string>
-        </property>
-        <property name="text">
-         <string>TextLabel</string>
-        </property>
-        <property name="alignment">
-         <set>Qt::AlignCenter</set>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QScrollArea" name="timeline_area">
-        <property name="styleSheet">
-         <string notr="true">border: none;
-padding: 20px;
-
-</string>
-        </property>
-        <property name="widgetResizable">
-         <bool>true</bool>
-        </property>
-        <widget class="QWidget" name="scroll_area_content">
-         <property name="geometry">
-          <rect>
-           <x>0</x>
-           <y>0</y>
-           <width>156</width>
-           <height>349</height>
-          </rect>
-         </property>
-        </widget>
-       </widget>
-      </item>
-     </layout>
+    <item row="1" column="4">
+     <widget class="QCalendarWidget" name="calendarWidget">
+      <property name="styleSheet">
+       <string notr="true"/>
+      </property>
+     </widget>
     </item>
     <item row="1" column="2">
      <layout class="QVBoxLayout" name="createTask_area">
@@ -200,6 +159,38 @@ border-radius: 5px;</string>
        </widget>
       </item>
       <item>
+       <layout class="QHBoxLayout" name="horizontalLayout_3">
+        <item>
+         <widget class="QPushButton" name="delete_btn">
+          <property name="styleSheet">
+           <string notr="true">margin: 0 10px;
+padding: 5px;
+background-color: rgba(0,176,254, 255);
+color: white; 
+border-radius: 5px;</string>
+          </property>
+          <property name="text">
+           <string>Delete Task</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="edit_btn">
+          <property name="styleSheet">
+           <string notr="true">margin: 0 10px;
+padding: 5px;
+background-color: rgba(0,176,254, 255);
+color: white; 
+border-radius: 5px;</string>
+          </property>
+          <property name="text">
+           <string>Edit Task</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
        <widget class="QLabel" name="status_label">
         <property name="text">
          <string/>
@@ -218,6 +209,54 @@ border-radius: 5px;</string>
          </size>
         </property>
        </spacer>
+      </item>
+     </layout>
+    </item>
+    <item row="1" column="3">
+     <layout class="QVBoxLayout" name="verticalLayout_3">
+      <item>
+       <widget class="QLabel" name="timeline_label">
+        <property name="font">
+         <font>
+          <pointsize>20</pointsize>
+          <weight>75</weight>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">color: rgba(0,176,254, 255);
+</string>
+        </property>
+        <property name="text">
+         <string>TextLabel</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QScrollArea" name="timeline_area">
+        <property name="styleSheet">
+         <string notr="true">border: none;
+padding: 20px;
+
+</string>
+        </property>
+        <property name="widgetResizable">
+         <bool>true</bool>
+        </property>
+        <widget class="QWidget" name="scroll_area_content">
+         <property name="geometry">
+          <rect>
+           <x>0</x>
+           <y>0</y>
+           <width>156</width>
+           <height>349</height>
+          </rect>
+         </property>
+        </widget>
+       </widget>
       </item>
      </layout>
     </item>
@@ -266,13 +305,6 @@ border-radius: 5px;</string>
        </widget>
       </item>
      </layout>
-    </item>
-    <item row="1" column="4">
-     <widget class="QCalendarWidget" name="calendarWidget">
-      <property name="styleSheet">
-       <string notr="true"/>
-      </property>
-     </widget>
     </item>
    </layout>
   </widget>
