@@ -38,6 +38,10 @@ void input_controller::stop(bool exit)
 
 
 // /////////////////////////////////////////////////////////////////////////// Methods
+int input_controller::set_task_parameter(int id) {
+    task_id = id;
+}
+
 int input_controller::set_task_parameter(string title, string description, int hour, int minute, int day, int month, int year, int id)
 {
     int minute_to_set;
