@@ -38,11 +38,11 @@ void input_controller::stop(bool exit)
 
 
 // /////////////////////////////////////////////////////////////////////////// Methods
-int input_controller::set_task_parameter(string title, string description, int hour, int minute, int day, int month, int year)
+int input_controller::set_task_parameter(string title, string description, int hour, int minute, int day, int month, int year, int id)
 {
     int minute_to_set;
 
-    if (check_task_parameter(title))                           // check important parameters
+    if (check_task_parameter(title))                                        // check important parameters
         return -1;
 
     if (minute < 15)                                                        // setting minute to 0 | 15 | 30 | 45. important for timeline
@@ -54,6 +54,7 @@ int input_controller::set_task_parameter(string title, string description, int h
     else
         minute_to_set = 45;
 
+    task_id = id;
     task_title = title;                                                     // set task info buffer
     task_description = description;
     task_date.set_date(day, month, year);
@@ -69,6 +70,10 @@ void input_controller::button_pressed(int button)
         case BUT_CREATE:    tm_c.createTask(task_title, task_description, task_date, task_time);
                             break;
         case BUT_PRINT:     tm_c.printTasks();
+                            break;
+        case BUT_DELETE:    tm_c.delTask(task_id);
+                            break;
+        case BUT_EDIT:      //tm_c.freshe_edit_funktion(task_id);
                             break;
     }
 }
