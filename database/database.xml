@@ -1,7 +1,227 @@
 <Data>
     <Tasks>
+        <Task>
+            <identifier>1</identifier>
+            <title>Pauls Geburtstag</title>
+            <description>HAPPY BIRTHDAY!!!!</description>
+            <priority>none</priority>
+            <date>02072019</date>
+            <startingtime>2000</startingtime>
+            <length>0</length>
+            <repetition>keine</repetition>
+            <category></category>
+        </Task>
+        <Task>
+            <identifier>2</identifier>
+            <title>time3</title>
+            <description>time3</description>
+            <priority>none</priority>
+            <date>30062019</date>
+            <startingtime>1930</startingtime>
+            <length>0</length>
+            <repetition>keine</repetition>
+            <category></category>
+        </Task>
+        <Task>
+            <identifier>3</identifier>
+            <title>Test</title>
+            <description>still working</description>
+            <priority>none</priority>
+            <date>29062019</date>
+            <startingtime>1930</startingtime>
+            <length>0</length>
+            <repetition>keine</repetition>
+            <category></category>
+        </Task>
+        <Task>
+            <identifier>6</identifier>
+            <title>test</title>
+            <description>09 minuten</description>
+            <priority>none</priority>
+            <date>01012001</date>
+            <startingtime>1500</startingtime>
+            <length>0</length>
+            <repetition>keine</repetition>
+            <category></category>
+        </Task>
+        <Task>
+            <identifier>7</identifier>
+            <title>test</title>
+            <description>18 minuten</description>
+            <priority>none</priority>
+            <date>01012001</date>
+            <startingtime>1515</startingtime>
+            <length>0</length>
+            <repetition>keine</repetition>
+            <category></category>
+        </Task>
+        <Task>
+            <identifier>8</identifier>
+            <title>test</title>
+            <description>33 minuten</description>
+            <priority>none</priority>
+            <date>01012001</date>
+            <startingtime>1530</startingtime>
+            <length>0</length>
+            <repetition>keine</repetition>
+            <category></category>
+        </Task>
+        <Task>
+            <identifier>9</identifier>
+            <title>test</title>
+            <description>56 minuten</description>
+            <priority>none</priority>
+            <date>01012001</date>
+            <startingtime>1545</startingtime>
+            <length>0</length>
+            <repetition>keine</repetition>
+            <category></category>
+        </Task>
+        <Task>
+            <identifier>10</identifier>
+            <title>Wichtiger als Pauls BDay</title>
+            <description>Waesche beim waschen zuschauen</description>
+            <priority>none</priority>
+            <date>02072019</date>
+            <startingtime>1500</startingtime>
+            <length>0</length>
+            <repetition>keine</repetition>
+            <category></category>
+        </Task>
+        <Task>
+            <identifier>11</identifier>
+            <title>03.07.2019 Arbeit Arbeit</title>
+            <description>Arbeit ist vollbracht!</description>
+            <priority>none</priority>
+            <date>03072019</date>
+            <startingtime>0800</startingtime>
+            <length>0</length>
+            <repetition>keine</repetition>
+            <category></category>
+        </Task>
+        <Task>
+            <identifier>12</identifier>
+            <title>test show todays tasks 1</title>
+            <description></description>
+            <priority>none</priority>
+            <date>04072019</date>
+            <startingtime>1845</startingtime>
+            <length>0</length>
+            <repetition>keine</repetition>
+            <category></category>
+        </Task>
+        <Task>
+            <identifier>13</identifier>
+            <title>test show todays tasks 2</title>
+            <description></description>
+            <priority>none</priority>
+            <date>04072019</date>
+            <startingtime>2045</startingtime>
+            <length>0</length>
+            <repetition>keine</repetition>
+            <category></category>
+        </Task>
+        <Task>
+            <identifier>14</identifier>
+            <title>Review </title>
+            <description>Software Engineering II Review </description>
+            <priority>none</priority>
+            <date>05072019</date>
+            <startingtime>1200</startingtime>
+            <length>0</length>
+            <repetition>keine</repetition>
+            <category></category>
+        </Task>
+        <Task>
+            <identifier>15</identifier>
+            <title>Vorbesprechung</title>
+            <description>Statusmeeting</description>
+            <priority>none</priority>
+            <date>05072019</date>
+            <startingtime>1100</startingtime>
+            <length>0</length>
+            <repetition>keine</repetition>
+            <category></category>
+        </Task>
+        <Task>
+            <identifier>16</identifier>
+            <title>Paul Abgabe  Aufgabe 1</title>
+            <description>Tolle Note bekommen</description>
+            <priority>none</priority>
+            <date>05072019</date>
+            <startingtime>1130</startingtime>
+            <length>0</length>
+            <repetition>keine</repetition>
+            <category></category>
+        </Task>
+        <Task>
+            <identifier>17</identifier>
+            <title>Klausur Projektmanagement</title>
+            <description></description>
+            <priority>none</priority>
+            <date>05072019</date>
+            <startingtime>1600</startingtime>
+            <length>0</length>
+            <repetition>keine</repetition>
+            <category></category>
+        </Task>
+        <Task>
+            <identifier>18</identifier>
+            <title>Mittagessen</title>
+            <description></description>
+            <priority>none</priority>
+            <date>05072019</date>
+            <startingtime>1300</startingtime>
+            <length>0</length>
+            <repetition>keine</repetition>
+            <category></category>
+        </Task>
+        <Task>
+            <identifier>19</identifier>
+            <title>Programmierbare Logik</title>
+            <description></description>
+            <priority>none</priority>
+            <date>06072019</date>
+            <startingtime>1200</startingtime>
+            <length>0</length>
+            <repetition>keine</repetition>
+            <category></category>
+        </Task>
+        <Task>
+            <identifier>20</identifier>
+            <title>Abschluss Review</title>
+            <description></description>
+            <priority>none</priority>
+            <date>05072019</date>
+            <startingtime>1230</startingtime>
+            <length>0</length>
+            <repetition>keine</repetition>
+            <category></category>
+        </Task>
+        <Task>
+            <identifier>21</identifier>
+            <title>Neuer Task</title>
+            <description>Iwas</description>
+            <priority>none</priority>
+            <date>05072019</date>
+            <startingtime>1400</startingtime>
+            <length>0</length>
+            <repetition>keine</repetition>
+            <category></category>
+        </Task>
+        <Task>
+            <identifier>4</identifier>
+            <title>Test LookupTable</title>
+            <description>nix</description>
+            <priority>none</priority>
+            <date>09072019</date>
+            <startingtime>1715</startingtime>
+            <length>0</length>
+            <repetition>keine</repetition>
+            <category></category>
+        </Task>
     </Tasks>
     <LookUpTable>
-
+        <identifier>5</identifier>
     </LookUpTable>
 </Data>
