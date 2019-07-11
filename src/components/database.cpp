@@ -352,15 +352,11 @@ void database::loadLookUpTable(ifstream &in)
 void database::storeLookUpTable(ofstream& out)
 {
     out << "    <LookUpTable>\n";
-    if(lookUpTable.size() == 0)
-        out << "\n";
-    else
+    for(uint i=0; i<lookUpTable.size(); ++i)
     {
-        for(uint i=0; i<lookUpTable.size(); ++i)
-        {
-            out << "        <identifier>" << lookUpTable.at(i) << "</identifier>\n";
-        }
+        out << "        <identifier>" << lookUpTable.at(i) << "</identifier>\n";
     }
+
     out << "    </LookUpTable>\n";
 }
 
