@@ -72,8 +72,8 @@ void database::storeFile()
     #if defined(__APPLE__) && defined(__MACH__)
         ofstream out("../../../../../database/database.xml");
     #else
-        //ofstream out("../../database/database.xml");
-         ofstream out("../../database/test.xml");
+        ofstream out("../../database/database.xml");
+         //ofstream out("../../database/test.xml");
     #endif
 
     out << "<Data>\n";

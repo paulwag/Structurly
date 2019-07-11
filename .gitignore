@@ -2,3 +2,4 @@ build/
 Structurly.pro.user
 src/datamodel/test.xml
 .DS_Store
+database/test.xml
