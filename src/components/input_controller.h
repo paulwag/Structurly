@@ -67,6 +67,7 @@
              * @return  -1, if important parameters are missing / wrong
              *           0, if all important parameters are ok
              */
+            //int input_controller::set_task_parameter(int id); <-- not C++ valid...
             int set_task_parameter(int id);
             int set_task_parameter(string title, string decription, int hour, int minute, int day, int month, int year, int id = 0);
 
