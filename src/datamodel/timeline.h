@@ -4,6 +4,11 @@
     #include <vector>
     #include "task.h"
 
+//Workaround for WIN...
+#if defined(WIN32) || defined(_WIN32) || defined(__WIN32) && !defined(__CYGWIN__)
+    typedef unsigned int u_int;
+#endif
+
     using namespace std;
 
     #define MAXSLOTS 96

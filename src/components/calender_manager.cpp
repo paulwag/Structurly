@@ -29,6 +29,7 @@ void calender_manager::start()
 
     for (auto task: tasks_from_task_manager)
     {
+        if(!task) continue;
         id = calc_id(task->get_date());
         existing = check_for_tl_existence(id, timelines);
 

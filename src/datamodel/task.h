@@ -5,6 +5,13 @@
 #include "ttime.h"
 #include "tdate.h"
 
+//Workaround for WIN...
+#if defined(WIN32) || defined(_WIN32) || defined(__WIN32) && !defined(__CYGWIN__)
+    typedef unsigned int uint;
+#endif
+
+
+
 using namespace std;
 
 enum priority {high, medium, low, none};
@@ -20,7 +27,7 @@ class task{
         priority        tpriority;
         tdate           date;
         ttime           startingtime;
-        uint             length;                 //in minutes
+        uint            length;                 //in minutes
         repetition      trepetition;
         string          category;
 
